@@ -1,0 +1,49 @@
+{
+  "name": "eco-seat-ai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.4.0",
+    "clsx": "^1.2.1",
+    "d3": "^7.8.5",
+    "framer-motion": "^10.12.16",
+    "lucide-react": "^0.263.1",
+    "plotly.js-dist-min": "^2.24.1",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-qr-code": "^2.0.12",
+    "react-router-dom": "^6.14.0",
+    "react-scripts": "^5.0.1",
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^1.13.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19"
+  }
+}

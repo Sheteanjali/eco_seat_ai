@@ -1,0 +1,18 @@
+# Web Framework & Server
+fastapi==0.103.1
+uvicorn==0.23.2
+
+# AI & Data Processing (The "Brain")
+pandas==2.1.0           # For Ingest: Cleaning 1,500 student records
+numpy==1.25.2           # For Matrix-based Constraint Processing
+ortools==9.7.2996       # Advanced Google AI tools for CSP (Optional but powerful)
+
+# Database (Persistence Layer)
+sqlalchemy==2.0.20      # ORM for PostgreSQL/MySQL
+psycopg2-binary==2.9.7  # Adapter for PostgreSQL
+
+# Hybrid Outputs & Automation
+reportlab==4.0.4        # Export: Generating Signed PDF Manifests
+python-multipart==0.0.6 # For Ingest: Handling CSV uploads
+python-jose[cryptography]==3.3.0 # Auth: Secure JWT Tokens
+passlib[bcrypt]==1.7.4  # Auth: Password Hashing for Signup
