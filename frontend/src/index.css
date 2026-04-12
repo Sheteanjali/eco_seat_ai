@@ -5,27 +5,64 @@
 @layer base {
   body {
     margin: 0;
-    background-color: #f8fafc; /* Crisp Light Slate */
-    color: #0f172a; /* Dark Navy Text */
-    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; 
+    color: #0f172a; 
+    
+    /* Primary UI Font: Bahnschrift for that clean, technical, semi-condensed look */
+    font-family: 'Bahnschrift', 'Segoe UI', Roboto, -apple-system, sans-serif;
+    font-weight: 300; 
+    
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Academic & Official Headers: Using Times New Roman for authority */
+  h1, h2, h3, .official-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 }
 
-/* Glassmorphism for Light Theme */
-.glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+@layer components {
+  /* Premium SaaS Card: Clean borders for a modern institutional feel */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)];
+  }
+
+  /* Professional Button Style */
+  .btn-primary {
+    @apply bg-slate-900 text-white font-bold py-3 px-6 rounded-xl 
+           hover:bg-indigo-600 transition-all active:scale-95 
+           disabled:bg-slate-200 disabled:cursor-not-allowed uppercase tracking-widest text-[11px];
+  }
 }
 
-.text-glow-blue {
-  text-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
+/* Professional Minimalist Scrollbar */
+::-webkit-scrollbar { 
+  width: 5px; 
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+::-webkit-scrollbar-track { 
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: #e2e8f0; 
+  border-radius: 20px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+  background: #6366f1; 
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

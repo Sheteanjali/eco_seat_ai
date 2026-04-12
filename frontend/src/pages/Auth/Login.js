@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, User, Key, ArrowRight, Sparkles, Loader2, AlertCircle } from 'lucide-react';
+import { ShieldCheck, User, Key, ArrowRight, Sparkles, Loader2, AlertCircle, Fingerprint } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
   
   const [formData, setFormData] = useState({
     rollNo: '',
-    secretKey: '', // This will now be compared against the 'Branch' in the backend
+    secretKey: '', 
     role: 'student'
   });
 
@@ -20,13 +20,13 @@ const Login = () => {
     setError('');
     
     try {
-      // --- DYNAMIC BACKEND CONNECTION ---
+      // Backend synchronization point
       const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           username: formData.rollNo,
-          password: formData.secretKey, // Sent to backend to check against student.branch
+          password: formData.secretKey, 
           role: formData.role
         })
       });
@@ -34,62 +34,68 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok && data.status === 'success') {
-        // --- SESSION PERSISTENCE ---
+        // Secure Session Persistence
         localStorage.setItem('userRollNo', data.roll_no || formData.rollNo);
         localStorage.setItem('userRole', data.role);
         localStorage.setItem('userName', data.username || 'Candidate');
         localStorage.setItem('isLoggedIn', 'true');
 
-        // --- DYNAMIC REDIRECT ---
+        // Route Authorization
         if (data.role === 'admin') {
-          console.log("Nagpur Division: Admin Authorized");
           navigate('/admin/dashboard'); 
         } else {
-          console.log("Nagpur Division: Candidate Authorized");
           navigate('/student/dashboard');
         }
       } else {
-        // Specific error if student isn't found or branch is wrong
-        setError(data.detail || "Verification Failed: Check Identity or Key");
+        // Context-aware error reporting
+        setError(data.detail || "Authentication Failed: Please verify credentials.");
       }
     } catch (err) {
-      console.error("Network Error:", err);
-      setError("System Offline: Check Backend Connection");
+      setError("Connection Failure: Authorization server is currently unreachable.");
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#F8FAFC] relative overflow-hidden font-sans">
+    <div className="min-h-screen w-full flex items-center justify-center bg-slate-50 relative overflow-hidden font-sans">
       
-      {/* Visual Accents */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/5 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/5 blur-[120px] rounded-full"></div>
+      {/* Ambient Visual Layers */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+        <div className="absolute top-[-15%] left-[-10%] w-[45%] h-[45%] bg-indigo-200 blur-[140px] rounded-full"></div>
+        <div className="absolute bottom-[-15%] right-[-10%] w-[45%] h-[45%] bg-blue-200 blur-[140px] rounded-full"></div>
+      </div>
 
-      <div className="relative z-10 w-full max-w-md p-6">
-        <div className="bg-white border border-slate-200 rounded-[2.5rem] shadow-2xl shadow-slate-200/60 p-10">
+      <div className="relative z-10 w-full max-w-[440px] p-6 animate-in fade-in zoom-in duration-500">
+        <div className="bg-white rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] border border-slate-200/60 p-10 md:p-12">
           
-          <div className="text-center mb-10">
-            <div className="inline-flex p-4 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-100 mb-6">
+          {/* Brand Identity */}
+          <div className="flex flex-col items-center mb-10">
+            <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-200/50 mb-6 transition-transform hover:scale-105 duration-300">
               <ShieldCheck className="text-white" size={32} />
             </div>
-            <h1 className="text-3xl font-black text-slate-900 tracking-tighter italic">Eco-Seat <span className="text-indigo-600">AI</span></h1>
-            <p className="text-slate-500 mt-2 font-bold flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest">
-              <Sparkles size={12} className="text-indigo-500" /> Nagpur Smart City Node
-            </p>
+            <h1 className="text-2xl font-black text-slate-900 tracking-tight uppercase tracking-tighter">
+              Eco-Seat <span className="text-indigo-600">AI</span>
+            </h1>
+            <div className="flex items-center gap-2 mt-2">
+              <div className="h-px w-4 bg-slate-200"></div>
+              <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[0.3em]">
+                Secure Entry Portal
+              </p>
+              <div className="h-px w-4 bg-slate-200"></div>
+            </div>
           </div>
 
-          <form className="space-y-6" onSubmit={handleLogin}>
+          <form className="space-y-5" onSubmit={handleLogin}>
             
-            {/* Identity */}
-            <div className="space-y-2">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Identity (Roll No)</label>
+            {/* Identity Field */}
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Identity Identifier</label>
               <div className="relative group">
-                <User className="absolute left-4 top-4 text-slate-300 group-focus-within:text-indigo-600 transition-colors" size={18} />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={17} />
                 <input 
-                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all font-bold" 
-                  placeholder="e.g. 101 or admin"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all font-semibold placeholder:text-slate-300" 
+                  placeholder="ID / Roll Number"
                   value={formData.rollNo}
                   onChange={(e) => setFormData({...formData, rollNo: e.target.value})}
                   required
@@ -97,15 +103,15 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Secret Key (Linked to Branch) */}
-            <div className="space-y-2">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Secret Key (Your Branch)</label>
+            {/* Secret Key Field */}
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Access Key</label>
               <div className="relative group">
-                <Key className="absolute left-4 top-4 text-slate-300 group-focus-within:text-indigo-600 transition-colors" size={18} />
+                <Key className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={17} />
                 <input 
                   type="password" 
-                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all font-bold" 
-                  placeholder="e.g. CSE or ME" 
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all font-semibold placeholder:text-slate-300" 
+                  placeholder="Security Key" 
                   value={formData.secretKey}
                   onChange={(e) => setFormData({...formData, secretKey: e.target.value})}
                   required
@@ -113,44 +119,54 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Role Selection */}
-            <div className="space-y-2">
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Portal Access Level</label>
-              <select 
-                value={formData.role}
-                onChange={(e) => setFormData({...formData, role: e.target.value})}
-                className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-indigo-600 font-black outline-none focus:border-indigo-500 transition-all cursor-pointer shadow-sm appearance-none"
-              >
-                <option value="student">Student Portal</option>
-                <option value="admin">Admin Dashboard</option>
-              </select>
+            {/* Authorization Level */}
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Authorization Node</label>
+              <div className="relative group">
+                <Fingerprint className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={17} />
+                <select 
+                  value={formData.role}
+                  onChange={(e) => setFormData({...formData, role: e.target.value})}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-10 text-slate-900 font-bold outline-none focus:bg-white focus:border-indigo-500 transition-all cursor-pointer appearance-none"
+                >
+                  <option value="student">Candidate Registry</option>
+                  <option value="admin">System Console</option>
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                  <ArrowRight size={14} className="rotate-90" />
+                </div>
+              </div>
             </div>
 
-            {/* Error Alert */}
+            {/* Notification Hub */}
             {error && (
-              <div className="flex items-center gap-2 p-4 bg-red-50 rounded-xl text-red-600 border border-red-100 animate-in slide-in-from-top-2">
-                <AlertCircle size={16} />
-                <p className="text-[10px] font-black uppercase tracking-tight">{error}</p>
+              <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-100 rounded-2xl text-rose-600 animate-in slide-in-from-top-2 duration-300">
+                <AlertCircle size={16} className="shrink-0" />
+                <p className="text-[11px] font-bold leading-tight">{error}</p>
               </div>
             )}
 
-            {/* Action Button */}
+            {/* Submission Action */}
             <button 
               disabled={isLoading}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 text-white font-black py-4.5 rounded-2xl shadow-xl shadow-indigo-100 flex items-center justify-center gap-3 transform active:scale-[0.98] transition-all tracking-widest text-xs uppercase"
+              className="w-full bg-slate-900 hover:bg-indigo-600 disabled:bg-slate-200 text-white font-black py-4.5 rounded-2xl shadow-xl shadow-slate-200 transition-all flex items-center justify-center gap-3 active:scale-[0.97] uppercase text-[11px] tracking-[0.2em] mt-2 group"
             >
               {isLoading ? (
-                <>Verifying Identity <Loader2 size={18} className="animate-spin" /></>
+                <>Synchronizing <Loader2 size={18} className="animate-spin text-white/50" /></>
               ) : (
-                <>Initiate Secure Access <ArrowRight size={18} /></>
+                <>Initialize Session <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>
               )}
             </button>
           </form>
 
-          <div className="mt-10 text-center">
-            <p className="text-slate-400 font-bold text-[10px] uppercase tracking-widest">
-              Nagpur Division <span className="text-indigo-600">Secure Node</span>
-            </p>
+          {/* Infrastructure Signature */}
+          <div className="mt-10 flex flex-col items-center border-t border-slate-50 pt-8">
+            <div className="flex items-center gap-2">
+              <Sparkles size={12} className="text-indigo-400 animate-pulse" />
+              <p className="text-slate-400 font-black text-[9px] uppercase tracking-[0.3em]">
+                Decentralized Deployment Unit
+              </p>
+            </div>
           </div>
         </div>
       </div>
