@@ -1,7 +1,15 @@
+# Node.js
 node_modules/
 frontend/node_modules/
+
+# Environment variables
 .env
+
+# Python
 __pycache__/
 *.pyc
+venv/
+
+# Build files
 dist/
 build/

@@ -16,3 +16,6 @@ reportlab==4.0.4        # Export: Generating Signed PDF Manifests
 python-multipart==0.0.6 # For Ingest: Handling CSV uploads
 python-jose[cryptography]==3.3.0 # Auth: Secure JWT Tokens
 passlib[bcrypt]==1.7.4  # Auth: Password Hashing for Signup
+
+# QR Code
+qrcode[pil]==7.4.2
