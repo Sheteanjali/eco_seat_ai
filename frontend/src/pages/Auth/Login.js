@@ -129,8 +129,8 @@ const Login = () => {
                   onChange={(e) => setFormData({...formData, role: e.target.value})}
                   className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-10 text-slate-900 font-bold outline-none focus:bg-white focus:border-indigo-500 transition-all cursor-pointer appearance-none"
                 >
-                  <option value="student">Candidate Registry</option>
-                  <option value="admin">System Console</option>
+                  <option value="student">Student</option>
+                  <option value="admin">Admin</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                   <ArrowRight size={14} className="rotate-90" />

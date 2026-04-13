@@ -22,9 +22,9 @@ const StudentDashboard = () => {
   const branchColorMap = {
     'CS': '#6366f1', // Indigo
     'ME': '#f59e0b', // Amber
-    'CE': '#10b981', // Emerald
+    'CE': '#fd0d35', // Emerald
     'EE': '#ec4899', // Pink
-    'ET': '#3b82f6', // Blue
+    'IT': '#3bf673', // Blue
   };
 
   useEffect(() => {
