@@ -2,185 +2,177 @@ import qrcode
 import base64
 import io
 import pandas as pd
-from datetime import datetime, time
-from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
+from datetime import datetime
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, Query
 from sqlalchemy.orm import Session
-from sqlalchemy import func, or_
+from sqlalchemy import func, or_, and_
+from pydantic import BaseModel
 from ..database import models, connection
 from ..core.solver import solve_seating 
 
 router = APIRouter(prefix="/api/admin", tags=["Admin Hub"])
 
+# Schema for Digital Twin infrastructure updates
+class BrokenTableUpdate(BaseModel):
+    room_no: str
+    table_id: str
+    is_broken: bool
+
+# --- 1. DATA INGESTION & SHIFT-AWARE AI SOLVER ---
 @router.post("/upload-bulk")
 async def upload_bulk_data(
     student_file: UploadFile = File(...), 
     room_file: UploadFile = File(...),
+    mode: str = "Single", 
     db: Session = Depends(connection.get_db)
 ):
     try:
-        # 1. Reset Database for new session [cite: 21]
+        # 1. Clear existing session data
         db.query(models.StudentSeating).delete()
+        db.query(models.Room).delete()
         db.commit()
 
-        # 2. Ingest Data [cite: 25]
-        student_bytes = await student_file.read()
-        room_bytes = await room_file.read()
+        # 2. Read and Normalize CSVs
+        s_df = pd.read_csv(io.BytesIO(await student_file.read()))
+        r_df = pd.read_csv(io.BytesIO(await room_file.read()))
         
-        students_df = pd.read_csv(io.BytesIO(student_bytes))
-        rooms_df = pd.read_csv(io.BytesIO(room_bytes))
+        # Standardize headers to lowercase_with_underscores
+        s_df.columns = [c.lower().strip().replace(' ', '_') for c in s_df.columns]
+        r_df.columns = [c.lower().strip().replace(' ', '_') for c in r_df.columns]
+
+        # 3. Sync Infrastructure (Fixed 'floor' keyword crash)
+        for _, r_data in r_df.iterrows():
+            db.add(models.Room(
+                room_no=str(r_data['room_no']),
+                floor=int(r_data.get('floor', 0)),
+                total_tables=int(r_data['total_tables']),
+                rows=int(r_data['rows']),
+                cols=int(r_data['cols']),
+                broken_tables=str(r_data.get('broken_tables', ""))
+            ))
+        db.commit()
+
+        # 4. EXECUTE AI ENGINE
+        # Pass 1 & 2 (Morning/Afternoon) are handled inside solve_seating
+        assignments = solve_seating(s_df.to_dict('records'), r_df.to_dict('records'), mode=mode)
         
-        students_df.columns = [c.lower().strip() for c in students_df.columns]
-        rooms_df.columns = [c.lower().strip() for c in rooms_df.columns]
-
-        if 'course_code' not in students_df.columns:
-            if 'subject' in students_df.columns:
-                students_df.rename(columns={'subject': 'course_code'}, inplace=True)
-
-        students_list = students_df.to_dict('records')
-        
-        # 3. Build Infrastructure Grid [cite: 30]
-        room_grid = []
-        for _, room in rooms_df.iterrows():
-            r_id = str(room['room_no'])
-            cap = int(room.get('total_capacity', room.get('capacity', 30)))
-            for i in range(cap):
-                room_grid.append((r_id, (i // 5, i % 5)))
-
-        total_capacity = len(room_grid)
-
-        # --- 🕒 SHIFT SPLITTING ENGINE ---
-        morning_batch = students_list[:total_capacity]
-        afternoon_batch = students_list[total_capacity:]
-
-        def process_shift(batch, shift_name):
-            if not batch: return
-            assignments = solve_seating(batch, room_grid) # Triggering AI Constraint Modeling [cite: 1]
+        # 5. SAVE ASSIGNMENTS (Fixed: assignments is a List, not a Dict)
+        new_records = []
+        for student in assignments:
+            roll_val = str(student.get('rollno') or student.get('roll_no'))
+            room_id = str(student.get('assigned_room'))
+            seat_id = str(student.get('assigned_seat'))
             
-            for seat_tuple, student in assignments.items():
-                room_id, (r, c) = seat_tuple
-                roll_no = str(student['roll_no'])
-                seat_label = f"R{r}C{c}"
+            # Extract Shift data from Solver metadata
+            curr_shift = student.get('shift', 'Morning')
+            curr_time = student.get('exam_time', '09:30 AM')
 
-                qr_data = f"NGP|{roll_no}|{shift_name}|{room_id}|{seat_label}"
-                qr = qrcode.make(qr_data)
-                buf = io.BytesIO()
-                qr.save(buf, format="PNG")
-                qr_base64 = base64.b64encode(buf.getvalue()).decode()
+            # Generate Secure RBU QR
+            qr_content = f"RBU|{roll_val}|{room_id}|{curr_time}"
+            qr = qrcode.make(qr_content)
+            buf = io.BytesIO()
+            qr.save(buf, format="PNG")
+            qr_base64 = base64.b64encode(buf.getvalue()).decode()
 
-                new_record = models.StudentSeating(
-                    name=student['name'],
-                    roll_no=roll_no,
-                    branch=student['branch'],
-                    subject=student.get('subject_name', student['course_code']),
-                    subject_code=str(student['course_code']),
-                    room_no=room_id,
-                    seat_no=seat_label,
-                    shift=shift_name,
-                    attendance_status="Pending",
-                    qr_code=f"data:image/png;base64,{qr_base64}"
-                )
-                db.add(new_record)
+            new_records.append(models.StudentSeating(
+                name=student.get('nameid') or student.get('name'),
+                roll_no=roll_val,
+                branch=student.get('branch', 'GEN'),
+                year=str(student.get('year', '1')),
+                subject=student.get('course_name') or student.get('subject', 'N/A'),
+                paper_group_id=student.get('paper_group_id', 'COMMON'),
+                room_no=room_id,
+                seat_no=seat_id,
+                shift=curr_shift,
+                exam_time=curr_time,
+                attendance_status="Absent",
+                qr_code=f"data:image/png;base64,{qr_base64}"
+            ))
 
-        process_shift(morning_batch, "Morning")
-        process_shift(afternoon_batch, "Afternoon")
-
+        db.add_all(new_records)
         db.commit()
-        return {"status": "success", "message": f"Morning: {len(morning_batch)} | Afternoon: {len(afternoon_batch)} allocated."}
+        return {"status": "success", "count": len(assignments)}
 
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"CRITICAL SOLVER ERROR: {str(e)}") # Visible in Python Terminal
+        raise HTTPException(status_code=500, detail=f"Solver Crash: {str(e)}")
 
-# --- 🔐 SECURE SCANNER (DEMO READY) ---
-@router.post("/verify-scan/{roll_no}")
-async def verify_scan(roll_no: str, db: Session = Depends(connection.get_db)):
-    student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == roll_no).first()
-    if not student:
-        raise HTTPException(status_code=404, detail="Student not found.")
+# --- 2. ROOM DIRECTORY ---
+@router.get("/rooms")
+async def get_all_rooms(db: Session = Depends(connection.get_db)):
+    return db.query(models.Room).all()
 
-    # 🕒 FOR PRESENTATION: Simulated current time set to 09:05 AM 
-    current_time = time(9, 5) 
-    MORNING_LIMIT = time(9, 10) 
-    AFTERNOON_LIMIT = time(13, 40)
-
-    if (student.shift == "Morning" and current_time > MORNING_LIMIT) or \
-       (student.shift == "Afternoon" and current_time > AFTERNOON_LIMIT):
-        student.attendance_status = "Absent"
-        db.commit()
-        return {"status": "REJECTED", "reason": "Late Entry threshold exceeded."}
-
-    # ✅ Entry Approved
-    student.attendance_status = "Present"
-    student.entry_time = datetime.now()
+# --- 3. DIGITAL TWIN SYNC ---
+@router.patch("/room/update-infrastructure")
+async def update_infrastructure(data: BrokenTableUpdate, db: Session = Depends(connection.get_db)):
+    room = db.query(models.Room).filter(models.Room.room_no == data.room_no).first()
+    if not room: raise HTTPException(status_code=404, detail="Room Not Found")
+    
+    current_broken = set(t.strip() for t in str(room.broken_tables).split(',') if t.strip())
+    if data.is_broken:
+        current_broken.add(data.table_id)
+    else:
+        current_broken.discard(data.table_id)
+    
+    room.broken_tables = ",".join(current_broken)
     db.commit()
-    return {"status": "APPROVED", "seat": student.seat_no, "room": student.room_no}
+    return {"status": "Synced", "broken_tables": room.broken_tables}
 
-# --- 🔍 ENHANCED MULTIMODAL SEARCH HUB (Room-Wise Allocation) ---
+# --- 4. STRICT SEARCH HUB (Strict AND Logic) ---
 @router.get("/search-hub")
-async def search_hub(query: str = None, filter_type: str = "all", db: Session = Depends(connection.get_db)):
-    base_query = db.query(models.StudentSeating)
-    if not query: return {"results": [], "summary": {}, "total": 0}
+async def search_hub(
+    query: str = Query(None), 
+    filter_type: str = Query("student"), 
+    shift: str = Query("All"),
+    year: str = Query("All"),
+    db: Session = Depends(connection.get_db)
+):
+    # Base query for Student Seating
+    stmt = db.query(models.StudentSeating)
+    
+    # Apply Strict Filters (If selected, MUST match)
+    if shift != "All":
+        stmt = stmt.filter(models.StudentSeating.shift == shift)
 
-    # 1. RETRIEVAL LOGIC
-    if filter_type == "student":
-        results = base_query.filter(or_(models.StudentSeating.name.ilike(f"%{query}%"), models.StudentSeating.roll_no.ilike(f"%{query}%"))).all()
-    elif filter_type == "room":
-        results = base_query.filter(models.StudentSeating.room_no == query).all()
-    elif filter_type == "branch":
-        results = base_query.filter(models.StudentSeating.branch.ilike(f"%{query}%")).all()
-    elif filter_type == "subject":
-        results = base_query.filter(or_(models.StudentSeating.subject.ilike(f"%{query}%"), models.StudentSeating.subject_code.ilike(f"%{query}%"))).all()
-    elif filter_type == "shift":
-        results = base_query.filter(models.StudentSeating.shift.ilike(f"%{query}%")).all()
-    else: 
-        results = []
+    if year != "All":
+        stmt = stmt.filter(models.StudentSeating.year == year)
 
-    # 2. DYNAMIC SUMMARY GENERATION (NESTED ROOM GROUPING)
-    # This logic provides the "Room Wise Allocation" breakdown you requested.
+    # Apply Search Query
+    if query:
+        if filter_type == "student":
+            stmt = stmt.filter(or_(
+                models.StudentSeating.name.ilike(f"%{query}%"), 
+                models.StudentSeating.roll_no.ilike(f"%{query}%")
+            ))
+        elif filter_type == "subject":
+            stmt = stmt.filter(models.StudentSeating.subject.ilike(f"%{query}%"))
+        elif filter_type == "room":
+            stmt = stmt.filter(models.StudentSeating.room_no == query)
+        elif filter_type == "branch":
+            stmt = stmt.filter(models.StudentSeating.branch.ilike(f"%{query}%"))
+
+    results = stmt.all()
+    
+    # Summary for Presence Heatmap
     summary = {}
     for s in results:
-        if filter_type == "room":
-            # If already searching for a room, show the Branch breakdown [cite: 14]
-            label = f"{s.branch.upper()} Dept"
-        else:
-            # For branch/shift/subject searches, show count per room [cite: 19]
-            label = f"Room {s.room_no}"
-            
+        label = f"Room {s.room_no}"
         summary[label] = summary.get(label, 0) + 1
 
     return {"results": results, "summary": summary, "total": len(results)}
 
-# --- 🛰️ DIGITAL TWIN ROOM LAYOUT ---
-@router.get("/room-layout/{room_no}")
-async def get_room_layout(room_no: str, db: Session = Depends(connection.get_db)):
-    students = db.query(models.StudentSeating).filter(models.StudentSeating.room_no == room_no).all()
-    return [
-        {
-            "seat": s.seat_no,
-            "name": s.name,
-            "roll_no": s.roll_no,
-            "branch": s.branch,
-            "subject": s.subject,
-            "status": s.attendance_status
-        } for s in students
-    ]
-
+# --- 5. LIVE ANALYTICS ---
 @router.get("/analytics")
 async def get_analytics(db: Session = Depends(connection.get_db)):
     total = db.query(models.StudentSeating).count()
     present = db.query(models.StudentSeating).filter(models.StudentSeating.attendance_status == "Present").count()
-    absent = db.query(models.StudentSeating).filter(models.StudentSeating.attendance_status == "Absent").count()
-    
-    # Accurate capacity management logic 
     rooms = db.query(models.StudentSeating.room_no, func.count(models.StudentSeating.id)).group_by(models.StudentSeating.room_no).all()
     
-    # Utilization based on total capacity
-    utilization = round((total / 2272) * 100, 1) if total > 0 else 0
-
     return {
         "totalStudents": total,
         "presentCount": present,
-        "absentCount": absent,
-        "utilization": utilization,
+        "absentCount": total - present,
+        "utilization": round((total / 2500) * 100, 1) if total > 0 else 0,
         "roomData": [{"name": f"Room {r[0]}", "count": r[1]} for r in rooms]
     }

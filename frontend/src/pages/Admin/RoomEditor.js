@@ -1,90 +1,185 @@
-import React, { useState } from 'react';
-import { Zap, LayoutGrid, MousePointer2, CheckCircle, ShieldCheck } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Zap, MapPin, AlertTriangle, ShieldCheck, Box, ChevronRight, Info, CheckCircle2, Loader2 } from 'lucide-react';
 import DigitalTwinGrid from '../../components/DigitalTwinGrid';
-import apiService from '../../services/api'; // Integrated with Python Backend
+import apiService from '../../services/api'; 
+import axios from 'axios';
 
 const RoomEditor = () => {
+  const [rooms, setRooms] = useState([]); 
+  const [selectedRoom, setSelectedRoom] = useState(null);
   const [blockedSeats, setBlockedSeats] = useState([]);
   const [status, setStatus] = useState('idle');
 
-  const runSolver = async () => {
-    setStatus('solving');
+  // 1. Initial Infrastructure Sync: Fetch list of all rooms
+  useEffect(() => {
+    const initInfra = async () => {
+      try {
+        const res = await axios.get('http://127.0.0.1:8000/api/admin/rooms');
+        setRooms(res.data);
+        if (res.data.length > 0) setSelectedRoom(res.data[0]);
+      } catch (err) { 
+        console.error("Infrastructure Sync Failed: Backend unreachable or 404"); 
+      }
+    };
+    initInfra();
+  }, []);
+
+  // 2. Room Switcher: Update local state when selectedRoom changes
+  useEffect(() => {
+    if (selectedRoom) {
+      // Parse the broken_tables string stored in DB (e.g., "T1,T4,T10")
+      const broken = selectedRoom.broken_tables 
+        ? selectedRoom.broken_tables.split(',').filter(t => t !== "") 
+        : [];
+      setBlockedSeats(broken);
+      setStatus('idle');
+    }
+  }, [selectedRoom]);
+
+  // 3. On-Time Constraint Marking
+  const toggleTableStatus = async (tableId) => {
+    const isCurrentlyBroken = blockedSeats.includes(tableId);
+    const updatedBlocked = isCurrentlyBroken 
+      ? blockedSeats.filter(s => s !== tableId) 
+      : [...blockedSeats, tableId];
+    
+    setBlockedSeats(updatedBlocked);
+
     try {
-      // Logic: Triggering AI-Based Constraint Modeling [cite: 1]
-      // Passes blocked seats as hard constraints to the Recursive Search [cite: 26]
-      const response = await apiService.initiateConstraintSolver({
-        roomId: "A-101",
-        blockedVariables: blockedSeats 
+      // API call to patch the CSV string in the rooms table
+      await axios.patch('http://127.0.0.1:8000/api/admin/room/update-infrastructure', {
+        room_no: selectedRoom.room_no,
+        table_id: tableId,
+        is_broken: !isCurrentlyBroken
       });
       
-      if (response.status === 'success') {
+      // Update local rooms list to keep sync
+      setRooms(prev => prev.map(r => 
+        r.room_no === selectedRoom.room_no 
+          ? { ...r, broken_tables: updatedBlocked.join(',') } 
+          : r
+      ));
+    } catch (err) { 
+        console.error("Real-time Constraint Sync Failed"); 
+    }
+  };
+
+  // 4. Trigger Recursive Solver pass
+  const runAISolver = async () => {
+    setStatus('solving');
+    try {
+      // Assuming uploadBulkData handles the re-allocation logic based on updated constraints
+      const res = await apiService.uploadBulkData(); 
+      if (res.data.status === 'success') {
         setStatus('success');
+        // Auto-refresh stats after 2 seconds
+        setTimeout(() => setStatus('idle'), 3000);
       }
-    } catch (error) {
-      console.error("CSP Solver Error: Constraints could not be satisfied.");
-      setStatus('idle');
+    } catch (error) { 
+        setStatus('error'); 
+        alert("Solver Error: Check Terminal for CSP backtracking logs.");
     }
   };
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-700">
-      <div className="flex justify-between items-center bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
-        <div>
-          {/* Proposed Solution: Eco-Seat AI [cite: 2] */}
-          <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tighter">
-            Digital Twin <span className="text-indigo-600">Mapping</span>
-          </h2>
-          <p className="text-xs text-slate-500 mt-1 font-medium tracking-wide">
-            Interactive Variable Modeling: Hall A-101 [cite: 3, 30]
-          </p>
+    <div className="flex h-screen bg-slate-50 gap-6 p-6 overflow-hidden animate-in fade-in duration-700">
+      
+      {/* LEFT: ROOM DIRECTORY SIDEBAR */}
+      <div className="w-80 bg-white border border-slate-200 rounded-[2.5rem] p-6 shadow-sm flex flex-col">
+        <div className="mb-6">
+            <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Infrastructure</h3>
+            <p className="text-xs font-bold text-slate-900">Select Hall to map constraints</p>
         </div>
-        <button 
-          onClick={runSolver}
-          disabled={status === 'solving'}
-          className="bg-slate-900 text-white px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-indigo-600 transition-all shadow-xl shadow-slate-200 disabled:opacity-50"
-        >
-          {status === 'solving' ? 'Backtracking...' : 'Initiate AI Solver'} <Zap size={14} />
-        </button>
+
+        <div className="space-y-3 overflow-y-auto flex-1 pr-2 custom-scrollbar">
+          {rooms.map((room) => (
+            <button 
+              key={room.room_no}
+              onClick={() => setSelectedRoom(room)}
+              className={`w-full p-4 rounded-2xl border transition-all flex items-center justify-between group ${
+                selectedRoom?.room_no === room.room_no 
+                ? 'bg-slate-900 border-slate-900 text-white shadow-xl translate-x-1' 
+                : 'bg-slate-50 border-slate-100 text-slate-600 hover:border-indigo-300 hover:bg-white'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div className={`p-2 rounded-lg ${selectedRoom?.room_no === room.room_no ? 'bg-indigo-500' : 'bg-white border'}`}>
+                    <Box size={14} className={selectedRoom?.room_no === room.room_no ? 'text-white' : 'text-slate-400'} />
+                </div>
+                <div className="text-left">
+                    <p className="text-xs font-black uppercase">Hall {room.room_no}</p>
+                    <p className={`text-[8px] font-bold uppercase tracking-tighter ${selectedRoom?.room_no === room.room_no ? 'text-slate-400' : 'text-slate-400'}`}>
+                        {room.total_tables} Seats • Floor {room.floor}
+                    </p>
+                </div>
+              </div>
+              <ChevronRight size={14} className={`${selectedRoom?.room_no === room.room_no ? 'text-indigo-400' : 'opacity-0'}`} />
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 overflow-hidden relative">
-        <div className="mb-8 flex justify-between items-center">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2">
-                <MousePointer2 size={12} className="text-indigo-600"/> Mark Unusable Seats (Pillars/Broken Benches) [cite: 31]
-            </span>
-            {status === 'success' && (
-              <span className="text-emerald-500 font-black text-[10px] uppercase tracking-widest flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-100">
-                <ShieldCheck size={14}/> Conflict-Free Plan Verified [cite: 13]
-              </span>
-            )}
+      {/* RIGHT: INTERACTIVE TWIN & SOLVER NODE */}
+      <div className="flex-1 flex flex-col gap-6 overflow-hidden">
+        
+        {/* HEADER CONTROL BAR */}
+        <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm flex justify-between items-center">
+            <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600">
+                    <MapPin size={24} />
+                </div>
+                <div>
+                    <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase italic">
+                        Digital Twin: <span className="text-indigo-600">{selectedRoom?.room_no}</span>
+                    </h2>
+                    <div className="flex gap-4 mt-1">
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1">
+                            <Info size={10} className="text-indigo-400"/> Grid Layout: {selectedRoom?.rows}x{selectedRoom?.cols}
+                        </span>
+                        <span className={`text-[9px] font-black uppercase tracking-widest flex items-center gap-1 ${blockedSeats.length > 0 ? 'text-rose-500' : 'text-slate-400'}`}>
+                            <AlertTriangle size={10}/> Broken/Blocked: {blockedSeats.length}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex gap-4">
+                <button 
+                  onClick={runAISolver}
+                  disabled={status === 'solving'}
+                  className="bg-slate-900 text-white px-10 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest flex items-center gap-3 hover:bg-indigo-600 transition-all shadow-xl shadow-slate-200 active:scale-95 disabled:opacity-50"
+                >
+                  {status === 'solving' ? 'Backtracking...' : 'Recalculate Session Shifts'} <Zap size={16} />
+                </button>
+            </div>
         </div>
-        
-        {/* Seats are treated as variables in the CSP model [cite: 3] */}
-        <DigitalTwinGrid 
-          rows={10} 
-          cols={15} 
-          blockedSeats={blockedSeats} 
-          onToggleSeat={(id) => {
-            // Real-time Adaptation to room changes [cite: 7]
-            setBlockedSeats(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]);
-            setStatus('idle');
-          }} 
-          interactive={true}
-        />
-        
-        <div className="mt-8 pt-8 border-t border-slate-50 flex items-center gap-8">
-            <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-slate-100 rounded-sm"></div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Available Variable</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-indigo-600 rounded-sm"></div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Candidate Assigned</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-100 border border-red-200 rounded-sm"></div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Constraint Block (Broken) [cite: 6]</span>
-            </div>
+
+        {/* INTERACTIVE MAPPING AREA */}
+        <div className="flex-1 bg-white border border-slate-200 rounded-[3rem] p-10 shadow-sm overflow-y-auto relative">
+           <div className="mb-6 flex justify-between items-center">
+               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Interactive Seat Variable Modeling</p>
+               {status === 'success' && (
+                  <div className="flex items-center gap-2 text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100 animate-in zoom-in">
+                      <CheckCircle2 size={14}/>
+                      <span className="text-[9px] font-black uppercase tracking-widest">Constraint Matrix Stabilized</span>
+                  </div>
+               )}
+           </div>
+
+           {selectedRoom ? (
+             <DigitalTwinGrid 
+                rows={parseInt(selectedRoom.rows)} 
+                cols={parseInt(selectedRoom.cols)} 
+                blockedSeats={blockedSeats} 
+                onToggleSeat={toggleTableStatus} 
+                interactive={true}
+             />
+           ) : (
+             <div className="h-full flex flex-col items-center justify-center text-slate-300">
+                <Loader2 className="animate-spin mb-4" />
+                <p className="text-[10px] font-black uppercase tracking-[0.4em]">Initializing Infrastructure Directory...</p>
+             </div>
+           )}
         </div>
       </div>
     </div>

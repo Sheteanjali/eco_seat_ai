@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
-  UploadCloud, 
+  Database, 
   BarChart3, 
   LogOut,
-  ShieldCheck,
+  Zap,
   Clock,
   ChevronRight,
-  RotateCcw
+  RotateCcw,
+  QrCode,
+  Map
 } from 'lucide-react';
 import apiService from '../services/api';
 
@@ -17,27 +19,28 @@ const Sidebar = () => {
   const location = useLocation();
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  // Real-time clock for the Nagpur Portal
+  // Real-time clock for the RBU Node
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
   const menuItems = [
-    { name: 'Dashboard', icon: LayoutDashboard, path: '/admin/dashboard', label: 'Visual Grid' },
-    { name: 'Upload Hub', icon: UploadCloud, path: '/admin/upload', label: 'Data Ingestion' },
-    { name: 'Analytics', icon: BarChart3, path: '/admin/analytics', label: 'AI Insights' },
+    { name: 'Analytics', icon: BarChart3, path: '/admin/analytics', label: 'Live Presence Feed' },
+    { name: 'Optimization', icon: Database, path: '/admin/upload', label: 'Syllabus Logic' },
+    { name: 'Digital Twin', icon: Map, path: '/admin/map', label: 'DT-Building Map' },
+    { name: 'Verify Scan', icon: QrCode, path: '/admin/scanner', label: 'Admin Entrance Verification' },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   const handleReset = async () => {
-    if (window.confirm("CRITICAL: Wipe seating data and unlock the engine?")) {
+    if (window.confirm("CRITICAL: Wipe seating data and clear current attendance logs?")) {
       try {
         await apiService.resetEngine();
         window.location.reload(); 
       } catch (err) {
-        alert("Reset failed. Engine is currently busy.");
+        alert("Reset failed. Engine is currently busy with a live session.");
       }
     }
   };
@@ -51,30 +54,33 @@ const Sidebar = () => {
     <aside className="h-screen w-72 bg-white border-r border-slate-200 flex flex-col sticky top-0 z-50 shadow-sm">
       
       {/* Branding Section */}
-      <div className="p-8">
-        <div className="flex items-center gap-3 mb-3">
+      <div className="p-8 pb-4">
+        <div className="flex items-center gap-3 mb-6">
           <div className="bg-indigo-600 p-2.5 rounded-xl shadow-lg shadow-indigo-100">
-            <ShieldCheck size={24} className="text-white" />
+            <Zap size={24} className="text-white fill-white" />
           </div>
-          <h1 className="text-xl font-black text-slate-900 tracking-tight italic">
-            Eco-Seat <span className="text-indigo-600">AI</span>
-          </h1>
+          <div>
+            <h1 className="text-xl font-black text-slate-900 tracking-tight uppercase" style={{ fontFamily: '"Times New Roman", serif' }}>
+              Eco-Seat <span className="text-indigo-600">AI</span>
+            </h1>
+            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest -mt-1">Operational Hub</p>
+          </div>
         </div>
         
-        {/* LIVE CLOCK WIDGET (Light Version) */}
-        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex items-center justify-between shadow-inner">
-          <div className="flex items-center gap-2 text-indigo-600">
+        {/* LIVE CLOCK WIDGET */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between shadow-xl">
+          <div className="flex items-center gap-2 text-indigo-400">
             <Clock size={14} />
-            <span className="text-[10px] font-black uppercase tracking-widest">NGP Time</span>
+            <span className="text-[10px] font-black uppercase tracking-widest">RBU Time</span>
           </div>
-          <span className="text-sm font-mono font-bold text-slate-700 tracking-widest">
+          <span className="text-sm font-mono font-bold text-white tracking-widest">
             {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </span>
         </div>
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 px-4 space-y-2">
+      <nav className="flex-1 px-4 py-6 space-y-2">
         {menuItems.map((item) => (
           <button
             key={item.name}
@@ -91,8 +97,8 @@ const Sidebar = () => {
                 <item.icon size={20} />
               </span>
               <div className="text-left">
-                <p className="text-sm tracking-tight">{item.name}</p>
-                <p className={`text-[9px] font-black uppercase tracking-widest ${isActive(item.path) ? 'text-indigo-400' : 'text-slate-400'}`}>
+                <p className="text-sm tracking-tight font-black uppercase">{item.name}</p>
+                <p className={`text-[9px] font-bold uppercase tracking-widest ${isActive(item.path) ? 'text-indigo-400' : 'text-slate-400'}`}>
                   {item.label}
                 </p>
               </div>
@@ -105,30 +111,19 @@ const Sidebar = () => {
       {/* Bottom Profile & Reset Controls */}
       <div className="p-6 mt-auto border-t border-slate-100 space-y-4">
         
-        {/* Reset Engine (Safe Light Action) */}
+        {/* Reset Action */}
         <button 
           onClick={handleReset}
-          className="w-full flex items-center gap-4 px-4 py-3 text-slate-400 font-bold hover:text-amber-600 transition-colors text-[10px] uppercase tracking-[0.2em] group"
+          className="w-full flex items-center gap-4 px-4 py-3 text-slate-400 font-bold hover:text-amber-600 transition-colors text-[9px] uppercase tracking-[0.2em] group"
         >
           <RotateCcw size={14} className="group-hover:rotate-[-45deg] transition-transform" />
-          Reset Seating Grid
+          Purge Active Logs
         </button>
-
-        {/* Admin Profile Card */}
-        <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100 flex items-center gap-3">
-          <div className="w-10 h-10 bg-indigo-100 border-2 border-white rounded-xl flex items-center justify-center text-indigo-600 font-black shadow-sm">
-            AD
-          </div>
-          <div>
-            <p className="text-xs font-black text-slate-900 uppercase">Administrator</p>
-            <p className="text-[10px] text-slate-500 font-bold italic">Nagpur Division</p>
-          </div>
-        </div>
         
         {/* Logout Button */}
         <button 
           onClick={handleLogout}
-          className="w-full flex items-center justify-center gap-2 py-4 bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 rounded-2xl border border-slate-200 transition-all font-black text-[10px] uppercase tracking-widest"
+          className="w-full flex items-center justify-center gap-2 py-4 bg-slate-900 hover:bg-rose-600 text-white rounded-2xl transition-all font-black text-[10px] uppercase tracking-widest shadow-xl shadow-slate-200"
         >
           <LogOut size={16} /> Terminate Access
         </button>

@@ -1,48 +1,73 @@
 import React from 'react';
 
 /**
- * DigitalTwinGrid: Specialized Spatial Mapping Node.
- * Font: Bahnschrift (Technical UI) & Times New Roman (Official Branding).
+ * DigitalTwinGrid: Advanced Spatial Mapping for RBU-DT Building.
+ * Features: On-time Broken Bench Marking & Live Attendance Visualization.
  */
-const DigitalTwinGrid = ({ occupiedSeats = [], userSeat, rows = 12, cols = 5 }) => {
+const DigitalTwinGrid = ({ 
+  occupiedSeats = [], 
+  blockedSeats = [], // T1, T2 format for broken tables
+  onToggleSeat,      // Function to mark broken on-time
+  userSeat, 
+  rows = 15, 
+  cols = 5,
+  interactive = false 
+}) => {
   
   const grid = [];
   
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const currentId = `R${r}C${c}`;
-      const isUser = currentId === userSeat;
-      const occupant = occupiedSeats.find(s => s.seat === currentId);
+      const seatId = `R${r}C${c}`;
+      const tableIndex = r * cols + c;
+      const tableId = `T${tableIndex}`;
+      
+      const isUser = seatId === userSeat;
+      const isBroken = blockedSeats.includes(tableId);
+      const occupant = occupiedSeats.find(s => s.seat === seatId);
 
       grid.push(
         <div
-          key={currentId}
+          key={seatId}
           onClick={() => {
-            if (occupant) {
+            if (interactive) {
+              // Admin toggles broken status on-time
+              onToggleSeat(tableId);
+            } else if (occupant) {
               alert(
                 `REGISTRY VERIFIED\n------------------\n` +
                 `Candidate: ${occupant.name}\n` +
-                `Roll Number: ${occupant.roll_no}\n` +
-                `Department: ${occupant.branch}\n` +
-                `Assigned Seat: ${currentId}`
+                `Status: ${occupant.status === 'Present' ? '✅ PRESENT' : '⏳ ABSENT'}\n` +
+                `Syllabus Group: ${occupant.paper_group_id || 'N/A'}\n` +
+                `Assigned Seat: ${seatId}`
               );
             }
           }}
           className={`
-            aspect-square rounded-xl border flex flex-col items-center justify-center transition-all duration-500 cursor-pointer
-            ${isUser 
-              ? 'bg-emerald-500 border-emerald-400 shadow-xl shadow-emerald-100 ring-4 ring-white z-10 scale-110' 
-              : occupant 
-                ? 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200' 
-                : 'bg-slate-50 border-slate-100 border-dashed text-slate-200'}
+            aspect-square rounded-xl border flex flex-col items-center justify-center transition-all duration-300 cursor-pointer
+            ${isBroken 
+              ? 'bg-rose-100 border-rose-200 text-rose-400 opacity-60' 
+              : isUser 
+                ? 'bg-indigo-600 border-indigo-400 shadow-xl shadow-indigo-100 ring-4 ring-white z-10 scale-110' 
+                : occupant 
+                  ? occupant.status === 'Present'
+                    ? 'bg-emerald-500 border-emerald-400 text-white' // Scanned by Admin
+                    : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200' // Allocated but Absent
+                  : 'bg-slate-50 border-slate-100 border-dashed text-slate-200'}
           `}
         >
-          {/* Seat Coordinate Label in Bahnschrift */}
-          <span className={`text-[8px] font-bold uppercase mb-0.5 tracking-tighter ${isUser ? 'text-emerald-100' : 'text-slate-300'}`}>
-            {currentId}
+          {/* Seat Coordinate Label */}
+          <span className={`text-[7px] font-bold uppercase mb-0.5 tracking-tighter 
+            ${isUser || (occupant && occupant.status === 'Present') ? 'text-white/70' : 'text-slate-300'}`}>
+            {isBroken ? 'BROKEN' : tableId}
           </span>
+          
           {isUser && (
             <span className="text-[10px] font-black text-white leading-none uppercase tracking-widest">You</span>
+          )}
+          
+          {occupant && occupant.status === 'Present' && !isUser && (
+            <span className="text-[8px] font-black text-white leading-none uppercase">IN</span>
           )}
         </div>
       );
@@ -50,50 +75,52 @@ const DigitalTwinGrid = ({ occupiedSeats = [], userSeat, rows = 12, cols = 5 }) 
   }
 
   return (
-    <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.03)] space-y-8 h-fit animate-in fade-in slide-in-from-right-4 duration-1000">
+    <div className="bg-white p-6 rounded-[2.5rem] border border-slate-200 shadow-sm space-y-6 h-fit animate-in fade-in duration-700">
       
-      {/* Header & Legend (SaaS Style) */}
-      <div className="flex justify-between items-start border-b border-slate-50 pb-6">
+      {/* Dynamic Legend */}
+      <div className="flex flex-wrap justify-between items-start border-b border-slate-50 pb-4 gap-4">
         <div>
-          {/* Official Header in Times New Roman */}
-          <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
-            Hall Visualization
+          <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight" style={{ fontFamily: '"Times New Roman", serif' }}>
+            Infrastructure Monitor
           </h4>
-          {/* Tech Data in Bahnschrift */}
-          <p className="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-[0.15em]">
-            Registry Node Capacity: {rows * cols}
+          <p className="text-[9px] font-bold text-slate-400 mt-1 uppercase tracking-widest">
+            {interactive ? "Interactive Mode: Click to mark/unmark broken tables" : "Viewer Mode: Visualizing live occupancy"}
           </p>
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-            <span className="text-[9px] font-bold uppercase text-slate-500 tracking-widest">Your Seat</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 bg-slate-200 rounded-full"></div>
-            <span className="text-[9px] font-bold uppercase text-slate-500 tracking-widest">Occupied</span>
-          </div>
+        
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+          <LegendItem color="bg-rose-400" label="Broken (Skip)" />
+          <LegendItem color="bg-emerald-500" label="Present (In)" />
+          <LegendItem color="bg-slate-200" label="Absent (Out)" />
+          <LegendItem color="bg-indigo-600" label="You" />
         </div>
       </div>
 
-      {/* Seating Grid (Bahnschrift styled via Tailwind) */}
+      {/* Seating Grid */}
       <div 
-        className="grid gap-3" 
+        className="grid gap-2.5" 
         style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
       >
         {grid}
       </div>
 
-      {/* Infrastructure Compass */}
-      <div className="pt-4">
-        <div className="bg-slate-900 py-3 rounded-2xl shadow-lg shadow-slate-200">
-          <p className="text-[9px] font-black text-white text-center uppercase tracking-[0.5em] opacity-80">
-            Examiner Console / Front
+      {/* Directional Indicator */}
+      <div className="pt-2">
+        <div className="bg-slate-900 py-2 rounded-xl">
+          <p className="text-[8px] font-black text-white text-center uppercase tracking-[0.4em]">
+            EXAMINER TABLE / ENTRANCE
           </p>
         </div>
       </div>
     </div>
   );
 };
+
+const LegendItem = ({ color, label }) => (
+  <div className="flex items-center gap-2">
+    <div className={`w-2 h-2 ${color} rounded-full`}></div>
+    <span className="text-[8px] font-bold uppercase text-slate-400 tracking-tighter">{label}</span>
+  </div>
+);
 
 export default DigitalTwinGrid;

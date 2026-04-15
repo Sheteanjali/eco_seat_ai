@@ -1,0 +1,2001 @@
+rollno,nameid,course name,course id,paper_group_id,year,branch,email
+2026CE1000,Sunita Parmar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student0@rbunagpur.in
+2026IT1001,Jiya Rao,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1@rbunagpur.in
+2026CS1002,Umesh Jadhav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student2@rbunagpur.in
+2026EE1003,Akash Pawar,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student3@rbunagpur.in
+2026EE1004,Ananya Ghuge,Network Theory,EE201,EE_YR2_GRP,2,EE,student4@rbunagpur.in
+2026CS1005,Lokesh Rathod,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student5@rbunagpur.in
+2026ME1006,Sai Aggarwal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student6@rbunagpur.in
+2026EE1007,Ayush Suri,Control Systems,EE301,EE_YR3_GRP,3,EE,student7@rbunagpur.in
+2026CS1008,Sanjay Shetty,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student8@rbunagpur.in
+2026ME1009,Trisha Chawla,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student9@rbunagpur.in
+2026CE1010,Nitin Patil,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student10@rbunagpur.in
+2026EE1011,Deepa Malhotra,Network Theory,EE201,EE_YR2_GRP,2,EE,student11@rbunagpur.in
+2026ME1012,Sanjay Joshi,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student12@rbunagpur.in
+2026EC1013,Lokesh Wankhede,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student13@rbunagpur.in
+2026EE1014,Seema Bansal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student14@rbunagpur.in
+2026IT1015,Sneha Mukherjee,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student15@rbunagpur.in
+2026EE1016,Myra Bose,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student16@rbunagpur.in
+2026CE1017,Dev Pandey,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student17@rbunagpur.in
+2026ME1018,Bhavya Dabre,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student18@rbunagpur.in
+2026EC1019,Rajesh Barad,Microprocessors,EC301,EC_YR3_GRP,3,EC,student19@rbunagpur.in
+2026IT1020,Pankaj Kapoor,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student20@rbunagpur.in
+2026IT1021,Harsh Sandhu,Web Technologies,IT101,IT_YR1_GRP,1,IT,student21@rbunagpur.in
+2026EE1022,Ananya Barad,Control Systems,EE301,EE_YR3_GRP,3,EE,student22@rbunagpur.in
+2026EE1023,Aditya Jain,Network Theory,EE201,EE_YR2_GRP,2,EE,student23@rbunagpur.in
+2026IT1024,Akash Gupta,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student24@rbunagpur.in
+2026EE1025,Shreya More,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student25@rbunagpur.in
+2026CS1026,Ishita Wankhede,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student26@rbunagpur.in
+2026IT1027,Tanya Gill,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student27@rbunagpur.in
+2026ME1028,Ananya Gohil,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student28@rbunagpur.in
+2026EE1029,Kiran Kaur,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student29@rbunagpur.in
+2026CS1030,Seema Chopde,Operating Systems,CS301,CS_YR3_GRP,3,CS,student30@rbunagpur.in
+2026CS1031,Rahul Bansal,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student31@rbunagpur.in
+2026IT1032,Rajesh Bhide,Software Engineering,IT301,IT_YR3_GRP,3,IT,student32@rbunagpur.in
+2026ME1033,Anvi Bhide,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student33@rbunagpur.in
+2026IT1034,Anay Bansal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student34@rbunagpur.in
+2026CS1035,Isha Zala,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student35@rbunagpur.in
+2026CE1036,Sumit Iyengar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student36@rbunagpur.in
+2026ME1037,Harsh Sidhu,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student37@rbunagpur.in
+2026CS1038,Ritu Ghuge,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student38@rbunagpur.in
+2026ME1039,Aarav Dabre,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student39@rbunagpur.in
+2026CS1040,Maitri Bose,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student40@rbunagpur.in
+2026EC1041,Dhwani Gupta,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student41@rbunagpur.in
+2026CE1042,Amit Sandhu,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student42@rbunagpur.in
+2026CS1043,Pradeep Yadav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student43@rbunagpur.in
+2026CE1044,Bhavya Pawar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student44@rbunagpur.in
+2026CE1045,Sunita Nair,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student45@rbunagpur.in
+2026ME1046,Ritu Sharma,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student46@rbunagpur.in
+2026EC1047,Manoj Sarkar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student47@rbunagpur.in
+2026IT1048,Sneha Mishra,Software Engineering,IT301,IT_YR3_GRP,3,IT,student48@rbunagpur.in
+2026EE1049,Tanya Chawla,Control Systems,EE301,EE_YR3_GRP,3,EE,student49@rbunagpur.in
+2026CE1050,Geeta Gohil,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student50@rbunagpur.in
+2026CS1051,Piyush Sidhu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student51@rbunagpur.in
+2026EE1052,Girish Sandhu,Control Systems,EE301,EE_YR3_GRP,3,EE,student52@rbunagpur.in
+2026EC1053,Vani Roy,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student53@rbunagpur.in
+2026EE1054,Krishna Shukla,Power Electronics,EE401,EE_YR4_GRP,4,EE,student54@rbunagpur.in
+2026CS1055,Pari Gaekwad,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student55@rbunagpur.in
+2026CE1056,Aarav Kaur,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student56@rbunagpur.in
+2026EE1057,Mayur Dhillon,Power Electronics,EE401,EE_YR4_GRP,4,EE,student57@rbunagpur.in
+2026CS1058,Ananya Menon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student58@rbunagpur.in
+2026CE1059,Rahul Reddy,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student59@rbunagpur.in
+2026CE1060,Gaurav Kaur,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student60@rbunagpur.in
+2026CE1061,Pradeep Pandey,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student61@rbunagpur.in
+2026EE1062,Aditi Jain,Network Theory,EE201,EE_YR2_GRP,2,EE,student62@rbunagpur.in
+2026CE1063,Vihaan Tiwari,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student63@rbunagpur.in
+2026ME1064,Ishaan Tiwari,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student64@rbunagpur.in
+2026EE1065,Krishna Parekh,Control Systems,EE301,EE_YR3_GRP,3,EE,student65@rbunagpur.in
+2026EC1066,Ishaan Mukherjee,VLSI Design,EC401,EC_YR4_GRP,4,EC,student66@rbunagpur.in
+2026CE1067,Amit Patil,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student67@rbunagpur.in
+2026IT1068,Vikram Reddy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student68@rbunagpur.in
+2026CS1069,Ishani Iyengar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student69@rbunagpur.in
+2026CE1070,Vinay Shah,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student70@rbunagpur.in
+2026EC1071,Anay Gohil,VLSI Design,EC401,EC_YR4_GRP,4,EC,student71@rbunagpur.in
+2026IT1072,Sumit Solanki,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student72@rbunagpur.in
+2026CE1073,Sunita Mishra,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student73@rbunagpur.in
+2026EC1074,Vivaan Wankhede,VLSI Design,EC401,EC_YR4_GRP,4,EC,student74@rbunagpur.in
+2026IT1075,Girish Rathod,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student75@rbunagpur.in
+2026EE1076,Ishani Nair,Network Theory,EE201,EE_YR2_GRP,2,EE,student76@rbunagpur.in
+2026EC1077,Vaibhav Gupta,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student77@rbunagpur.in
+2026ME1078,Seema Shah,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student78@rbunagpur.in
+2026IT1079,Piyush Tiwari,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student79@rbunagpur.in
+2026IT1080,Dhiraj Cheema,Software Engineering,IT301,IT_YR3_GRP,3,IT,student80@rbunagpur.in
+2026CE1081,Ansh Trivedi,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student81@rbunagpur.in
+2026CE1082,Sumit Sarkar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student82@rbunagpur.in
+2026CE1083,Seema Aggarwal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student83@rbunagpur.in
+2026ME1084,Ishaan Iyer,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student84@rbunagpur.in
+2026ME1085,Seema Grewal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student85@rbunagpur.in
+2026CS1086,Ishani Chatterjee,Operating Systems,CS301,CS_YR3_GRP,3,CS,student86@rbunagpur.in
+2026IT1087,Kriti Jain,Web Technologies,IT101,IT_YR1_GRP,1,IT,student87@rbunagpur.in
+2026CE1088,Mayur Parekh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student88@rbunagpur.in
+2026ME1089,Aanya Khanna,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student89@rbunagpur.in
+2026CS1090,Sanjay Zala,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student90@rbunagpur.in
+2026ME1091,Ankit Grewal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student91@rbunagpur.in
+2026ME1092,Anvi Khanna,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student92@rbunagpur.in
+2026ME1093,Deepa Tiwari,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student93@rbunagpur.in
+2026ME1094,Manish Brar,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student94@rbunagpur.in
+2026CS1095,Shreya Trivedi,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student95@rbunagpur.in
+2026EE1096,Suresh Ghuge,Power Electronics,EE401,EE_YR4_GRP,4,EE,student96@rbunagpur.in
+2026CS1097,Ayush Sharma,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student97@rbunagpur.in
+2026EC1098,Ansh Dhillon,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student98@rbunagpur.in
+2026IT1099,Esha Barad,Web Technologies,IT101,IT_YR1_GRP,1,IT,student99@rbunagpur.in
+2026CS1100,Manoj Shukla,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student100@rbunagpur.in
+2026CE1101,Ananya Kapoor,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student101@rbunagpur.in
+2026EE1102,Dev Dhillon,Power Electronics,EE401,EE_YR4_GRP,4,EE,student102@rbunagpur.in
+2026IT1103,Siddharth Sarkar,Web Technologies,IT101,IT_YR1_GRP,1,IT,student103@rbunagpur.in
+2026ME1104,Reyansh Jadeja,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student104@rbunagpur.in
+2026CE1105,Lokesh Verma,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student105@rbunagpur.in
+2026CE1106,Yash Ghosh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student106@rbunagpur.in
+2026CS1107,Suresh Bansal,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student107@rbunagpur.in
+2026IT1108,Sara Jadeja,Web Technologies,IT101,IT_YR1_GRP,1,IT,student108@rbunagpur.in
+2026CE1109,Manish Nair,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student109@rbunagpur.in
+2026CS1110,Nitin Parekh,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student110@rbunagpur.in
+2026ME1111,Lokesh Yadav,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student111@rbunagpur.in
+2026CS1112,Reyansh Chopde,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student112@rbunagpur.in
+2026CS1113,Dhwani Gaekwad,Operating Systems,CS301,CS_YR3_GRP,3,CS,student113@rbunagpur.in
+2026ME1114,Ayush Ghuge,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student114@rbunagpur.in
+2026ME1115,Manish Barad,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student115@rbunagpur.in
+2026EC1116,Deepa Gill,Microprocessors,EC301,EC_YR3_GRP,3,EC,student116@rbunagpur.in
+2026CE1117,Esha Kaur,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student117@rbunagpur.in
+2026ME1118,Neel Parekh,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student118@rbunagpur.in
+2026IT1119,Sia Shinde,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student119@rbunagpur.in
+2026ME1120,Shreya Shukla,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student120@rbunagpur.in
+2026IT1121,Shreya Parekh,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student121@rbunagpur.in
+2026EE1122,Vikram Verma,Network Theory,EE201,EE_YR2_GRP,2,EE,student122@rbunagpur.in
+2026IT1123,Aavya Kapoor,Software Engineering,IT301,IT_YR3_GRP,3,IT,student123@rbunagpur.in
+2026EE1124,Vaibhav Vaghela,Network Theory,EE201,EE_YR2_GRP,2,EE,student124@rbunagpur.in
+2026EC1125,Asha Gohil,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student125@rbunagpur.in
+2026CE1126,Aryan Gupta,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student126@rbunagpur.in
+2026ME1127,Umesh Bansal,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student127@rbunagpur.in
+2026IT1128,Asha Sharma,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student128@rbunagpur.in
+2026CS1129,Aditi Sidhu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student129@rbunagpur.in
+2026EE1130,Anay Sen,Power Electronics,EE401,EE_YR4_GRP,4,EE,student130@rbunagpur.in
+2026CS1131,Diya Gill,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student131@rbunagpur.in
+2026EC1132,Sunita Deshmukh,VLSI Design,EC401,EC_YR4_GRP,4,EC,student132@rbunagpur.in
+2026CE1133,Vinay Sen,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student133@rbunagpur.in
+2026EE1134,Vikram Gohil,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student134@rbunagpur.in
+2026EE1135,Sanjay Barad,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student135@rbunagpur.in
+2026EE1136,Sunita Gill,Control Systems,EE301,EE_YR3_GRP,3,EE,student136@rbunagpur.in
+2026IT1137,Dhwani Pandey,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student137@rbunagpur.in
+2026EE1138,Vanya Iyer,Control Systems,EE301,EE_YR3_GRP,3,EE,student138@rbunagpur.in
+2026EE1139,Shruti Sarkar,Control Systems,EE301,EE_YR3_GRP,3,EE,student139@rbunagpur.in
+2026EE1140,Kiara Reddy,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student140@rbunagpur.in
+2026ME1141,Neel Pandey,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student141@rbunagpur.in
+2026CS1142,Shreya Naidu,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student142@rbunagpur.in
+2026CS1143,Shanaya Chopde,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student143@rbunagpur.in
+2026CS1144,Ayaan Sarkar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student144@rbunagpur.in
+2026ME1145,Kiara Singh,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student145@rbunagpur.in
+2026ME1146,Ishita Jadeja,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student146@rbunagpur.in
+2026IT1147,Avni Gill,Software Engineering,IT301,IT_YR3_GRP,3,IT,student147@rbunagpur.in
+2026EE1148,Pradeep Sarkar,Network Theory,EE201,EE_YR2_GRP,2,EE,student148@rbunagpur.in
+2026EC1149,Shanaya Khanna,Microprocessors,EC301,EC_YR3_GRP,3,EC,student149@rbunagpur.in
+2026EC1150,Geeta Sharma,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student150@rbunagpur.in
+2026EC1151,Seema Chatterjee,VLSI Design,EC401,EC_YR4_GRP,4,EC,student151@rbunagpur.in
+2026IT1152,Avni Kapoor,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student152@rbunagpur.in
+2026EC1153,Vani Gohil,Microprocessors,EC301,EC_YR3_GRP,3,EC,student153@rbunagpur.in
+2026ME1154,Esha Sidhu,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student154@rbunagpur.in
+2026IT1155,Vaibhav Goud,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student155@rbunagpur.in
+2026CS1156,Aditi Dabre,Operating Systems,CS301,CS_YR3_GRP,3,CS,student156@rbunagpur.in
+2026IT1157,Sia Singh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student157@rbunagpur.in
+2026IT1158,Pranav Nair,Web Technologies,IT101,IT_YR1_GRP,1,IT,student158@rbunagpur.in
+2026EC1159,Karan Pathak,Microprocessors,EC301,EC_YR3_GRP,3,EC,student159@rbunagpur.in
+2026CE1160,Lokesh Dutta,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student160@rbunagpur.in
+2026EC1161,Trisha Menon,Microprocessors,EC301,EC_YR3_GRP,3,EC,student161@rbunagpur.in
+2026CS1162,Swapnil Aulakh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student162@rbunagpur.in
+2026CE1163,Vivaan Goud,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student163@rbunagpur.in
+2026IT1164,Kiran Joshi,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student164@rbunagpur.in
+2026CE1165,Sia Gupta,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student165@rbunagpur.in
+2026ME1166,Esha Joshi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student166@rbunagpur.in
+2026CE1167,Saanvi Reddy,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student167@rbunagpur.in
+2026EC1168,Saanvi Chawla,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student168@rbunagpur.in
+2026EC1169,Shruti Dhillon,VLSI Design,EC401,EC_YR4_GRP,4,EC,student169@rbunagpur.in
+2026IT1170,Aanya Pawar,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student170@rbunagpur.in
+2026IT1171,Suresh Mishra,Software Engineering,IT301,IT_YR3_GRP,3,IT,student171@rbunagpur.in
+2026CS1172,Pankaj Iyengar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student172@rbunagpur.in
+2026CE1173,Navya Shinde,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student173@rbunagpur.in
+2026EE1174,Sara Tiwari,Network Theory,EE201,EE_YR2_GRP,2,EE,student174@rbunagpur.in
+2026IT1175,Reyansh Sen,Software Engineering,IT301,IT_YR3_GRP,3,IT,student175@rbunagpur.in
+2026CE1176,Vikram Brar,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student176@rbunagpur.in
+2026EE1177,Shanaya Wankhede,Power Electronics,EE401,EE_YR4_GRP,4,EE,student177@rbunagpur.in
+2026EC1178,Vani Aggarwal,VLSI Design,EC401,EC_YR4_GRP,4,EC,student178@rbunagpur.in
+2026CS1179,Trisha Gaekwad,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student179@rbunagpur.in
+2026IT1180,Yash Verma,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student180@rbunagpur.in
+2026EC1181,Pari Tiwari,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student181@rbunagpur.in
+2026CE1182,Rohan Parekh,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student182@rbunagpur.in
+2026EC1183,Rohan Iyengar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student183@rbunagpur.in
+2026EE1184,Ansh Roy,Power Electronics,EE401,EE_YR4_GRP,4,EE,student184@rbunagpur.in
+2026ME1185,Lokesh Chauhan,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student185@rbunagpur.in
+2026EC1186,Yash Goel,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student186@rbunagpur.in
+2026CE1187,Lokesh Ghuge,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student187@rbunagpur.in
+2026ME1188,Ansh Bansal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student188@rbunagpur.in
+2026IT1189,Shreya Mori,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student189@rbunagpur.in
+2026EE1190,Kavya More,Network Theory,EE201,EE_YR2_GRP,2,EE,student190@rbunagpur.in
+2026EC1191,Bhavya Iyer,VLSI Design,EC401,EC_YR4_GRP,4,EC,student191@rbunagpur.in
+2026ME1192,Geeta Goud,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student192@rbunagpur.in
+2026EE1193,Umesh Shinde,Network Theory,EE201,EE_YR2_GRP,2,EE,student193@rbunagpur.in
+2026EC1194,Trisha Iyengar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student194@rbunagpur.in
+2026ME1195,Mayur Trivedi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student195@rbunagpur.in
+2026EC1196,Dhwani Chauhan,VLSI Design,EC401,EC_YR4_GRP,4,EC,student196@rbunagpur.in
+2026EE1197,Maitri Ghosh,Power Electronics,EE401,EE_YR4_GRP,4,EE,student197@rbunagpur.in
+2026IT1198,Pankaj Kaur,Web Technologies,IT101,IT_YR1_GRP,1,IT,student198@rbunagpur.in
+2026IT1199,Geeta Vaghela,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student199@rbunagpur.in
+2026IT1200,Swapnil Zala,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student200@rbunagpur.in
+2026EC1201,Harsh Chatterjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student201@rbunagpur.in
+2026IT1202,Deepa Pawar,Web Technologies,IT101,IT_YR1_GRP,1,IT,student202@rbunagpur.in
+2026IT1203,Diya Aggarwal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student203@rbunagpur.in
+2026ME1204,Avni Bose,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student204@rbunagpur.in
+2026IT1205,Kiran Bhide,Web Technologies,IT101,IT_YR1_GRP,1,IT,student205@rbunagpur.in
+2026IT1206,Yash Aulakh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student206@rbunagpur.in
+2026ME1207,Dhiraj Mishra,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student207@rbunagpur.in
+2026IT1208,Dhwani Singh,Software Engineering,IT301,IT_YR3_GRP,3,IT,student208@rbunagpur.in
+2026CS1209,Dhiraj Gaekwad,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student209@rbunagpur.in
+2026ME1210,Aditya Rao,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student210@rbunagpur.in
+2026CS1211,Sumit Barad,Operating Systems,CS301,CS_YR3_GRP,3,CS,student211@rbunagpur.in
+2026IT1212,Lokesh Iyer,Software Engineering,IT301,IT_YR3_GRP,3,IT,student212@rbunagpur.in
+2026CE1213,Anvi Trivedi,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student213@rbunagpur.in
+2026EE1214,Ayush Pawar,Control Systems,EE301,EE_YR3_GRP,3,EE,student214@rbunagpur.in
+2026CS1215,Tanya Parmar,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student215@rbunagpur.in
+2026EE1216,Dhwani Das,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student216@rbunagpur.in
+2026EE1217,Aarav Bose,Control Systems,EE301,EE_YR3_GRP,3,EE,student217@rbunagpur.in
+2026CS1218,Kavya Mori,Operating Systems,CS301,CS_YR3_GRP,3,CS,student218@rbunagpur.in
+2026EE1219,Aavya Pawar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student219@rbunagpur.in
+2026CS1220,Atharv Das,Operating Systems,CS301,CS_YR3_GRP,3,CS,student220@rbunagpur.in
+2026ME1221,Siddharth Parmar,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student221@rbunagpur.in
+2026CE1222,Tanmay Jadeja,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student222@rbunagpur.in
+2026ME1223,Sanjay Dhillon,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student223@rbunagpur.in
+2026CE1224,Krishna Khanna,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student224@rbunagpur.in
+2026CS1225,Jiya Patil,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student225@rbunagpur.in
+2026ME1226,Vivaan Mann,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student226@rbunagpur.in
+2026CE1227,Ayush Jadhav,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student227@rbunagpur.in
+2026CS1228,Ansh Menon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student228@rbunagpur.in
+2026ME1229,Atharv Trivedi,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student229@rbunagpur.in
+2026EC1230,Rahul Kapoor,VLSI Design,EC401,EC_YR4_GRP,4,EC,student230@rbunagpur.in
+2026CE1231,Ankit Dabre,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student231@rbunagpur.in
+2026EC1232,Saanvi Kaur,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student232@rbunagpur.in
+2026EE1233,Vani Nair,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student233@rbunagpur.in
+2026CS1234,Diya Reddy,Operating Systems,CS301,CS_YR3_GRP,3,CS,student234@rbunagpur.in
+2026CE1235,Neha Sandhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student235@rbunagpur.in
+2026EE1236,Kiara Rathod,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student236@rbunagpur.in
+2026EE1237,Shreya Shetty,Control Systems,EE301,EE_YR3_GRP,3,EE,student237@rbunagpur.in
+2026CE1238,Kiara Deshmukh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student238@rbunagpur.in
+2026EE1239,Gaurav Sidhu,Power Electronics,EE401,EE_YR4_GRP,4,EE,student239@rbunagpur.in
+2026EC1240,Ayush Das,Microprocessors,EC301,EC_YR3_GRP,3,EC,student240@rbunagpur.in
+2026CE1241,Pankaj Mann,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student241@rbunagpur.in
+2026EC1242,Ayaan Jadeja,VLSI Design,EC401,EC_YR4_GRP,4,EC,student242@rbunagpur.in
+2026EE1243,Vani Grewal,Power Electronics,EE401,EE_YR4_GRP,4,EE,student243@rbunagpur.in
+2026IT1244,Suresh Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student244@rbunagpur.in
+2026IT1245,Dhiraj Goud,Web Technologies,IT101,IT_YR1_GRP,1,IT,student245@rbunagpur.in
+2026EC1246,Sia Sandhu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student246@rbunagpur.in
+2026IT1247,Atharv Naidu,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student247@rbunagpur.in
+2026ME1248,Trisha Patil,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student248@rbunagpur.in
+2026CE1249,Sai Dabre,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student249@rbunagpur.in
+2026CS1250,Saanvi Gupta,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student250@rbunagpur.in
+2026EE1251,Sara Iyer,Control Systems,EE301,EE_YR3_GRP,3,EE,student251@rbunagpur.in
+2026ME1252,Manoj Pathak,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student252@rbunagpur.in
+2026CE1253,Dhwani Banerjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student253@rbunagpur.in
+2026CE1254,Pranav Iyer,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student254@rbunagpur.in
+2026CE1255,Sanjay Shah,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student255@rbunagpur.in
+2026CE1256,Bhavya Reddy,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student256@rbunagpur.in
+2026CE1257,Saanvi Verma,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student257@rbunagpur.in
+2026ME1258,Asha Parekh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student258@rbunagpur.in
+2026ME1259,Arnav Trivedi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student259@rbunagpur.in
+2026ME1260,Atharv Pathak,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student260@rbunagpur.in
+2026EC1261,Swapnil Goud,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student261@rbunagpur.in
+2026CS1262,Neel Naidu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student262@rbunagpur.in
+2026EE1263,Advait Roy,Control Systems,EE301,EE_YR3_GRP,3,EE,student263@rbunagpur.in
+2026IT1264,Krishna Mehta,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student264@rbunagpur.in
+2026CE1265,Asha Kaur,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student265@rbunagpur.in
+2026CS1266,Ananya Dutta,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student266@rbunagpur.in
+2026CS1267,Ishita Pillai,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student267@rbunagpur.in
+2026ME1268,Tanya Kapoor,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student268@rbunagpur.in
+2026EC1269,Advait Pillai,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student269@rbunagpur.in
+2026IT1270,Jiya Gaekwad,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student270@rbunagpur.in
+2026ME1271,Siddharth Gill,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student271@rbunagpur.in
+2026CS1272,Vaibhav Gaekwad,Operating Systems,CS301,CS_YR3_GRP,3,CS,student272@rbunagpur.in
+2026EE1273,Arnav Rathod,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student273@rbunagpur.in
+2026EC1274,Piyush Barad,VLSI Design,EC401,EC_YR4_GRP,4,EC,student274@rbunagpur.in
+2026CE1275,Mayur Dutta,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student275@rbunagpur.in
+2026IT1276,Ananya Grewal,Web Technologies,IT101,IT_YR1_GRP,1,IT,student276@rbunagpur.in
+2026CE1277,Lokesh Sidhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student277@rbunagpur.in
+2026ME1278,Vaibhav Kaur,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student278@rbunagpur.in
+2026EC1279,Krishna Yadav,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student279@rbunagpur.in
+2026EE1280,Vikram Dhillon,Network Theory,EE201,EE_YR2_GRP,2,EE,student280@rbunagpur.in
+2026ME1281,Diya Iyer,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student281@rbunagpur.in
+2026EE1282,Anita Singh,Power Electronics,EE401,EE_YR4_GRP,4,EE,student282@rbunagpur.in
+2026EC1283,Vaibhav Naidu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student283@rbunagpur.in
+2026EE1284,Ayush Rathod,Control Systems,EE301,EE_YR3_GRP,3,EE,student284@rbunagpur.in
+2026CE1285,Navya Gill,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student285@rbunagpur.in
+2026EC1286,Ritu Singh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student286@rbunagpur.in
+2026EE1287,Arjun Ghuge,Network Theory,EE201,EE_YR2_GRP,2,EE,student287@rbunagpur.in
+2026ME1288,Shanaya Grewal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student288@rbunagpur.in
+2026EC1289,Nitin Zala,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student289@rbunagpur.in
+2026IT1290,Pari Zala,Web Technologies,IT101,IT_YR1_GRP,1,IT,student290@rbunagpur.in
+2026IT1291,Maitri Solanki,Web Technologies,IT101,IT_YR1_GRP,1,IT,student291@rbunagpur.in
+2026ME1292,Kiran Cheema,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student292@rbunagpur.in
+2026CS1293,Megha Grewal,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student293@rbunagpur.in
+2026EC1294,Jiya Mishra,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student294@rbunagpur.in
+2026ME1295,Anay Wankhede,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student295@rbunagpur.in
+2026EE1296,Asha Vaghela,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student296@rbunagpur.in
+2026CE1297,Girish Banerjee,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student297@rbunagpur.in
+2026EC1298,Umesh Sandhu,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student298@rbunagpur.in
+2026EE1299,Megha Mori,Control Systems,EE301,EE_YR3_GRP,3,EE,student299@rbunagpur.in
+2026ME1300,Manoj Mori,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student300@rbunagpur.in
+2026EE1301,Yash Rao,Power Electronics,EE401,EE_YR4_GRP,4,EE,student301@rbunagpur.in
+2026CS1302,Sneha Dutta,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student302@rbunagpur.in
+2026CE1303,Saanvi Mishra,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student303@rbunagpur.in
+2026ME1304,Advait Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student304@rbunagpur.in
+2026IT1305,Riya Dhillon,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student305@rbunagpur.in
+2026ME1306,Aditi Sarkar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student306@rbunagpur.in
+2026IT1307,Neha Mukherjee,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student307@rbunagpur.in
+2026CS1308,Aditi Pillai,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student308@rbunagpur.in
+2026IT1309,Tushar Parekh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student309@rbunagpur.in
+2026EC1310,Akash Sen,VLSI Design,EC401,EC_YR4_GRP,4,EC,student310@rbunagpur.in
+2026EC1311,Jiya Menon,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student311@rbunagpur.in
+2026EE1312,Rohan Sandhu,Power Electronics,EE401,EE_YR4_GRP,4,EE,student312@rbunagpur.in
+2026CS1313,Advait Mehta,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student313@rbunagpur.in
+2026ME1314,Dhiraj Aulakh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student314@rbunagpur.in
+2026CS1315,Sunita Cheema,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student315@rbunagpur.in
+2026EC1316,Rajesh Khanna,VLSI Design,EC401,EC_YR4_GRP,4,EC,student316@rbunagpur.in
+2026CE1317,Isha Rao,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student317@rbunagpur.in
+2026CS1318,Advait More,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student318@rbunagpur.in
+2026ME1319,Dhwani Mehta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student319@rbunagpur.in
+2026EE1320,Aanya Gohil,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student320@rbunagpur.in
+2026ME1321,Anita Mehta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student321@rbunagpur.in
+2026EC1322,Vanya Zala,Microprocessors,EC301,EC_YR3_GRP,3,EC,student322@rbunagpur.in
+2026EC1323,Esha Solanki,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student323@rbunagpur.in
+2026ME1324,Sia Naidu,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student324@rbunagpur.in
+2026EE1325,Manoj Ojha,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student325@rbunagpur.in
+2026EE1326,Nitin Yadav,Power Electronics,EE401,EE_YR4_GRP,4,EE,student326@rbunagpur.in
+2026CE1327,Nitin Sarkar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student327@rbunagpur.in
+2026EE1328,Isha Pathak,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student328@rbunagpur.in
+2026IT1329,Piyush Sarkar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student329@rbunagpur.in
+2026CE1330,Aanya Ghosh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student330@rbunagpur.in
+2026IT1331,Neha Brar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student331@rbunagpur.in
+2026EC1332,Anita Sarkar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student332@rbunagpur.in
+2026CS1333,Ayush Grewal,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student333@rbunagpur.in
+2026IT1334,Megha Brar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student334@rbunagpur.in
+2026ME1335,Myra Shinde,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student335@rbunagpur.in
+2026IT1336,Megha Sidhu,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student336@rbunagpur.in
+2026EC1337,Sanjay Mukherjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student337@rbunagpur.in
+2026EC1338,Aditi Mukherjee,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student338@rbunagpur.in
+2026CS1339,Rani Gaekwad,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student339@rbunagpur.in
+2026IT1340,Aarav Sharma,Software Engineering,IT301,IT_YR3_GRP,3,IT,student340@rbunagpur.in
+2026IT1341,Sunita Pillai,Web Technologies,IT101,IT_YR1_GRP,1,IT,student341@rbunagpur.in
+2026ME1342,Vinay Joshi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student342@rbunagpur.in
+2026CS1343,Neel Jadhav,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student343@rbunagpur.in
+2026EE1344,Advait Yadav,Control Systems,EE301,EE_YR3_GRP,3,EE,student344@rbunagpur.in
+2026CE1345,Aditya Mishra,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student345@rbunagpur.in
+2026IT1346,Avni Chopde,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student346@rbunagpur.in
+2026ME1347,Arnav Mori,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student347@rbunagpur.in
+2026CE1348,Trisha More,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student348@rbunagpur.in
+2026CE1349,Kriti Sidhu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student349@rbunagpur.in
+2026EC1350,Riya Dabre,Microprocessors,EC301,EC_YR3_GRP,3,EC,student350@rbunagpur.in
+2026EE1351,Deepa Mehta,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student351@rbunagpur.in
+2026EC1352,Vikram Sandhu,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student352@rbunagpur.in
+2026CS1353,Riya Parmar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student353@rbunagpur.in
+2026CS1354,Ishaan Goel,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student354@rbunagpur.in
+2026IT1355,Maitri Chauhan,Software Engineering,IT301,IT_YR3_GRP,3,IT,student355@rbunagpur.in
+2026EE1356,Geeta Sen,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student356@rbunagpur.in
+2026CE1357,Saanvi Barad,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student357@rbunagpur.in
+2026CE1358,Isha Sandhu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student358@rbunagpur.in
+2026CS1359,Piyush Mann,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student359@rbunagpur.in
+2026IT1360,Kriti Chatterjee,Software Engineering,IT301,IT_YR3_GRP,3,IT,student360@rbunagpur.in
+2026ME1361,Aryan Kapoor,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student361@rbunagpur.in
+2026EE1362,Umesh Garg,Control Systems,EE301,EE_YR3_GRP,3,EE,student362@rbunagpur.in
+2026IT1363,Piyush Singh,Software Engineering,IT301,IT_YR3_GRP,3,IT,student363@rbunagpur.in
+2026EC1364,Aavya Chawla,Microprocessors,EC301,EC_YR3_GRP,3,EC,student364@rbunagpur.in
+2026IT1365,Aryan Mishra,Web Technologies,IT101,IT_YR1_GRP,1,IT,student365@rbunagpur.in
+2026CE1366,Isha Shah,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student366@rbunagpur.in
+2026ME1367,Sai Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student367@rbunagpur.in
+2026ME1368,Saanvi More,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student368@rbunagpur.in
+2026ME1369,Piyush Roy,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student369@rbunagpur.in
+2026EC1370,Amit Chawla,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student370@rbunagpur.in
+2026CS1371,Piyush Brar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student371@rbunagpur.in
+2026CE1372,Neel Pillai,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student372@rbunagpur.in
+2026EC1373,Tushar Khanna,Microprocessors,EC301,EC_YR3_GRP,3,EC,student373@rbunagpur.in
+2026EE1374,Vanya Pandey,Network Theory,EE201,EE_YR2_GRP,2,EE,student374@rbunagpur.in
+2026EE1375,Pankaj Bose,Power Electronics,EE401,EE_YR4_GRP,4,EE,student375@rbunagpur.in
+2026EE1376,Pranav Verma,Control Systems,EE301,EE_YR3_GRP,3,EE,student376@rbunagpur.in
+2026EC1377,Rajesh Pawar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student377@rbunagpur.in
+2026EE1378,Ayush Kulkarni,Power Electronics,EE401,EE_YR4_GRP,4,EE,student378@rbunagpur.in
+2026EE1379,Maitri Kulkarni,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student379@rbunagpur.in
+2026CE1380,Suresh Tiwari,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student380@rbunagpur.in
+2026EE1381,Ishaan Jadhav,Network Theory,EE201,EE_YR2_GRP,2,EE,student381@rbunagpur.in
+2026ME1382,Rohan Shetty,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student382@rbunagpur.in
+2026CS1383,Ishita Mann,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student383@rbunagpur.in
+2026ME1384,Shruti Dubey,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student384@rbunagpur.in
+2026ME1385,Ankit Bose,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student385@rbunagpur.in
+2026CE1386,Krishna Suri,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student386@rbunagpur.in
+2026CS1387,Piyush Sharma,Operating Systems,CS301,CS_YR3_GRP,3,CS,student387@rbunagpur.in
+2026ME1388,Nitin Dutta,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student388@rbunagpur.in
+2026EE1389,Ankit Shetty,Network Theory,EE201,EE_YR2_GRP,2,EE,student389@rbunagpur.in
+2026CE1390,Manish Goud,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student390@rbunagpur.in
+2026CE1391,Kriti Gaekwad,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student391@rbunagpur.in
+2026IT1392,Sai Verma,Web Technologies,IT101,IT_YR1_GRP,1,IT,student392@rbunagpur.in
+2026EE1393,Shreya Gupta,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student393@rbunagpur.in
+2026CS1394,Lokesh Dhillon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student394@rbunagpur.in
+2026EC1395,Reyansh Brar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student395@rbunagpur.in
+2026CE1396,Asha Shetty,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student396@rbunagpur.in
+2026EE1397,Girish Dutta,Control Systems,EE301,EE_YR3_GRP,3,EE,student397@rbunagpur.in
+2026ME1398,Mayur Aggarwal,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student398@rbunagpur.in
+2026IT1399,Arjun Reddy,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student399@rbunagpur.in
+2026EC1400,Swapnil Khanna,Microprocessors,EC301,EC_YR3_GRP,3,EC,student400@rbunagpur.in
+2026EC1401,Ansh Pawar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student401@rbunagpur.in
+2026EC1402,Dhiraj Jain,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student402@rbunagpur.in
+2026IT1403,Anita Chopde,Web Technologies,IT101,IT_YR1_GRP,1,IT,student403@rbunagpur.in
+2026ME1404,Suresh Goud,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student404@rbunagpur.in
+2026CE1405,Gaurav Ojha,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student405@rbunagpur.in
+2026ME1406,Kiara Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student406@rbunagpur.in
+2026EE1407,Vani Reddy,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student407@rbunagpur.in
+2026EE1408,Trisha Zala,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student408@rbunagpur.in
+2026CE1409,Kabir Dubey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student409@rbunagpur.in
+2026ME1410,Girish Brar,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student410@rbunagpur.in
+2026CS1411,Isha Aulakh,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student411@rbunagpur.in
+2026IT1412,Sunita Mori,Web Technologies,IT101,IT_YR1_GRP,1,IT,student412@rbunagpur.in
+2026EC1413,Ananya Wankhede,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student413@rbunagpur.in
+2026CE1414,Dev Verma,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student414@rbunagpur.in
+2026CE1415,Vani Gaekwad,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student415@rbunagpur.in
+2026CS1416,Sara Naidu,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student416@rbunagpur.in
+2026EE1417,Kiara Rao,Network Theory,EE201,EE_YR2_GRP,2,EE,student417@rbunagpur.in
+2026EC1418,Krishna Chatterjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student418@rbunagpur.in
+2026EE1419,Myra Mori,Power Electronics,EE401,EE_YR4_GRP,4,EE,student419@rbunagpur.in
+2026CS1420,Sanjay Pathak,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student420@rbunagpur.in
+2026CE1421,Krishna Garg,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student421@rbunagpur.in
+2026IT1422,Abhishek Khanna,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student422@rbunagpur.in
+2026EE1423,Amol Dutta,Control Systems,EE301,EE_YR3_GRP,3,EE,student423@rbunagpur.in
+2026ME1424,Tanya Jadhav,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student424@rbunagpur.in
+2026EC1425,Ananya Mori,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student425@rbunagpur.in
+2026CS1426,Amit Zala,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student426@rbunagpur.in
+2026IT1427,Myra Mehta,Software Engineering,IT301,IT_YR3_GRP,3,IT,student427@rbunagpur.in
+2026CS1428,Vivaan Goel,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student428@rbunagpur.in
+2026CE1429,Shreya Joshi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student429@rbunagpur.in
+2026EC1430,Aarav Gaekwad,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student430@rbunagpur.in
+2026EC1431,Rani Vaghela,VLSI Design,EC401,EC_YR4_GRP,4,EC,student431@rbunagpur.in
+2026EE1432,Tushar Nair,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student432@rbunagpur.in
+2026IT1433,Vani Garg,Web Technologies,IT101,IT_YR1_GRP,1,IT,student433@rbunagpur.in
+2026EC1434,Riya Ojha,Microprocessors,EC301,EC_YR3_GRP,3,EC,student434@rbunagpur.in
+2026CE1435,Pradeep Sidhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student435@rbunagpur.in
+2026CS1436,Karan Goud,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student436@rbunagpur.in
+2026CE1437,Umesh Verma,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student437@rbunagpur.in
+2026IT1438,Diya Sarkar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student438@rbunagpur.in
+2026CS1439,Pooja Ghosh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student439@rbunagpur.in
+2026ME1440,Lokesh Mori,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student440@rbunagpur.in
+2026EC1441,Vanya Brar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student441@rbunagpur.in
+2026EE1442,Ishita Mori,Control Systems,EE301,EE_YR3_GRP,3,EE,student442@rbunagpur.in
+2026ME1443,Anvi Jadhav,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student443@rbunagpur.in
+2026ME1444,Esha Roy,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student444@rbunagpur.in
+2026CS1445,Avni Suri,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student445@rbunagpur.in
+2026CE1446,Piyush Shinde,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student446@rbunagpur.in
+2026EC1447,Neel Shah,Microprocessors,EC301,EC_YR3_GRP,3,EC,student447@rbunagpur.in
+2026CE1448,Sumit Tiwari,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student448@rbunagpur.in
+2026CS1449,Shruti Yadav,Operating Systems,CS301,CS_YR3_GRP,3,CS,student449@rbunagpur.in
+2026EC1450,Ishita Banerjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student450@rbunagpur.in
+2026CS1451,Kabir Pillai,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student451@rbunagpur.in
+2026ME1452,Navya Banerjee,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student452@rbunagpur.in
+2026EC1453,Arnav Das,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student453@rbunagpur.in
+2026EC1454,Ankit Sen,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student454@rbunagpur.in
+2026EE1455,Arjun Khanna,Network Theory,EE201,EE_YR2_GRP,2,EE,student455@rbunagpur.in
+2026CS1456,Geeta Naidu,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student456@rbunagpur.in
+2026CS1457,Saanvi Yadav,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student457@rbunagpur.in
+2026EC1458,Vanya Dubey,Microprocessors,EC301,EC_YR3_GRP,3,EC,student458@rbunagpur.in
+2026EE1459,Akash Ojha,Network Theory,EE201,EE_YR2_GRP,2,EE,student459@rbunagpur.in
+2026CS1460,Pari Suri,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student460@rbunagpur.in
+2026CS1461,Vikram Barad,Operating Systems,CS301,CS_YR3_GRP,3,CS,student461@rbunagpur.in
+2026IT1462,Anita Bhide,Web Technologies,IT101,IT_YR1_GRP,1,IT,student462@rbunagpur.in
+2026CE1463,Ritu Kulkarni,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student463@rbunagpur.in
+2026IT1464,Aditi More,Web Technologies,IT101,IT_YR1_GRP,1,IT,student464@rbunagpur.in
+2026IT1465,Isha Bansal,Software Engineering,IT301,IT_YR3_GRP,3,IT,student465@rbunagpur.in
+2026CS1466,Amit Garg,Operating Systems,CS301,CS_YR3_GRP,3,CS,student466@rbunagpur.in
+2026CS1467,Suresh Sandhu,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student467@rbunagpur.in
+2026EE1468,Riya Chatterjee,Control Systems,EE301,EE_YR3_GRP,3,EE,student468@rbunagpur.in
+2026EC1469,Vivaan Sarkar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student469@rbunagpur.in
+2026IT1470,Ayush Goel,Web Technologies,IT101,IT_YR1_GRP,1,IT,student470@rbunagpur.in
+2026IT1471,Swapnil Mishra,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student471@rbunagpur.in
+2026IT1472,Tanmay Goud,Software Engineering,IT301,IT_YR3_GRP,3,IT,student472@rbunagpur.in
+2026CS1473,Swapnil Chauhan,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student473@rbunagpur.in
+2026CS1474,Siddharth Bhide,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student474@rbunagpur.in
+2026EC1475,Tanya Jain,VLSI Design,EC401,EC_YR4_GRP,4,EC,student475@rbunagpur.in
+2026ME1476,Aarav Verma,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student476@rbunagpur.in
+2026CE1477,Umesh Das,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student477@rbunagpur.in
+2026EE1478,Manoj Solanki,Power Electronics,EE401,EE_YR4_GRP,4,EE,student478@rbunagpur.in
+2026IT1479,Arjun Banerjee,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student479@rbunagpur.in
+2026EE1480,Anita Ojha,Power Electronics,EE401,EE_YR4_GRP,4,EE,student480@rbunagpur.in
+2026EC1481,Pari Shetty,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student481@rbunagpur.in
+2026IT1482,Pari Jadeja,Software Engineering,IT301,IT_YR3_GRP,3,IT,student482@rbunagpur.in
+2026ME1483,Vaibhav Solanki,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student483@rbunagpur.in
+2026CE1484,Bhavya Banerjee,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student484@rbunagpur.in
+2026ME1485,Sai Sarkar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student485@rbunagpur.in
+2026EC1486,Kiran Malhotra,Microprocessors,EC301,EC_YR3_GRP,3,EC,student486@rbunagpur.in
+2026EE1487,Riya Bhide,Control Systems,EE301,EE_YR3_GRP,3,EE,student487@rbunagpur.in
+2026EC1488,Nitin Goud,VLSI Design,EC401,EC_YR4_GRP,4,EC,student488@rbunagpur.in
+2026ME1489,Tanmay Suri,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student489@rbunagpur.in
+2026EC1490,Dhwani Barad,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student490@rbunagpur.in
+2026EE1491,Reyansh Menon,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student491@rbunagpur.in
+2026CS1492,Atharv Sandhu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student492@rbunagpur.in
+2026CS1493,Myra Dubey,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student493@rbunagpur.in
+2026CS1494,Sanjay Dubey,Operating Systems,CS301,CS_YR3_GRP,3,CS,student494@rbunagpur.in
+2026IT1495,Ishaan Bansal,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student495@rbunagpur.in
+2026EC1496,Ritu Kaur,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student496@rbunagpur.in
+2026EC1497,Maitri Jadhav,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student497@rbunagpur.in
+2026CE1498,Vaibhav Singh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student498@rbunagpur.in
+2026ME1499,Lokesh More,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student499@rbunagpur.in
+2026CE1500,Myra Sharma,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student500@rbunagpur.in
+2026EC1501,Akash Jadhav,Microprocessors,EC301,EC_YR3_GRP,3,EC,student501@rbunagpur.in
+2026CS1502,Kavya Mann,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student502@rbunagpur.in
+2026ME1503,Anita Roy,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student503@rbunagpur.in
+2026EE1504,Ananya Naidu,Power Electronics,EE401,EE_YR4_GRP,4,EE,student504@rbunagpur.in
+2026CE1505,Kriti Pathak,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student505@rbunagpur.in
+2026IT1506,Manoj Joshi,Software Engineering,IT301,IT_YR3_GRP,3,IT,student506@rbunagpur.in
+2026EE1507,Esha Das,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student507@rbunagpur.in
+2026ME1508,Ankit Chauhan,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student508@rbunagpur.in
+2026EC1509,Ansh Mehta,VLSI Design,EC401,EC_YR4_GRP,4,EC,student509@rbunagpur.in
+2026CS1510,Swapnil Garg,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student510@rbunagpur.in
+2026EE1511,Advait Deshmukh,Control Systems,EE301,EE_YR3_GRP,3,EE,student511@rbunagpur.in
+2026EC1512,Rohan Joshi,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student512@rbunagpur.in
+2026CS1513,Avni Pawar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student513@rbunagpur.in
+2026CE1514,Ayaan Sidhu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student514@rbunagpur.in
+2026EE1515,Dev Mann,Network Theory,EE201,EE_YR2_GRP,2,EE,student515@rbunagpur.in
+2026CE1516,Aditi Chatterjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student516@rbunagpur.in
+2026ME1517,Aarav Jain,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student517@rbunagpur.in
+2026CE1518,Ayaan Jain,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student518@rbunagpur.in
+2026CS1519,Vani Iyengar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student519@rbunagpur.in
+2026EE1520,Seema Sen,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student520@rbunagpur.in
+2026ME1521,Neha Banerjee,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student521@rbunagpur.in
+2026IT1522,Tanya Dhillon,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student522@rbunagpur.in
+2026CS1523,Neel Shukla,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student523@rbunagpur.in
+2026ME1524,Ankit Yadav,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student524@rbunagpur.in
+2026IT1525,Pankaj Reddy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student525@rbunagpur.in
+2026ME1526,Ayush Sandhu,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student526@rbunagpur.in
+2026EC1527,Siddharth Pathak,VLSI Design,EC401,EC_YR4_GRP,4,EC,student527@rbunagpur.in
+2026EE1528,Avni Menon,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student528@rbunagpur.in
+2026EC1529,Anay Solanki,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student529@rbunagpur.in
+2026IT1530,Vinay Sandhu,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student530@rbunagpur.in
+2026EC1531,Girish Chatterjee,Microprocessors,EC301,EC_YR3_GRP,3,EC,student531@rbunagpur.in
+2026EC1532,Ishani Sharma,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student532@rbunagpur.in
+2026EE1533,Neha Gill,Power Electronics,EE401,EE_YR4_GRP,4,EE,student533@rbunagpur.in
+2026CE1534,Asha Chatterjee,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student534@rbunagpur.in
+2026EC1535,Arnav Gupta,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student535@rbunagpur.in
+2026CE1536,Ansh Bose,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student536@rbunagpur.in
+2026ME1537,Ayaan Verma,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student537@rbunagpur.in
+2026ME1538,Isha Patil,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student538@rbunagpur.in
+2026CE1539,Trisha Parekh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student539@rbunagpur.in
+2026EC1540,Vinay Pillai,VLSI Design,EC401,EC_YR4_GRP,4,EC,student540@rbunagpur.in
+2026EC1541,Bhavya Wankhede,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student541@rbunagpur.in
+2026ME1542,Piyush Reddy,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student542@rbunagpur.in
+2026EC1543,Vanya Bansal,Microprocessors,EC301,EC_YR3_GRP,3,EC,student543@rbunagpur.in
+2026IT1544,Aanya Kulkarni,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student544@rbunagpur.in
+2026EE1545,Tushar Menon,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student545@rbunagpur.in
+2026CE1546,Geeta Shukla,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student546@rbunagpur.in
+2026CE1547,Sanjay Pillai,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student547@rbunagpur.in
+2026CE1548,Sara Sidhu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student548@rbunagpur.in
+2026EE1549,Avni Goud,Control Systems,EE301,EE_YR3_GRP,3,EE,student549@rbunagpur.in
+2026EC1550,Sia Sarkar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student550@rbunagpur.in
+2026CS1551,Sumit Nair,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student551@rbunagpur.in
+2026CE1552,Siddharth Ojha,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student552@rbunagpur.in
+2026ME1553,Yash Sidhu,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student553@rbunagpur.in
+2026EE1554,Manoj Brar,Network Theory,EE201,EE_YR2_GRP,2,EE,student554@rbunagpur.in
+2026IT1555,Reyansh Dubey,Software Engineering,IT301,IT_YR3_GRP,3,IT,student555@rbunagpur.in
+2026ME1556,Rani Barad,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student556@rbunagpur.in
+2026CE1557,Vivaan Khanna,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student557@rbunagpur.in
+2026EC1558,Jiya Tiwari,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student558@rbunagpur.in
+2026CS1559,Rani Sidhu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student559@rbunagpur.in
+2026IT1560,Sanjay Nair,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student560@rbunagpur.in
+2026ME1561,Anvi Chauhan,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student561@rbunagpur.in
+2026EE1562,Aanya Grewal,Control Systems,EE301,EE_YR3_GRP,3,EE,student562@rbunagpur.in
+2026EE1563,Jiya Barad,Network Theory,EE201,EE_YR2_GRP,2,EE,student563@rbunagpur.in
+2026IT1564,Diya Mori,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student564@rbunagpur.in
+2026CE1565,Navya Mukherjee,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student565@rbunagpur.in
+2026EE1566,Kavya Rao,Network Theory,EE201,EE_YR2_GRP,2,EE,student566@rbunagpur.in
+2026EC1567,Geeta Gaekwad,Microprocessors,EC301,EC_YR3_GRP,3,EC,student567@rbunagpur.in
+2026ME1568,Pari Trivedi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student568@rbunagpur.in
+2026CS1569,Rajesh Iyer,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student569@rbunagpur.in
+2026CE1570,Anvi Goel,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student570@rbunagpur.in
+2026CE1571,Arjun Aulakh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student571@rbunagpur.in
+2026EE1572,Neha Mehta,Power Electronics,EE401,EE_YR4_GRP,4,EE,student572@rbunagpur.in
+2026CS1573,Swapnil Iyer,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student573@rbunagpur.in
+2026EC1574,Suresh Yadav,VLSI Design,EC401,EC_YR4_GRP,4,EC,student574@rbunagpur.in
+2026EC1575,Amol Nair,Microprocessors,EC301,EC_YR3_GRP,3,EC,student575@rbunagpur.in
+2026CS1576,Geeta Dutta,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student576@rbunagpur.in
+2026IT1577,Sia Gaekwad,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student577@rbunagpur.in
+2026EC1578,Aryan Verma,VLSI Design,EC401,EC_YR4_GRP,4,EC,student578@rbunagpur.in
+2026ME1579,Suresh Jain,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student579@rbunagpur.in
+2026IT1580,Pankaj Pandey,Software Engineering,IT301,IT_YR3_GRP,3,IT,student580@rbunagpur.in
+2026ME1581,Rahul Pathak,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student581@rbunagpur.in
+2026CS1582,Siddharth Garg,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student582@rbunagpur.in
+2026EC1583,Aryan Menon,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student583@rbunagpur.in
+2026CE1584,Sara Jain,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student584@rbunagpur.in
+2026IT1585,Sunita Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student585@rbunagpur.in
+2026CE1586,Asha Yadav,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student586@rbunagpur.in
+2026ME1587,Navya Trivedi,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student587@rbunagpur.in
+2026EE1588,Vikram Zala,Power Electronics,EE401,EE_YR4_GRP,4,EE,student588@rbunagpur.in
+2026EE1589,Jiya Nair,Power Electronics,EE401,EE_YR4_GRP,4,EE,student589@rbunagpur.in
+2026EE1590,Yash Mishra,Network Theory,EE201,EE_YR2_GRP,2,EE,student590@rbunagpur.in
+2026IT1591,Sumit Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student591@rbunagpur.in
+2026ME1592,Pankaj Chauhan,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student592@rbunagpur.in
+2026CS1593,Anay Ghosh,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student593@rbunagpur.in
+2026CE1594,Ayush Dubey,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student594@rbunagpur.in
+2026ME1595,Ishaan Reddy,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student595@rbunagpur.in
+2026CS1596,Megha Yadav,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student596@rbunagpur.in
+2026ME1597,Rahul Nair,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student597@rbunagpur.in
+2026CE1598,Aavya Kulkarni,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student598@rbunagpur.in
+2026IT1599,Akash Pathak,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student599@rbunagpur.in
+2026EC1600,Lokesh Naidu,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student600@rbunagpur.in
+2026EC1601,Harsh Chauhan,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student601@rbunagpur.in
+2026EC1602,Aditi Gaekwad,VLSI Design,EC401,EC_YR4_GRP,4,EC,student602@rbunagpur.in
+2026EC1603,Vani Mishra,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student603@rbunagpur.in
+2026ME1604,Gaurav Shinde,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student604@rbunagpur.in
+2026CS1605,Karan Pawar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student605@rbunagpur.in
+2026CS1606,Pranav Solanki,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student606@rbunagpur.in
+2026IT1607,Neha Chawla,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student607@rbunagpur.in
+2026EC1608,Isha Bhide,VLSI Design,EC401,EC_YR4_GRP,4,EC,student608@rbunagpur.in
+2026CS1609,Kiran Ojha,Operating Systems,CS301,CS_YR3_GRP,3,CS,student609@rbunagpur.in
+2026CE1610,Sameer Gill,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student610@rbunagpur.in
+2026CS1611,Diya Pillai,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student611@rbunagpur.in
+2026IT1612,Shanaya Goud,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student612@rbunagpur.in
+2026CE1613,Dev Aggarwal,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student613@rbunagpur.in
+2026CE1614,Suresh Trivedi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student614@rbunagpur.in
+2026IT1615,Asha Sarkar,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student615@rbunagpur.in
+2026CS1616,Rajesh More,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student616@rbunagpur.in
+2026ME1617,Sameer Wankhede,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student617@rbunagpur.in
+2026ME1618,Shreya Shinde,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student618@rbunagpur.in
+2026IT1619,Sumit Sharma,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student619@rbunagpur.in
+2026EC1620,Aarav Shetty,VLSI Design,EC401,EC_YR4_GRP,4,EC,student620@rbunagpur.in
+2026EE1621,Lokesh Chatterjee,Power Electronics,EE401,EE_YR4_GRP,4,EE,student621@rbunagpur.in
+2026CS1622,Sameer Dutta,Operating Systems,CS301,CS_YR3_GRP,3,CS,student622@rbunagpur.in
+2026CE1623,Anita Grewal,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student623@rbunagpur.in
+2026CE1624,Shreya Sarkar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student624@rbunagpur.in
+2026IT1625,Anvi Grewal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student625@rbunagpur.in
+2026EE1626,Jiya Naidu,Network Theory,EE201,EE_YR2_GRP,2,EE,student626@rbunagpur.in
+2026EE1627,Navya Garg,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student627@rbunagpur.in
+2026EC1628,Vani Malhotra,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student628@rbunagpur.in
+2026CE1629,Umesh Joshi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student629@rbunagpur.in
+2026IT1630,Amol Bansal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student630@rbunagpur.in
+2026CS1631,Kavya Kulkarni,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student631@rbunagpur.in
+2026EE1632,Kavya Deshmukh,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student632@rbunagpur.in
+2026EC1633,Maitri Cheema,Microprocessors,EC301,EC_YR3_GRP,3,EC,student633@rbunagpur.in
+2026CE1634,Kriti Mishra,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student634@rbunagpur.in
+2026CE1635,Megha Dhillon,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student635@rbunagpur.in
+2026ME1636,Lokesh Brar,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student636@rbunagpur.in
+2026IT1637,Vanya Joshi,Web Technologies,IT101,IT_YR1_GRP,1,IT,student637@rbunagpur.in
+2026CE1638,Sara Das,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student638@rbunagpur.in
+2026EE1639,Asha Barad,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student639@rbunagpur.in
+2026EE1640,Swapnil Gohil,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student640@rbunagpur.in
+2026CE1641,Manish Sarkar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student641@rbunagpur.in
+2026CE1642,Neha Nair,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student642@rbunagpur.in
+2026CS1643,Reyansh Yadav,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student643@rbunagpur.in
+2026EC1644,Saanvi Wankhede,Microprocessors,EC301,EC_YR3_GRP,3,EC,student644@rbunagpur.in
+2026CS1645,Myra Parmar,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student645@rbunagpur.in
+2026CE1646,Sunita Banerjee,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student646@rbunagpur.in
+2026CE1647,Ayush Roy,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student647@rbunagpur.in
+2026CS1648,Kiara Jadeja,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student648@rbunagpur.in
+2026CS1649,Asha Bhide,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student649@rbunagpur.in
+2026CS1650,Sunita Sharma,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student650@rbunagpur.in
+2026CE1651,Bhavya Suri,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student651@rbunagpur.in
+2026CS1652,Anvi Brar,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student652@rbunagpur.in
+2026ME1653,Yash Trivedi,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student653@rbunagpur.in
+2026IT1654,Kavya Brar,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student654@rbunagpur.in
+2026CS1655,Riya Dutta,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student655@rbunagpur.in
+2026EE1656,Manish Cheema,Power Electronics,EE401,EE_YR4_GRP,4,EE,student656@rbunagpur.in
+2026ME1657,Avni Iyer,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student657@rbunagpur.in
+2026EE1658,Karan Sarkar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student658@rbunagpur.in
+2026EC1659,Abhishek Gohil,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student659@rbunagpur.in
+2026ME1660,Akash Khanna,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student660@rbunagpur.in
+2026EC1661,Swapnil Shukla,Microprocessors,EC301,EC_YR3_GRP,3,EC,student661@rbunagpur.in
+2026CS1662,Tanmay Shukla,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student662@rbunagpur.in
+2026ME1663,Dhiraj Pandey,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student663@rbunagpur.in
+2026CS1664,Akash Suri,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student664@rbunagpur.in
+2026IT1665,Girish Iyengar,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student665@rbunagpur.in
+2026CE1666,Trisha Shukla,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student666@rbunagpur.in
+2026CE1667,Dhiraj Pathak,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student667@rbunagpur.in
+2026EE1668,Neel Solanki,Power Electronics,EE401,EE_YR4_GRP,4,EE,student668@rbunagpur.in
+2026CS1669,Aarav Zala,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student669@rbunagpur.in
+2026ME1670,Shruti Gohil,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student670@rbunagpur.in
+2026EE1671,Maitri Mukherjee,Control Systems,EE301,EE_YR3_GRP,3,EE,student671@rbunagpur.in
+2026EE1672,Aditi Malhotra,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student672@rbunagpur.in
+2026IT1673,Arjun Dutta,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student673@rbunagpur.in
+2026IT1674,Sameer Pawar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student674@rbunagpur.in
+2026CE1675,Vanya Singh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student675@rbunagpur.in
+2026CS1676,Aanya Garg,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student676@rbunagpur.in
+2026ME1677,Aditi Iyer,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student677@rbunagpur.in
+2026IT1678,Riya Menon,Web Technologies,IT101,IT_YR1_GRP,1,IT,student678@rbunagpur.in
+2026CS1679,Tanmay Naidu,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student679@rbunagpur.in
+2026EC1680,Deepa Shah,Microprocessors,EC301,EC_YR3_GRP,3,EC,student680@rbunagpur.in
+2026CE1681,Megha Pathak,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student681@rbunagpur.in
+2026EE1682,Girish Kulkarni,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student682@rbunagpur.in
+2026IT1683,Kavya Wankhede,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student683@rbunagpur.in
+2026CS1684,Vanya Pillai,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student684@rbunagpur.in
+2026EC1685,Vihaan Pawar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student685@rbunagpur.in
+2026CS1686,Ananya Pandey,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student686@rbunagpur.in
+2026ME1687,Suresh Rathod,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student687@rbunagpur.in
+2026EC1688,Krishna Trivedi,Microprocessors,EC301,EC_YR3_GRP,3,EC,student688@rbunagpur.in
+2026ME1689,Seema Suri,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student689@rbunagpur.in
+2026EE1690,Sumit Trivedi,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student690@rbunagpur.in
+2026EC1691,Suresh Mann,Microprocessors,EC301,EC_YR3_GRP,3,EC,student691@rbunagpur.in
+2026CE1692,Girish Sharma,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student692@rbunagpur.in
+2026CE1693,Dhwani Pawar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student693@rbunagpur.in
+2026ME1694,Tushar Naidu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student694@rbunagpur.in
+2026CE1695,Myra Suri,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student695@rbunagpur.in
+2026EC1696,Ayaan Gill,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student696@rbunagpur.in
+2026ME1697,Deepa Rao,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student697@rbunagpur.in
+2026IT1698,Ishani Menon,Web Technologies,IT101,IT_YR1_GRP,1,IT,student698@rbunagpur.in
+2026ME1699,Seema Mukherjee,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student699@rbunagpur.in
+2026CE1700,Dev Bose,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student700@rbunagpur.in
+2026EE1701,Geeta Mann,Control Systems,EE301,EE_YR3_GRP,3,EE,student701@rbunagpur.in
+2026ME1702,Isha Trivedi,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student702@rbunagpur.in
+2026CE1703,Shanaya Bansal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student703@rbunagpur.in
+2026ME1704,Ayaan Dabre,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student704@rbunagpur.in
+2026EC1705,Advait Parmar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student705@rbunagpur.in
+2026EC1706,Arjun Ojha,VLSI Design,EC401,EC_YR4_GRP,4,EC,student706@rbunagpur.in
+2026IT1707,Vani Khanna,Web Technologies,IT101,IT_YR1_GRP,1,IT,student707@rbunagpur.in
+2026EC1708,Vivaan Sidhu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student708@rbunagpur.in
+2026IT1709,Rajesh Pandey,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student709@rbunagpur.in
+2026ME1710,Dev Yadav,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student710@rbunagpur.in
+2026EE1711,Ishita Aulakh,Control Systems,EE301,EE_YR3_GRP,3,EE,student711@rbunagpur.in
+2026CE1712,Harsh Barad,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student712@rbunagpur.in
+2026CE1713,Ansh Suri,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student713@rbunagpur.in
+2026EC1714,Arnav Parmar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student714@rbunagpur.in
+2026CS1715,Aanya Verma,Operating Systems,CS301,CS_YR3_GRP,3,CS,student715@rbunagpur.in
+2026EE1716,Ishani Shetty,Network Theory,EE201,EE_YR2_GRP,2,EE,student716@rbunagpur.in
+2026CS1717,Sumit Shinde,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student717@rbunagpur.in
+2026EC1718,Pankaj Solanki,Microprocessors,EC301,EC_YR3_GRP,3,EC,student718@rbunagpur.in
+2026IT1719,Jiya Ghosh,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student719@rbunagpur.in
+2026CE1720,Riya Sidhu,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student720@rbunagpur.in
+2026EE1721,Sai Parekh,Control Systems,EE301,EE_YR3_GRP,3,EE,student721@rbunagpur.in
+2026ME1722,Umesh Singh,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student722@rbunagpur.in
+2026IT1723,Vikram Patil,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student723@rbunagpur.in
+2026EC1724,Manish Parekh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student724@rbunagpur.in
+2026CE1725,Seema Singh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student725@rbunagpur.in
+2026EE1726,Bhavya Aulakh,Power Electronics,EE401,EE_YR4_GRP,4,EE,student726@rbunagpur.in
+2026CS1727,Shruti Parekh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student727@rbunagpur.in
+2026EE1728,Tanmay Banerjee,Power Electronics,EE401,EE_YR4_GRP,4,EE,student728@rbunagpur.in
+2026CE1729,Vihaan Parekh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student729@rbunagpur.in
+2026ME1730,Kiara Sharma,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student730@rbunagpur.in
+2026IT1731,Maitri Barad,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student731@rbunagpur.in
+2026CS1732,Diya Iyengar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student732@rbunagpur.in
+2026CE1733,Gaurav Tiwari,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student733@rbunagpur.in
+2026CE1734,Rohan Rao,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student734@rbunagpur.in
+2026EC1735,Shreya Gill,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student735@rbunagpur.in
+2026ME1736,Girish Pillai,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student736@rbunagpur.in
+2026CS1737,Kabir Shetty,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student737@rbunagpur.in
+2026CS1738,Arjun Iyengar,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student738@rbunagpur.in
+2026CS1739,Pankaj Jain,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student739@rbunagpur.in
+2026EE1740,Reyansh Joshi,Network Theory,EE201,EE_YR2_GRP,2,EE,student740@rbunagpur.in
+2026CE1741,Diya Naidu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student741@rbunagpur.in
+2026IT1742,Dhiraj Sandhu,Software Engineering,IT301,IT_YR3_GRP,3,IT,student742@rbunagpur.in
+2026IT1743,Ishani Verma,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student743@rbunagpur.in
+2026EC1744,Dev Trivedi,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student744@rbunagpur.in
+2026IT1745,Aanya Dutta,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student745@rbunagpur.in
+2026CE1746,Vaibhav Reddy,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student746@rbunagpur.in
+2026CS1747,Suresh Shetty,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student747@rbunagpur.in
+2026EC1748,Piyush Parmar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student748@rbunagpur.in
+2026EC1749,Manoj Cheema,VLSI Design,EC401,EC_YR4_GRP,4,EC,student749@rbunagpur.in
+2026IT1750,Sai Kulkarni,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student750@rbunagpur.in
+2026IT1751,Pari Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student751@rbunagpur.in
+2026EC1752,Suresh Jadhav,Microprocessors,EC301,EC_YR3_GRP,3,EC,student752@rbunagpur.in
+2026ME1753,Kiran Roy,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student753@rbunagpur.in
+2026EC1754,Harsh Deshmukh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student754@rbunagpur.in
+2026IT1755,Rani Shinde,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student755@rbunagpur.in
+2026IT1756,Tushar Kulkarni,Web Technologies,IT101,IT_YR1_GRP,1,IT,student756@rbunagpur.in
+2026ME1757,Shruti Gupta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student757@rbunagpur.in
+2026EC1758,Rahul Dubey,Microprocessors,EC301,EC_YR3_GRP,3,EC,student758@rbunagpur.in
+2026ME1759,Megha Pawar,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student759@rbunagpur.in
+2026EE1760,Aditi Ojha,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student760@rbunagpur.in
+2026ME1761,Sai More,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student761@rbunagpur.in
+2026CE1762,Pooja Mukherjee,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student762@rbunagpur.in
+2026EC1763,Harsh Sen,VLSI Design,EC401,EC_YR4_GRP,4,EC,student763@rbunagpur.in
+2026IT1764,Sunita Gaekwad,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student764@rbunagpur.in
+2026EE1765,Aarav Vaghela,Control Systems,EE301,EE_YR3_GRP,3,EE,student765@rbunagpur.in
+2026EE1766,Suresh Sarkar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student766@rbunagpur.in
+2026EC1767,Rohan Sen,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student767@rbunagpur.in
+2026EC1768,Shreya Khanna,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student768@rbunagpur.in
+2026EC1769,Pradeep Kulkarni,Microprocessors,EC301,EC_YR3_GRP,3,EC,student769@rbunagpur.in
+2026ME1770,Deepa Menon,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student770@rbunagpur.in
+2026CS1771,Dev Sharma,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student771@rbunagpur.in
+2026EC1772,Siddharth Pawar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student772@rbunagpur.in
+2026IT1773,Rohan Ojha,Web Technologies,IT101,IT_YR1_GRP,1,IT,student773@rbunagpur.in
+2026CE1774,Vikram Parmar,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student774@rbunagpur.in
+2026IT1775,Diya Menon,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student775@rbunagpur.in
+2026EC1776,Akash Kapoor,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student776@rbunagpur.in
+2026EE1777,Jiya Singh,Network Theory,EE201,EE_YR2_GRP,2,EE,student777@rbunagpur.in
+2026EC1778,Tushar Goud,VLSI Design,EC401,EC_YR4_GRP,4,EC,student778@rbunagpur.in
+2026IT1779,Vani Kaur,Software Engineering,IT301,IT_YR3_GRP,3,IT,student779@rbunagpur.in
+2026CE1780,Anay Naidu,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student780@rbunagpur.in
+2026CS1781,Arjun Goel,Operating Systems,CS301,CS_YR3_GRP,3,CS,student781@rbunagpur.in
+2026IT1782,Siddharth Rao,Software Engineering,IT301,IT_YR3_GRP,3,IT,student782@rbunagpur.in
+2026IT1783,Aryan Singh,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student783@rbunagpur.in
+2026CS1784,Arnav Mukherjee,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student784@rbunagpur.in
+2026IT1785,Siddharth Verma,Software Engineering,IT301,IT_YR3_GRP,3,IT,student785@rbunagpur.in
+2026CE1786,Aarav Shukla,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student786@rbunagpur.in
+2026EC1787,Aanya Malhotra,Microprocessors,EC301,EC_YR3_GRP,3,EC,student787@rbunagpur.in
+2026ME1788,Rani Shah,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student788@rbunagpur.in
+2026EE1789,Trisha Khanna,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student789@rbunagpur.in
+2026ME1790,Sai Khanna,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student790@rbunagpur.in
+2026IT1791,Vinay Rathod,Web Technologies,IT101,IT_YR1_GRP,1,IT,student791@rbunagpur.in
+2026ME1792,Abhishek Jadeja,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student792@rbunagpur.in
+2026EE1793,Manish Pawar,Control Systems,EE301,EE_YR3_GRP,3,EE,student793@rbunagpur.in
+2026IT1794,Pranav Sen,Software Engineering,IT301,IT_YR3_GRP,3,IT,student794@rbunagpur.in
+2026IT1795,Aarav Mann,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student795@rbunagpur.in
+2026CS1796,Aarav Kapoor,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student796@rbunagpur.in
+2026CS1797,Pooja Shinde,Operating Systems,CS301,CS_YR3_GRP,3,CS,student797@rbunagpur.in
+2026ME1798,Jiya Roy,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student798@rbunagpur.in
+2026ME1799,Girish Deshmukh,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student799@rbunagpur.in
+2026CS1800,Amol Garg,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student800@rbunagpur.in
+2026EE1801,Sneha Pawar,Network Theory,EE201,EE_YR2_GRP,2,EE,student801@rbunagpur.in
+2026CS1802,Bhavya Dhillon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student802@rbunagpur.in
+2026IT1803,Advait Gohil,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student803@rbunagpur.in
+2026EC1804,Girish Dubey,Microprocessors,EC301,EC_YR3_GRP,3,EC,student804@rbunagpur.in
+2026ME1805,Gaurav Zala,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student805@rbunagpur.in
+2026CE1806,Piyush Rathod,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student806@rbunagpur.in
+2026EE1807,Sneha Zala,Network Theory,EE201,EE_YR2_GRP,2,EE,student807@rbunagpur.in
+2026EC1808,Advait Das,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student808@rbunagpur.in
+2026ME1809,Arnav Menon,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student809@rbunagpur.in
+2026EE1810,Ishaan More,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student810@rbunagpur.in
+2026EC1811,Girish Dabre,VLSI Design,EC401,EC_YR4_GRP,4,EC,student811@rbunagpur.in
+2026EE1812,Suresh Grewal,Network Theory,EE201,EE_YR2_GRP,2,EE,student812@rbunagpur.in
+2026EC1813,Dev Menon,Microprocessors,EC301,EC_YR3_GRP,3,EC,student813@rbunagpur.in
+2026ME1814,Vani Dubey,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student814@rbunagpur.in
+2026EE1815,Aryan Das,Network Theory,EE201,EE_YR2_GRP,2,EE,student815@rbunagpur.in
+2026ME1816,Sanjay Aggarwal,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student816@rbunagpur.in
+2026CE1817,Ansh Verma,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student817@rbunagpur.in
+2026EE1818,Vikram Chawla,Power Electronics,EE401,EE_YR4_GRP,4,EE,student818@rbunagpur.in
+2026CE1819,Aditya Roy,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student819@rbunagpur.in
+2026CE1820,Maitri Gohil,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student820@rbunagpur.in
+2026CS1821,Amol Patil,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student821@rbunagpur.in
+2026IT1822,Sameer Ghuge,Web Technologies,IT101,IT_YR1_GRP,1,IT,student822@rbunagpur.in
+2026IT1823,Aditya Sidhu,Software Engineering,IT301,IT_YR3_GRP,3,IT,student823@rbunagpur.in
+2026EE1824,Pankaj Menon,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student824@rbunagpur.in
+2026IT1825,Krishna Ghuge,Web Technologies,IT101,IT_YR1_GRP,1,IT,student825@rbunagpur.in
+2026EE1826,Girish Verma,Control Systems,EE301,EE_YR3_GRP,3,EE,student826@rbunagpur.in
+2026ME1827,Seema Garg,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student827@rbunagpur.in
+2026EE1828,Vaibhav Bansal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student828@rbunagpur.in
+2026EE1829,Ayush Verma,Network Theory,EE201,EE_YR2_GRP,2,EE,student829@rbunagpur.in
+2026IT1830,Yash Bansal,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student830@rbunagpur.in
+2026CS1831,Atharv Shukla,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student831@rbunagpur.in
+2026CE1832,Vanya Patil,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student832@rbunagpur.in
+2026ME1833,Mayur Sharma,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student833@rbunagpur.in
+2026CS1834,Sameer Nair,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student834@rbunagpur.in
+2026EE1835,Aryan Jadhav,Power Electronics,EE401,EE_YR4_GRP,4,EE,student835@rbunagpur.in
+2026ME1836,Rahul Joshi,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student836@rbunagpur.in
+2026CS1837,Myra Rao,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student837@rbunagpur.in
+2026CS1838,Pranav Parekh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student838@rbunagpur.in
+2026EE1839,Karan Shinde,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student839@rbunagpur.in
+2026CE1840,Diya Jadeja,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student840@rbunagpur.in
+2026CE1841,Isha Suri,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student841@rbunagpur.in
+2026CE1842,Tanmay Joshi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student842@rbunagpur.in
+2026EC1843,Ishaan Banerjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student843@rbunagpur.in
+2026CS1844,Megha Ghuge,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student844@rbunagpur.in
+2026CE1845,Neel Dubey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student845@rbunagpur.in
+2026EC1846,Sameer Reddy,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student846@rbunagpur.in
+2026ME1847,Maitri Shinde,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student847@rbunagpur.in
+2026EE1848,Mayur Dabre,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student848@rbunagpur.in
+2026CE1849,Megha Cheema,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student849@rbunagpur.in
+2026CS1850,Rohan Jadeja,Operating Systems,CS301,CS_YR3_GRP,3,CS,student850@rbunagpur.in
+2026CE1851,Sai Kaur,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student851@rbunagpur.in
+2026EC1852,Myra Brar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student852@rbunagpur.in
+2026EC1853,Sneha Chauhan,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student853@rbunagpur.in
+2026CE1854,Myra Chauhan,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student854@rbunagpur.in
+2026CS1855,Navya Ghosh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student855@rbunagpur.in
+2026EC1856,Pari Dabre,VLSI Design,EC401,EC_YR4_GRP,4,EC,student856@rbunagpur.in
+2026IT1857,Lokesh Grewal,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student857@rbunagpur.in
+2026ME1858,Shruti Mukherjee,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student858@rbunagpur.in
+2026ME1859,Aditi Solanki,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student859@rbunagpur.in
+2026EC1860,Kriti Sandhu,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student860@rbunagpur.in
+2026IT1861,Gaurav Pathak,Web Technologies,IT101,IT_YR1_GRP,1,IT,student861@rbunagpur.in
+2026EE1862,Aavya Menon,Network Theory,EE201,EE_YR2_GRP,2,EE,student862@rbunagpur.in
+2026EE1863,Sia Mishra,Network Theory,EE201,EE_YR2_GRP,2,EE,student863@rbunagpur.in
+2026EC1864,Ansh Brar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student864@rbunagpur.in
+2026EC1865,Sanjay More,Microprocessors,EC301,EC_YR3_GRP,3,EC,student865@rbunagpur.in
+2026CS1866,Myra Shukla,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student866@rbunagpur.in
+2026EE1867,Vani Sarkar,Network Theory,EE201,EE_YR2_GRP,2,EE,student867@rbunagpur.in
+2026ME1868,Ritu Mori,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student868@rbunagpur.in
+2026CE1869,Vinay Chauhan,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student869@rbunagpur.in
+2026IT1870,Navya Chopde,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student870@rbunagpur.in
+2026IT1871,Advait Cheema,Web Technologies,IT101,IT_YR1_GRP,1,IT,student871@rbunagpur.in
+2026CS1872,Navya Sidhu,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student872@rbunagpur.in
+2026ME1873,Kavya Patil,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student873@rbunagpur.in
+2026CE1874,Riya Wankhede,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student874@rbunagpur.in
+2026EC1875,Saanvi Trivedi,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student875@rbunagpur.in
+2026CE1876,Dev Rao,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student876@rbunagpur.in
+2026IT1877,Gaurav Iyengar,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student877@rbunagpur.in
+2026CS1878,Neel Garg,Operating Systems,CS301,CS_YR3_GRP,3,CS,student878@rbunagpur.in
+2026IT1879,Kabir Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student879@rbunagpur.in
+2026CS1880,Vivaan Kulkarni,Operating Systems,CS301,CS_YR3_GRP,3,CS,student880@rbunagpur.in
+2026EE1881,Manoj Gaekwad,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student881@rbunagpur.in
+2026CS1882,Asha Patil,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student882@rbunagpur.in
+2026ME1883,Atharv Mukherjee,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student883@rbunagpur.in
+2026EC1884,Neha Pillai,VLSI Design,EC401,EC_YR4_GRP,4,EC,student884@rbunagpur.in
+2026CS1885,Jiya Parekh,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student885@rbunagpur.in
+2026CS1886,Shanaya Aulakh,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student886@rbunagpur.in
+2026CS1887,Rohan Ghuge,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student887@rbunagpur.in
+2026CS1888,Ishani Parekh,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student888@rbunagpur.in
+2026ME1889,Rahul Sarkar,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student889@rbunagpur.in
+2026CE1890,Vivaan Bansal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student890@rbunagpur.in
+2026EC1891,Vinay Mann,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student891@rbunagpur.in
+2026CE1892,Jiya Bose,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student892@rbunagpur.in
+2026CE1893,Kriti Kulkarni,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student893@rbunagpur.in
+2026IT1894,Swapnil Ghosh,Software Engineering,IT301,IT_YR3_GRP,3,IT,student894@rbunagpur.in
+2026ME1895,Tanya Gupta,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student895@rbunagpur.in
+2026EC1896,Anita Gohil,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student896@rbunagpur.in
+2026CS1897,Vivaan Jadeja,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student897@rbunagpur.in
+2026CS1898,Ansh Sidhu,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student898@rbunagpur.in
+2026CE1899,Advait Dutta,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student899@rbunagpur.in
+2026EE1900,Swapnil Pathak,Network Theory,EE201,EE_YR2_GRP,2,EE,student900@rbunagpur.in
+2026EC1901,Megha Mukherjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student901@rbunagpur.in
+2026CE1902,Girish Goud,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student902@rbunagpur.in
+2026EC1903,Dev Mori,Microprocessors,EC301,EC_YR3_GRP,3,EC,student903@rbunagpur.in
+2026EC1904,Lokesh Roy,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student904@rbunagpur.in
+2026ME1905,Vanya Tiwari,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student905@rbunagpur.in
+2026CE1906,Saanvi Rathod,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student906@rbunagpur.in
+2026CS1907,Aditya Wankhede,Operating Systems,CS301,CS_YR3_GRP,3,CS,student907@rbunagpur.in
+2026CS1908,Ayush Goud,Operating Systems,CS301,CS_YR3_GRP,3,CS,student908@rbunagpur.in
+2026EE1909,Gaurav Brar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student909@rbunagpur.in
+2026CE1910,Ishani Pandey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student910@rbunagpur.in
+2026IT1911,Sanjay Bose,Software Engineering,IT301,IT_YR3_GRP,3,IT,student911@rbunagpur.in
+2026EC1912,Krishna Mukherjee,Microprocessors,EC301,EC_YR3_GRP,3,EC,student912@rbunagpur.in
+2026IT1913,Umesh Pillai,Software Engineering,IT301,IT_YR3_GRP,3,IT,student913@rbunagpur.in
+2026EE1914,Vikram Sen,Control Systems,EE301,EE_YR3_GRP,3,EE,student914@rbunagpur.in
+2026ME1915,Arjun Patil,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student915@rbunagpur.in
+2026EC1916,Ananya Tiwari,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student916@rbunagpur.in
+2026CE1917,Sneha Dubey,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student917@rbunagpur.in
+2026CS1918,Shanaya Mori,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student918@rbunagpur.in
+2026EC1919,Anita Garg,Microprocessors,EC301,EC_YR3_GRP,3,EC,student919@rbunagpur.in
+2026ME1920,Isha Verma,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student920@rbunagpur.in
+2026EC1921,Ishita Dhillon,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student921@rbunagpur.in
+2026IT1922,Girish Das,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student922@rbunagpur.in
+2026EC1923,Ansh Shetty,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student923@rbunagpur.in
+2026IT1924,Myra Goud,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student924@rbunagpur.in
+2026EC1925,Vaibhav Das,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student925@rbunagpur.in
+2026CS1926,Bhavya Kapoor,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student926@rbunagpur.in
+2026EE1927,Akash Rathod,Control Systems,EE301,EE_YR3_GRP,3,EE,student927@rbunagpur.in
+2026EC1928,Manish Gupta,VLSI Design,EC401,EC_YR4_GRP,4,EC,student928@rbunagpur.in
+2026CS1929,Abhishek Naidu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student929@rbunagpur.in
+2026EE1930,Vani Pawar,Control Systems,EE301,EE_YR3_GRP,3,EE,student930@rbunagpur.in
+2026CS1931,Dev Shinde,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student931@rbunagpur.in
+2026ME1932,Sameer Tiwari,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student932@rbunagpur.in
+2026EC1933,Akash Gill,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student933@rbunagpur.in
+2026EC1934,Atharv Patil,VLSI Design,EC401,EC_YR4_GRP,4,EC,student934@rbunagpur.in
+2026EC1935,Deepa Sidhu,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student935@rbunagpur.in
+2026EC1936,Suresh Aggarwal,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student936@rbunagpur.in
+2026CE1937,Vani Banerjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student937@rbunagpur.in
+2026EC1938,Sanjay Bhide,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student938@rbunagpur.in
+2026CS1939,Sanjay Pandey,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student939@rbunagpur.in
+2026EC1940,Ishaan Das,VLSI Design,EC401,EC_YR4_GRP,4,EC,student940@rbunagpur.in
+2026CS1941,Avni Kulkarni,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student941@rbunagpur.in
+2026CE1942,Ayush Rao,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student942@rbunagpur.in
+2026CS1943,Ishani Mori,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student943@rbunagpur.in
+2026ME1944,Vaibhav Cheema,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student944@rbunagpur.in
+2026CS1945,Umesh Ghuge,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student945@rbunagpur.in
+2026ME1946,Pari Mehta,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student946@rbunagpur.in
+2026CE1947,Neel Mehta,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student947@rbunagpur.in
+2026EC1948,Avni Pandey,VLSI Design,EC401,EC_YR4_GRP,4,EC,student948@rbunagpur.in
+2026EC1949,Aditya Shah,VLSI Design,EC401,EC_YR4_GRP,4,EC,student949@rbunagpur.in
+2026CE1950,Sameer Dubey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student950@rbunagpur.in
+2026EE1951,Vani Das,Control Systems,EE301,EE_YR3_GRP,3,EE,student951@rbunagpur.in
+2026IT1952,Sneha Trivedi,Web Technologies,IT101,IT_YR1_GRP,1,IT,student952@rbunagpur.in
+2026IT1953,Kiran Parmar,Web Technologies,IT101,IT_YR1_GRP,1,IT,student953@rbunagpur.in
+2026EE1954,Pooja More,Power Electronics,EE401,EE_YR4_GRP,4,EE,student954@rbunagpur.in
+2026CE1955,Akash Pandey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student955@rbunagpur.in
+2026EC1956,Ishani Aggarwal,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student956@rbunagpur.in
+2026IT1957,Ritu Dhillon,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student957@rbunagpur.in
+2026EE1958,Dhiraj Kapoor,Control Systems,EE301,EE_YR3_GRP,3,EE,student958@rbunagpur.in
+2026CE1959,Karan Garg,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student959@rbunagpur.in
+2026CE1960,Karan Barad,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student960@rbunagpur.in
+2026CS1961,Dhiraj Aggarwal,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student961@rbunagpur.in
+2026EC1962,Saanvi Patil,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student962@rbunagpur.in
+2026IT1963,Anita Shetty,Web Technologies,IT101,IT_YR1_GRP,1,IT,student963@rbunagpur.in
+2026EE1964,Tushar Gupta,Network Theory,EE201,EE_YR2_GRP,2,EE,student964@rbunagpur.in
+2026IT1965,Reyansh Mishra,Web Technologies,IT101,IT_YR1_GRP,1,IT,student965@rbunagpur.in
+2026EE1966,Vikram Grewal,Control Systems,EE301,EE_YR3_GRP,3,EE,student966@rbunagpur.in
+2026EE1967,Saanvi Khanna,Power Electronics,EE401,EE_YR4_GRP,4,EE,student967@rbunagpur.in
+2026EC1968,Neel Ghuge,VLSI Design,EC401,EC_YR4_GRP,4,EC,student968@rbunagpur.in
+2026CE1969,Trisha Singh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student969@rbunagpur.in
+2026ME1970,Dhwani Sandhu,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student970@rbunagpur.in
+2026EC1971,Kiran Menon,VLSI Design,EC401,EC_YR4_GRP,4,EC,student971@rbunagpur.in
+2026ME1972,Dev Ghosh,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student972@rbunagpur.in
+2026CE1973,Aditya Das,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student973@rbunagpur.in
+2026CS1974,Rani Chauhan,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student974@rbunagpur.in
+2026CE1975,Vinay Nair,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student975@rbunagpur.in
+2026EE1976,Pooja Gill,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student976@rbunagpur.in
+2026IT1977,Riya Jadeja,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student977@rbunagpur.in
+2026IT1978,Avni Chatterjee,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student978@rbunagpur.in
+2026IT1979,Sanjay Trivedi,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student979@rbunagpur.in
+2026CS1980,Kiara Khanna,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student980@rbunagpur.in
+2026EC1981,Nitin Bose,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student981@rbunagpur.in
+2026ME1982,Gaurav Naidu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student982@rbunagpur.in
+2026CS1983,Ansh Rathod,Operating Systems,CS301,CS_YR3_GRP,3,CS,student983@rbunagpur.in
+2026CS1984,Pranav Mukherjee,Operating Systems,CS301,CS_YR3_GRP,3,CS,student984@rbunagpur.in
+2026CS1985,Anita Sandhu,Operating Systems,CS301,CS_YR3_GRP,3,CS,student985@rbunagpur.in
+2026IT1986,Sumit Goud,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student986@rbunagpur.in
+2026CE1987,Anvi Jain,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student987@rbunagpur.in
+2026IT1988,Rohan Naidu,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student988@rbunagpur.in
+2026CE1989,Harsh Naidu,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student989@rbunagpur.in
+2026IT1990,Kiara Solanki,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student990@rbunagpur.in
+2026IT1991,Ankit Kapoor,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student991@rbunagpur.in
+2026IT1992,Pankaj Wankhede,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student992@rbunagpur.in
+2026IT1993,Ankit Iyengar,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student993@rbunagpur.in
+2026EE1994,Rani Cheema,Network Theory,EE201,EE_YR2_GRP,2,EE,student994@rbunagpur.in
+2026IT1995,Saanvi Naidu,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student995@rbunagpur.in
+2026ME1996,Aditi Pandey,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student996@rbunagpur.in
+2026IT1997,Myra Grewal,Web Technologies,IT101,IT_YR1_GRP,1,IT,student997@rbunagpur.in
+2026CS1998,Amit Mori,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student998@rbunagpur.in
+2026ME1999,Anita Gill,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student999@rbunagpur.in
+2026CS2000,Suresh Ojha,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1000@rbunagpur.in
+2026IT2001,Shanaya Brar,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1001@rbunagpur.in
+2026EE2002,Amol Iyer,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1002@rbunagpur.in
+2026EC2003,Anita Menon,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1003@rbunagpur.in
+2026EC2004,Anay Iyengar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1004@rbunagpur.in
+2026ME2005,Akash Shetty,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1005@rbunagpur.in
+2026CS2006,Esha More,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1006@rbunagpur.in
+2026CE2007,Mayur Wankhede,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1007@rbunagpur.in
+2026EC2008,Manish Wankhede,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1008@rbunagpur.in
+2026EC2009,Tushar Shinde,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1009@rbunagpur.in
+2026EC2010,Siddharth Iyengar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1010@rbunagpur.in
+2026CE2011,Neha Pathak,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1011@rbunagpur.in
+2026CE2012,Ankit Gohil,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1012@rbunagpur.in
+2026IT2013,Asha Ojha,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1013@rbunagpur.in
+2026EC2014,Pari Aggarwal,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1014@rbunagpur.in
+2026EE2015,Pradeep Iyer,Network Theory,EE201,EE_YR2_GRP,2,EE,student1015@rbunagpur.in
+2026EE2016,Mayur Grewal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1016@rbunagpur.in
+2026IT2017,Megha Dubey,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1017@rbunagpur.in
+2026EC2018,Sameer Gaekwad,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1018@rbunagpur.in
+2026EC2019,Isha Naidu,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1019@rbunagpur.in
+2026IT2020,Seema Parekh,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1020@rbunagpur.in
+2026EE2021,Megha Solanki,Control Systems,EE301,EE_YR3_GRP,3,EE,student1021@rbunagpur.in
+2026CS2022,Aditya Kaur,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1022@rbunagpur.in
+2026CS2023,Akash Tiwari,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1023@rbunagpur.in
+2026EC2024,Arjun Verma,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1024@rbunagpur.in
+2026EC2025,Gaurav Chatterjee,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1025@rbunagpur.in
+2026CE2026,Sameer Mukherjee,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1026@rbunagpur.in
+2026ME2027,Aryan Dutta,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1027@rbunagpur.in
+2026EE2028,Sameer Ojha,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1028@rbunagpur.in
+2026EC2029,Pooja Parekh,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1029@rbunagpur.in
+2026IT2030,Arnav Reddy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1030@rbunagpur.in
+2026CE2031,Girish Wankhede,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1031@rbunagpur.in
+2026ME2032,Ananya Rathod,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1032@rbunagpur.in
+2026IT2033,Sanjay Dabre,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1033@rbunagpur.in
+2026EE2034,Sunita Chatterjee,Control Systems,EE301,EE_YR3_GRP,3,EE,student1034@rbunagpur.in
+2026EE2035,Vaibhav Chauhan,Control Systems,EE301,EE_YR3_GRP,3,EE,student1035@rbunagpur.in
+2026CS2036,Diya Malhotra,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1036@rbunagpur.in
+2026ME2037,Maitri Mann,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1037@rbunagpur.in
+2026CE2038,Atharv Mehta,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1038@rbunagpur.in
+2026CE2039,Deepa Shetty,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1039@rbunagpur.in
+2026IT2040,Kavya Bhide,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1040@rbunagpur.in
+2026EC2041,Sai Barad,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1041@rbunagpur.in
+2026EC2042,Vanya Yadav,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1042@rbunagpur.in
+2026EC2043,Vihaan Kaur,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1043@rbunagpur.in
+2026ME2044,Sumit Sidhu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1044@rbunagpur.in
+2026EC2045,Dhiraj Chauhan,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1045@rbunagpur.in
+2026ME2046,Amit Barad,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1046@rbunagpur.in
+2026EE2047,Vani Pillai,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1047@rbunagpur.in
+2026CS2048,Aditya Sandhu,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1048@rbunagpur.in
+2026CS2049,Pari Shukla,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1049@rbunagpur.in
+2026CE2050,Shanaya Patil,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1050@rbunagpur.in
+2026EC2051,Advait Malhotra,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1051@rbunagpur.in
+2026ME2052,Sanjay Vaghela,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1052@rbunagpur.in
+2026EC2053,Vani Jain,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1053@rbunagpur.in
+2026EE2054,Aditya Mukherjee,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1054@rbunagpur.in
+2026CE2055,Vivaan Bose,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1055@rbunagpur.in
+2026EE2056,Manoj Gupta,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1056@rbunagpur.in
+2026CE2057,Jiya Aulakh,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1057@rbunagpur.in
+2026CS2058,Arnav Bhide,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1058@rbunagpur.in
+2026IT2059,Ishaan Mishra,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1059@rbunagpur.in
+2026EE2060,Aanya Das,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1060@rbunagpur.in
+2026IT2061,Vanya Jain,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1061@rbunagpur.in
+2026EE2062,Shruti Gaekwad,Network Theory,EE201,EE_YR2_GRP,2,EE,student1062@rbunagpur.in
+2026EE2063,Maitri Menon,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1063@rbunagpur.in
+2026CE2064,Suresh Iyer,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1064@rbunagpur.in
+2026CE2065,Pari Kapoor,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1065@rbunagpur.in
+2026CS2066,Reyansh Aggarwal,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1066@rbunagpur.in
+2026IT2067,Aanya Sharma,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1067@rbunagpur.in
+2026EE2068,Asha Iyer,Control Systems,EE301,EE_YR3_GRP,3,EE,student1068@rbunagpur.in
+2026EE2069,Bhavya Bansal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1069@rbunagpur.in
+2026CE2070,Ishaan Grewal,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1070@rbunagpur.in
+2026IT2071,Manoj Mukherjee,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1071@rbunagpur.in
+2026ME2072,Ishani Mann,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1072@rbunagpur.in
+2026ME2073,Ankit Singh,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1073@rbunagpur.in
+2026ME2074,Kiran Mukherjee,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1074@rbunagpur.in
+2026EE2075,Shruti Wankhede,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1075@rbunagpur.in
+2026IT2076,Sunita Barad,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1076@rbunagpur.in
+2026CS2077,Sai Mori,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1077@rbunagpur.in
+2026CS2078,Ansh Banerjee,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1078@rbunagpur.in
+2026IT2079,Umesh Gaekwad,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1079@rbunagpur.in
+2026EE2080,Dhwani Vaghela,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1080@rbunagpur.in
+2026CS2081,Amol Dubey,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1081@rbunagpur.in
+2026IT2082,Pradeep Joshi,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1082@rbunagpur.in
+2026CE2083,Manish Shukla,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1083@rbunagpur.in
+2026EC2084,Megha Khanna,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1084@rbunagpur.in
+2026CS2085,Maitri Patil,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1085@rbunagpur.in
+2026ME2086,Aditi Sandhu,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1086@rbunagpur.in
+2026EC2087,Neha Rathod,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1087@rbunagpur.in
+2026EC2088,Suresh Sidhu,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1088@rbunagpur.in
+2026CS2089,Manish Ghosh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1089@rbunagpur.in
+2026EE2090,Geeta Mishra,Network Theory,EE201,EE_YR2_GRP,2,EE,student1090@rbunagpur.in
+2026ME2091,Lokesh Cheema,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1091@rbunagpur.in
+2026EC2092,Arjun Solanki,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1092@rbunagpur.in
+2026IT2093,Kabir Garg,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1093@rbunagpur.in
+2026CS2094,Ansh Ghuge,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1094@rbunagpur.in
+2026CE2095,Anvi Shukla,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1095@rbunagpur.in
+2026CS2096,Asha Dutta,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1096@rbunagpur.in
+2026ME2097,Rahul Garg,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1097@rbunagpur.in
+2026EE2098,Anvi Wankhede,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1098@rbunagpur.in
+2026CE2099,Vivaan Banerjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1099@rbunagpur.in
+2026EE2100,Kiara Nair,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1100@rbunagpur.in
+2026EC2101,Advait Zala,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1101@rbunagpur.in
+2026ME2102,Yash Mann,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1102@rbunagpur.in
+2026EC2103,Siddharth Shinde,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1103@rbunagpur.in
+2026EE2104,Shreya Dubey,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1104@rbunagpur.in
+2026EC2105,Myra Zala,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1105@rbunagpur.in
+2026CS2106,Shreya Mann,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1106@rbunagpur.in
+2026EE2107,Pradeep Deshmukh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1107@rbunagpur.in
+2026CS2108,Deepa Dubey,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1108@rbunagpur.in
+2026CS2109,Anay Mukherjee,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1109@rbunagpur.in
+2026IT2110,Vani Bansal,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1110@rbunagpur.in
+2026ME2111,Rohan Trivedi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1111@rbunagpur.in
+2026CS2112,Ankit Ghuge,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1112@rbunagpur.in
+2026IT2113,Sneha Mori,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1113@rbunagpur.in
+2026CE2114,Mayur Yadav,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1114@rbunagpur.in
+2026CE2115,Abhishek Jadhav,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1115@rbunagpur.in
+2026EE2116,Sunita Goud,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1116@rbunagpur.in
+2026CS2117,Vaibhav Sandhu,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1117@rbunagpur.in
+2026EC2118,Vaibhav Chopde,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1118@rbunagpur.in
+2026CS2119,Vanya Jadeja,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1119@rbunagpur.in
+2026CS2120,Vinay Roy,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1120@rbunagpur.in
+2026EC2121,Anay Barad,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1121@rbunagpur.in
+2026CS2122,Amit Gupta,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1122@rbunagpur.in
+2026EE2123,Tanmay Vaghela,Network Theory,EE201,EE_YR2_GRP,2,EE,student1123@rbunagpur.in
+2026EC2124,Amit Ghosh,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1124@rbunagpur.in
+2026IT2125,Abhishek Ojha,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1125@rbunagpur.in
+2026ME2126,Asha Aggarwal,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1126@rbunagpur.in
+2026CS2127,Arjun Wankhede,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1127@rbunagpur.in
+2026CS2128,Kiran Gill,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1128@rbunagpur.in
+2026EE2129,Girish Mukherjee,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1129@rbunagpur.in
+2026EC2130,Manoj Iyengar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1130@rbunagpur.in
+2026EE2131,Sia Aulakh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1131@rbunagpur.in
+2026CS2132,Ritu Zala,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1132@rbunagpur.in
+2026CS2133,Ansh Pathak,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1133@rbunagpur.in
+2026CE2134,Pranav Dhillon,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1134@rbunagpur.in
+2026CE2135,Umesh Sharma,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1135@rbunagpur.in
+2026ME2136,Kiara Ghuge,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1136@rbunagpur.in
+2026EE2137,Bhavya Yadav,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1137@rbunagpur.in
+2026CS2138,Sai Vaghela,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1138@rbunagpur.in
+2026ME2139,Ishani Rathod,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1139@rbunagpur.in
+2026ME2140,Ishani Cheema,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1140@rbunagpur.in
+2026CS2141,Siddharth Mori,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1141@rbunagpur.in
+2026EE2142,Sneha Pandey,Network Theory,EE201,EE_YR2_GRP,2,EE,student1142@rbunagpur.in
+2026EC2143,Swapnil Kaur,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1143@rbunagpur.in
+2026CE2144,Anita Iyer,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1144@rbunagpur.in
+2026EC2145,Ishani Mishra,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1145@rbunagpur.in
+2026CE2146,Arjun Trivedi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1146@rbunagpur.in
+2026CS2147,Nitin Dabre,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1147@rbunagpur.in
+2026ME2148,Esha Mori,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1148@rbunagpur.in
+2026CE2149,Suresh Khanna,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1149@rbunagpur.in
+2026EC2150,Sara Gill,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1150@rbunagpur.in
+2026CE2151,Yash Banerjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1151@rbunagpur.in
+2026IT2152,Sunita Rao,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1152@rbunagpur.in
+2026ME2153,Kriti Dubey,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1153@rbunagpur.in
+2026CS2154,Kiara Shetty,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1154@rbunagpur.in
+2026EE2155,Ayaan Bose,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1155@rbunagpur.in
+2026IT2156,Swapnil Patil,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1156@rbunagpur.in
+2026CE2157,Umesh Sarkar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1157@rbunagpur.in
+2026CE2158,Piyush Pandey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1158@rbunagpur.in
+2026CE2159,Ansh Wankhede,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1159@rbunagpur.in
+2026EE2160,Anita Aggarwal,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1160@rbunagpur.in
+2026EE2161,Aavya Solanki,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1161@rbunagpur.in
+2026CS2162,Sumit Cheema,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1162@rbunagpur.in
+2026IT2163,Bhavya Chopde,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1163@rbunagpur.in
+2026CS2164,Vivaan Mishra,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1164@rbunagpur.in
+2026CE2165,Avni Brar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1165@rbunagpur.in
+2026EC2166,Seema Gupta,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1166@rbunagpur.in
+2026ME2167,Vani Rathod,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1167@rbunagpur.in
+2026IT2168,Abhishek Bose,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1168@rbunagpur.in
+2026CS2169,Vinay Dutta,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1169@rbunagpur.in
+2026EE2170,Shreya Mukherjee,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1170@rbunagpur.in
+2026IT2171,Anay Sharma,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1171@rbunagpur.in
+2026ME2172,Kiran Verma,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1172@rbunagpur.in
+2026EC2173,Tanya Bansal,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1173@rbunagpur.in
+2026CS2174,Tanya Chauhan,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1174@rbunagpur.in
+2026ME2175,Shruti Goel,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1175@rbunagpur.in
+2026EE2176,Kiara Kulkarni,Network Theory,EE201,EE_YR2_GRP,2,EE,student1176@rbunagpur.in
+2026IT2177,Rajesh Iyengar,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1177@rbunagpur.in
+2026CS2178,Vanya Khanna,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1178@rbunagpur.in
+2026ME2179,Swapnil Gaekwad,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1179@rbunagpur.in
+2026EC2180,Rahul Pawar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1180@rbunagpur.in
+2026EE2181,Ananya Banerjee,Network Theory,EE201,EE_YR2_GRP,2,EE,student1181@rbunagpur.in
+2026ME2182,Jiya Yadav,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1182@rbunagpur.in
+2026EE2183,Saanvi Ojha,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1183@rbunagpur.in
+2026IT2184,Pooja Menon,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1184@rbunagpur.in
+2026EE2185,Mayur Pawar,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1185@rbunagpur.in
+2026IT2186,Anay Joshi,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1186@rbunagpur.in
+2026EE2187,Kiara Gill,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1187@rbunagpur.in
+2026EC2188,Pranav Aulakh,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1188@rbunagpur.in
+2026IT2189,Trisha Grewal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1189@rbunagpur.in
+2026EE2190,Diya Shukla,Control Systems,EE301,EE_YR3_GRP,3,EE,student1190@rbunagpur.in
+2026ME2191,Pari Goud,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1191@rbunagpur.in
+2026ME2192,Kiran Shinde,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1192@rbunagpur.in
+2026EC2193,Kabir Chatterjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1193@rbunagpur.in
+2026IT2194,Sneha Chopde,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1194@rbunagpur.in
+2026ME2195,Deepa Parmar,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1195@rbunagpur.in
+2026EC2196,Aryan Bhide,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1196@rbunagpur.in
+2026CS2197,Rahul Shukla,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1197@rbunagpur.in
+2026EE2198,Tushar Jadhav,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1198@rbunagpur.in
+2026IT2199,Sneha Roy,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1199@rbunagpur.in
+2026IT2200,Piyush Nair,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1200@rbunagpur.in
+2026IT2201,Sunita Chauhan,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1201@rbunagpur.in
+2026CE2202,Harsh Singh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1202@rbunagpur.in
+2026CE2203,Anvi Dhillon,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1203@rbunagpur.in
+2026EE2204,Tanmay Bansal,Control Systems,EE301,EE_YR3_GRP,3,EE,student1204@rbunagpur.in
+2026EC2205,Shreya Kapoor,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1205@rbunagpur.in
+2026CS2206,Manish Vaghela,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1206@rbunagpur.in
+2026CS2207,Trisha Mehta,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1207@rbunagpur.in
+2026EE2208,Vaibhav Ghuge,Control Systems,EE301,EE_YR3_GRP,3,EE,student1208@rbunagpur.in
+2026EC2209,Asha Gill,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1209@rbunagpur.in
+2026CS2210,Riya Iyengar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1210@rbunagpur.in
+2026EC2211,Siddharth Pandey,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1211@rbunagpur.in
+2026IT2212,Sumit Joshi,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1212@rbunagpur.in
+2026CE2213,Pankaj Joshi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1213@rbunagpur.in
+2026ME2214,Diya Mishra,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1214@rbunagpur.in
+2026ME2215,Kriti Shetty,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1215@rbunagpur.in
+2026ME2216,Vanya Rao,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1216@rbunagpur.in
+2026EE2217,Pari More,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1217@rbunagpur.in
+2026EC2218,Pranav Shinde,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1218@rbunagpur.in
+2026IT2219,Shanaya Parmar,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1219@rbunagpur.in
+2026IT2220,Krishna Singh,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1220@rbunagpur.in
+2026CS2221,Rani Naidu,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1221@rbunagpur.in
+2026EC2222,Mayur Chopde,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1222@rbunagpur.in
+2026ME2223,Asha Kapoor,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1223@rbunagpur.in
+2026ME2224,Tanmay Verma,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1224@rbunagpur.in
+2026EC2225,Vihaan Jadeja,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1225@rbunagpur.in
+2026CE2226,Dev Banerjee,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1226@rbunagpur.in
+2026CS2227,Piyush Vaghela,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1227@rbunagpur.in
+2026CE2228,Shreya Sharma,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1228@rbunagpur.in
+2026CE2229,Abhishek Kulkarni,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1229@rbunagpur.in
+2026CE2230,Saanvi Kulkarni,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1230@rbunagpur.in
+2026IT2231,Bhavya Goud,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1231@rbunagpur.in
+2026IT2232,Piyush Dubey,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1232@rbunagpur.in
+2026ME2233,Gaurav Kulkarni,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1233@rbunagpur.in
+2026ME2234,Asha Pawar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1234@rbunagpur.in
+2026ME2235,Deepa Jadhav,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1235@rbunagpur.in
+2026ME2236,Akash Dabre,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1236@rbunagpur.in
+2026ME2237,Karan Sen,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1237@rbunagpur.in
+2026IT2238,Vivaan Reddy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1238@rbunagpur.in
+2026ME2239,Kiara Dubey,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1239@rbunagpur.in
+2026EC2240,Vikram Mishra,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1240@rbunagpur.in
+2026IT2241,Sameer Cheema,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1241@rbunagpur.in
+2026EC2242,Isha Parmar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1242@rbunagpur.in
+2026EE2243,Ansh Ghosh,Network Theory,EE201,EE_YR2_GRP,2,EE,student1243@rbunagpur.in
+2026CE2244,Kriti Banerjee,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1244@rbunagpur.in
+2026CE2245,Pradeep Menon,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1245@rbunagpur.in
+2026IT2246,Kavya Chatterjee,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1246@rbunagpur.in
+2026EC2247,Ishani Zala,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1247@rbunagpur.in
+2026EC2248,Ananya Bose,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1248@rbunagpur.in
+2026EC2249,Navya Pandey,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1249@rbunagpur.in
+2026EE2250,Megha Jadhav,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1250@rbunagpur.in
+2026IT2251,Bhavya Barad,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1251@rbunagpur.in
+2026IT2252,Shreya Wankhede,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1252@rbunagpur.in
+2026EE2253,Saanvi Aulakh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1253@rbunagpur.in
+2026CE2254,Aditi Sen,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1254@rbunagpur.in
+2026ME2255,Ananya Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1255@rbunagpur.in
+2026CE2256,Pankaj Iyer,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1256@rbunagpur.in
+2026CE2257,Aarav Mukherjee,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1257@rbunagpur.in
+2026CE2258,Kriti Rathod,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1258@rbunagpur.in
+2026CS2259,Pradeep Dhillon,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1259@rbunagpur.in
+2026ME2260,Myra Pillai,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1260@rbunagpur.in
+2026IT2261,Abhishek Garg,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1261@rbunagpur.in
+2026CE2262,Ishita Sarkar,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1262@rbunagpur.in
+2026CE2263,Amol Mishra,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1263@rbunagpur.in
+2026EE2264,Ayush Chawla,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1264@rbunagpur.in
+2026CE2265,Kavya Ojha,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1265@rbunagpur.in
+2026CE2266,Pranav Gohil,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1266@rbunagpur.in
+2026ME2267,Dhwani Deshmukh,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1267@rbunagpur.in
+2026ME2268,Isha Chatterjee,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1268@rbunagpur.in
+2026EE2269,Kiran Pawar,Control Systems,EE301,EE_YR3_GRP,3,EE,student1269@rbunagpur.in
+2026IT2270,Diya Shetty,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1270@rbunagpur.in
+2026IT2271,Abhishek Goud,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1271@rbunagpur.in
+2026IT2272,Sneha Parekh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1272@rbunagpur.in
+2026EC2273,Deepa Singh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1273@rbunagpur.in
+2026ME2274,Yash Singh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1274@rbunagpur.in
+2026CS2275,Lokesh Pandey,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1275@rbunagpur.in
+2026ME2276,Neha Jadeja,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1276@rbunagpur.in
+2026ME2277,Vaibhav Pandey,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1277@rbunagpur.in
+2026CE2278,Atharv Jadhav,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1278@rbunagpur.in
+2026CS2279,Vani Vaghela,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1279@rbunagpur.in
+2026CS2280,Neha Chatterjee,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1280@rbunagpur.in
+2026CS2281,Pradeep Dabre,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1281@rbunagpur.in
+2026EC2282,Vani Sidhu,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1282@rbunagpur.in
+2026ME2283,Reyansh Khanna,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1283@rbunagpur.in
+2026CE2284,Aryan Iyer,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1284@rbunagpur.in
+2026CE2285,Vinay Sharma,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1285@rbunagpur.in
+2026IT2286,Reyansh Parmar,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1286@rbunagpur.in
+2026CS2287,Abhishek Sharma,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1287@rbunagpur.in
+2026CE2288,Sia Grewal,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1288@rbunagpur.in
+2026IT2289,Sara Shukla,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1289@rbunagpur.in
+2026EE2290,Kavya Khanna,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1290@rbunagpur.in
+2026IT2291,Lokesh Pathak,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1291@rbunagpur.in
+2026CS2292,Pradeep Sharma,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1292@rbunagpur.in
+2026EE2293,Karan Kaur,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1293@rbunagpur.in
+2026CE2294,Sara Shinde,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1294@rbunagpur.in
+2026EC2295,Karan Gill,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1295@rbunagpur.in
+2026CE2296,Dhiraj Dubey,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1296@rbunagpur.in
+2026EC2297,Mayur Deshmukh,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1297@rbunagpur.in
+2026EE2298,Megha Sharma,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1298@rbunagpur.in
+2026CS2299,Pankaj Shukla,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1299@rbunagpur.in
+2026EC2300,Krishna More,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1300@rbunagpur.in
+2026EE2301,Dev Deshmukh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1301@rbunagpur.in
+2026IT2302,Seema Shukla,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1302@rbunagpur.in
+2026ME2303,Aditya Verma,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1303@rbunagpur.in
+2026CE2304,Reyansh Cheema,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1304@rbunagpur.in
+2026CE2305,Ayaan Suri,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1305@rbunagpur.in
+2026EE2306,Ayaan Mann,Control Systems,EE301,EE_YR3_GRP,3,EE,student1306@rbunagpur.in
+2026EE2307,Rajesh Sen,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1307@rbunagpur.in
+2026EE2308,Navya Goud,Control Systems,EE301,EE_YR3_GRP,3,EE,student1308@rbunagpur.in
+2026CE2309,Ishani Sidhu,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1309@rbunagpur.in
+2026EC2310,Bhavya Shinde,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1310@rbunagpur.in
+2026ME2311,Tanya Sen,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1311@rbunagpur.in
+2026ME2312,Manoj Wankhede,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1312@rbunagpur.in
+2026CE2313,Reyansh Pillai,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1313@rbunagpur.in
+2026EE2314,Anvi Patil,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1314@rbunagpur.in
+2026ME2315,Rohan Singh,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1315@rbunagpur.in
+2026ME2316,Ayush Trivedi,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1316@rbunagpur.in
+2026ME2317,Tanmay Gill,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1317@rbunagpur.in
+2026CE2318,Isha Sidhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1318@rbunagpur.in
+2026EE2319,Maitri Shetty,Control Systems,EE301,EE_YR3_GRP,3,EE,student1319@rbunagpur.in
+2026CE2320,Ishita More,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1320@rbunagpur.in
+2026IT2321,Deepa Goud,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1321@rbunagpur.in
+2026ME2322,Sumit Chawla,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1322@rbunagpur.in
+2026CE2323,Tanya Mann,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1323@rbunagpur.in
+2026CS2324,Trisha Nair,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1324@rbunagpur.in
+2026CS2325,Aditi Menon,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1325@rbunagpur.in
+2026EC2326,Sunita Kaur,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1326@rbunagpur.in
+2026CS2327,Shanaya Gupta,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1327@rbunagpur.in
+2026ME2328,Sneha Gohil,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1328@rbunagpur.in
+2026EC2329,Neha Kapoor,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1329@rbunagpur.in
+2026ME2330,Kabir Aulakh,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1330@rbunagpur.in
+2026EC2331,Amit Shah,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1331@rbunagpur.in
+2026CE2332,Isha Aggarwal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1332@rbunagpur.in
+2026IT2333,Dhiraj Joshi,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1333@rbunagpur.in
+2026ME2334,Pradeep Sandhu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1334@rbunagpur.in
+2026CS2335,Tanya Vaghela,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1335@rbunagpur.in
+2026CS2336,Ayaan Chawla,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1336@rbunagpur.in
+2026CE2337,Isha Rathod,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1337@rbunagpur.in
+2026EC2338,Sumit Naidu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1338@rbunagpur.in
+2026ME2339,Yash Ghuge,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1339@rbunagpur.in
+2026CE2340,Advait Grewal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1340@rbunagpur.in
+2026IT2341,Gaurav Chawla,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1341@rbunagpur.in
+2026ME2342,Isha Deshmukh,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1342@rbunagpur.in
+2026CE2343,Kiran Reddy,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1343@rbunagpur.in
+2026EE2344,Sia Tiwari,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1344@rbunagpur.in
+2026ME2345,Vinay Mehta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1345@rbunagpur.in
+2026IT2346,Ritu Sidhu,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1346@rbunagpur.in
+2026EE2347,Sneha Shah,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1347@rbunagpur.in
+2026CE2348,Aryan Roy,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1348@rbunagpur.in
+2026EC2349,Sai Ghuge,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1349@rbunagpur.in
+2026IT2350,Pooja Gupta,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1350@rbunagpur.in
+2026EE2351,Seema Aulakh,Network Theory,EE201,EE_YR2_GRP,2,EE,student1351@rbunagpur.in
+2026CE2352,Nitin Kulkarni,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1352@rbunagpur.in
+2026EE2353,Aryan Kaur,Network Theory,EE201,EE_YR2_GRP,2,EE,student1353@rbunagpur.in
+2026IT2354,Vinay Jadeja,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1354@rbunagpur.in
+2026CS2355,Anita Patil,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1355@rbunagpur.in
+2026CE2356,Manish Shetty,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1356@rbunagpur.in
+2026EC2357,Tanya Jadeja,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1357@rbunagpur.in
+2026CE2358,Rohan Gupta,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1358@rbunagpur.in
+2026CS2359,Navya Vaghela,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1359@rbunagpur.in
+2026EE2360,Harsh Banerjee,Control Systems,EE301,EE_YR3_GRP,3,EE,student1360@rbunagpur.in
+2026EE2361,Kiara Sarkar,Network Theory,EE201,EE_YR2_GRP,2,EE,student1361@rbunagpur.in
+2026ME2362,Pradeep Jain,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1362@rbunagpur.in
+2026CE2363,Nitin Naidu,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1363@rbunagpur.in
+2026ME2364,Tushar Grewal,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1364@rbunagpur.in
+2026CE2365,Esha Gaekwad,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1365@rbunagpur.in
+2026EE2366,Pradeep Mann,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1366@rbunagpur.in
+2026CE2367,Asha Rao,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1367@rbunagpur.in
+2026IT2368,Kabir Dabre,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1368@rbunagpur.in
+2026EC2369,Lokesh Shinde,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1369@rbunagpur.in
+2026ME2370,Vikram Iyengar,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1370@rbunagpur.in
+2026EC2371,Harsh Gaekwad,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1371@rbunagpur.in
+2026IT2372,Arjun Jain,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1372@rbunagpur.in
+2026CE2373,Kiran Chauhan,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1373@rbunagpur.in
+2026CE2374,Pari Parmar,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1374@rbunagpur.in
+2026IT2375,Sameer Chatterjee,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1375@rbunagpur.in
+2026EE2376,Deepa Pillai,Network Theory,EE201,EE_YR2_GRP,2,EE,student1376@rbunagpur.in
+2026IT2377,Aavya Singh,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1377@rbunagpur.in
+2026IT2378,Deepa Grewal,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1378@rbunagpur.in
+2026ME2379,Asha Khanna,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1379@rbunagpur.in
+2026CE2380,Pari Jain,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1380@rbunagpur.in
+2026CS2381,Vikram Gill,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1381@rbunagpur.in
+2026IT2382,Aditya Naidu,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1382@rbunagpur.in
+2026EC2383,Myra Aulakh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1383@rbunagpur.in
+2026EE2384,Tushar Vaghela,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1384@rbunagpur.in
+2026ME2385,Ayush Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1385@rbunagpur.in
+2026EC2386,Saanvi Sandhu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1386@rbunagpur.in
+2026EE2387,Kiran Parekh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1387@rbunagpur.in
+2026EE2388,Manoj Banerjee,Network Theory,EE201,EE_YR2_GRP,2,EE,student1388@rbunagpur.in
+2026CS2389,Kabir Gohil,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1389@rbunagpur.in
+2026EC2390,Vinay Parmar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1390@rbunagpur.in
+2026CE2391,Jiya Suri,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1391@rbunagpur.in
+2026IT2392,Rani Mishra,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1392@rbunagpur.in
+2026EC2393,Suresh Wankhede,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1393@rbunagpur.in
+2026ME2394,Lokesh Reddy,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1394@rbunagpur.in
+2026CE2395,Suresh Rao,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1395@rbunagpur.in
+2026CE2396,Vanya Bose,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1396@rbunagpur.in
+2026CS2397,Krishna Iyengar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1397@rbunagpur.in
+2026ME2398,Siddharth Iyer,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1398@rbunagpur.in
+2026ME2399,Sara Sandhu,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1399@rbunagpur.in
+2026IT2400,Ayaan Barad,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1400@rbunagpur.in
+2026EE2401,Navya Barad,Control Systems,EE301,EE_YR3_GRP,3,EE,student1401@rbunagpur.in
+2026ME2402,Kriti Trivedi,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1402@rbunagpur.in
+2026CE2403,Bhavya Goel,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1403@rbunagpur.in
+2026EC2404,Aanya Sarkar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1404@rbunagpur.in
+2026EE2405,Arnav Nair,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1405@rbunagpur.in
+2026EE2406,Kiran Ghosh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1406@rbunagpur.in
+2026CE2407,Pranav Singh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1407@rbunagpur.in
+2026ME2408,Neel Iyer,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1408@rbunagpur.in
+2026EE2409,Anvi Cheema,Control Systems,EE301,EE_YR3_GRP,3,EE,student1409@rbunagpur.in
+2026EE2410,Akash Cheema,Control Systems,EE301,EE_YR3_GRP,3,EE,student1410@rbunagpur.in
+2026EE2411,Asha Gupta,Network Theory,EE201,EE_YR2_GRP,2,EE,student1411@rbunagpur.in
+2026EC2412,Ayush Wankhede,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1412@rbunagpur.in
+2026ME2413,Yash Kapoor,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1413@rbunagpur.in
+2026EC2414,Nitin Pillai,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1414@rbunagpur.in
+2026ME2415,Vivaan Singh,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1415@rbunagpur.in
+2026EC2416,Vikram Banerjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1416@rbunagpur.in
+2026EE2417,Anvi Ghosh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1417@rbunagpur.in
+2026EC2418,Sneha More,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1418@rbunagpur.in
+2026EE2419,Shanaya Gill,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1419@rbunagpur.in
+2026CS2420,Anita Chauhan,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1420@rbunagpur.in
+2026EE2421,Sara Singh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1421@rbunagpur.in
+2026EE2422,Shruti Parmar,Control Systems,EE301,EE_YR3_GRP,3,EE,student1422@rbunagpur.in
+2026EC2423,Mayur Vaghela,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1423@rbunagpur.in
+2026IT2424,Maitri Bansal,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1424@rbunagpur.in
+2026CE2425,Ananya Singh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1425@rbunagpur.in
+2026ME2426,Geeta Nair,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1426@rbunagpur.in
+2026ME2427,Suresh Vaghela,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1427@rbunagpur.in
+2026CE2428,Geeta Mehta,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1428@rbunagpur.in
+2026CE2429,Mayur Ghosh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1429@rbunagpur.in
+2026IT2430,Aavya Malhotra,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1430@rbunagpur.in
+2026CE2431,Sanjay Shukla,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1431@rbunagpur.in
+2026ME2432,Dhwani Grewal,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1432@rbunagpur.in
+2026ME2433,Aditya Bhide,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1433@rbunagpur.in
+2026CS2434,Tanya Pawar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1434@rbunagpur.in
+2026ME2435,Rani Das,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1435@rbunagpur.in
+2026ME2436,Advait Iyer,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1436@rbunagpur.in
+2026IT2437,Vinay Cheema,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1437@rbunagpur.in
+2026IT2438,Megha Aggarwal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1438@rbunagpur.in
+2026CE2439,Piyush Mukherjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1439@rbunagpur.in
+2026CS2440,Rajesh Garg,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1440@rbunagpur.in
+2026CS2441,Ansh Jadeja,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1441@rbunagpur.in
+2026IT2442,Gaurav Vaghela,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1442@rbunagpur.in
+2026ME2443,Shruti Rathod,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1443@rbunagpur.in
+2026IT2444,Aditi Singh,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1444@rbunagpur.in
+2026EE2445,Amit Gohil,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1445@rbunagpur.in
+2026EE2446,Neha Grewal,Network Theory,EE201,EE_YR2_GRP,2,EE,student1446@rbunagpur.in
+2026CS2447,Asha Pandey,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1447@rbunagpur.in
+2026EC2448,Shreya Parmar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1448@rbunagpur.in
+2026ME2449,Rohan Jain,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1449@rbunagpur.in
+2026EE2450,Neha Solanki,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1450@rbunagpur.in
+2026ME2451,Sneha Mehta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1451@rbunagpur.in
+2026IT2452,Mayur Jadeja,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1452@rbunagpur.in
+2026CS2453,Ansh Deshmukh,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1453@rbunagpur.in
+2026EE2454,Navya Khanna,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1454@rbunagpur.in
+2026EE2455,Geeta Bansal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1455@rbunagpur.in
+2026EC2456,Vikram Bhide,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1456@rbunagpur.in
+2026EE2457,Pari Deshmukh,Network Theory,EE201,EE_YR2_GRP,2,EE,student1457@rbunagpur.in
+2026EE2458,Tanya Shinde,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1458@rbunagpur.in
+2026EE2459,Amol Malhotra,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1459@rbunagpur.in
+2026CE2460,Jiya Rathod,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1460@rbunagpur.in
+2026IT2461,Aanya Dubey,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1461@rbunagpur.in
+2026ME2462,Kabir Tiwari,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1462@rbunagpur.in
+2026IT2463,Aditi Goud,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1463@rbunagpur.in
+2026CE2464,Rajesh Malhotra,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1464@rbunagpur.in
+2026ME2465,Kriti Reddy,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1465@rbunagpur.in
+2026CE2466,Karan Aggarwal,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1466@rbunagpur.in
+2026EE2467,Swapnil Shetty,Network Theory,EE201,EE_YR2_GRP,2,EE,student1467@rbunagpur.in
+2026CE2468,Asha Solanki,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1468@rbunagpur.in
+2026EC2469,Krishna Pillai,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1469@rbunagpur.in
+2026ME2470,Atharv Barad,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1470@rbunagpur.in
+2026EE2471,Reyansh Dutta,Control Systems,EE301,EE_YR3_GRP,3,EE,student1471@rbunagpur.in
+2026ME2472,Pradeep Das,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1472@rbunagpur.in
+2026EE2473,Advait Wankhede,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1473@rbunagpur.in
+2026ME2474,Sara Ojha,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1474@rbunagpur.in
+2026ME2475,Reyansh Wankhede,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1475@rbunagpur.in
+2026CS2476,Amol Goel,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1476@rbunagpur.in
+2026EE2477,Arjun Garg,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1477@rbunagpur.in
+2026CE2478,Vaibhav Shah,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1478@rbunagpur.in
+2026CS2479,Umesh Trivedi,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1479@rbunagpur.in
+2026IT2480,Reyansh Das,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1480@rbunagpur.in
+2026EE2481,Amol Joshi,Network Theory,EE201,EE_YR2_GRP,2,EE,student1481@rbunagpur.in
+2026CS2482,Siddharth Dhillon,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1482@rbunagpur.in
+2026IT2483,Amol Mann,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1483@rbunagpur.in
+2026CS2484,Arnav Mishra,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1484@rbunagpur.in
+2026EE2485,Ayush Gohil,Control Systems,EE301,EE_YR3_GRP,3,EE,student1485@rbunagpur.in
+2026EC2486,Anay Rao,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1486@rbunagpur.in
+2026CS2487,Isha Gohil,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1487@rbunagpur.in
+2026EE2488,Girish Khanna,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1488@rbunagpur.in
+2026EC2489,Vaibhav Tiwari,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1489@rbunagpur.in
+2026EE2490,Suresh Kaur,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1490@rbunagpur.in
+2026CS2491,Geeta Kapoor,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1491@rbunagpur.in
+2026EC2492,Ishita Pawar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1492@rbunagpur.in
+2026EC2493,Anay Rathod,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1493@rbunagpur.in
+2026EE2494,Arnav Verma,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1494@rbunagpur.in
+2026IT2495,Ritu Kapoor,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1495@rbunagpur.in
+2026ME2496,Kiran Jadeja,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1496@rbunagpur.in
+2026CE2497,Ayush Gill,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1497@rbunagpur.in
+2026ME2498,Aarav Patil,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1498@rbunagpur.in
+2026ME2499,Mayur Shukla,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1499@rbunagpur.in
+2026CE2500,Atharv Dubey,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1500@rbunagpur.in
+2026ME2501,Pradeep Barad,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1501@rbunagpur.in
+2026ME2502,Aavya Chatterjee,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1502@rbunagpur.in
+2026EE2503,Sunita Pawar,Control Systems,EE301,EE_YR3_GRP,3,EE,student1503@rbunagpur.in
+2026CE2504,Pranav Rao,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1504@rbunagpur.in
+2026IT2505,Swapnil Singh,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1505@rbunagpur.in
+2026CS2506,Ayush Dutta,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1506@rbunagpur.in
+2026IT2507,Tanmay Shinde,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1507@rbunagpur.in
+2026CE2508,Suresh Das,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1508@rbunagpur.in
+2026CE2509,Aditi Patil,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1509@rbunagpur.in
+2026IT2510,Deepa Iyer,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1510@rbunagpur.in
+2026CS2511,Sai Bose,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1511@rbunagpur.in
+2026EC2512,Kavya Rathod,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1512@rbunagpur.in
+2026ME2513,Vihaan Sharma,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1513@rbunagpur.in
+2026EE2514,Abhishek Rathod,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1514@rbunagpur.in
+2026EC2515,Akash Shinde,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1515@rbunagpur.in
+2026ME2516,Mayur Iyengar,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1516@rbunagpur.in
+2026CE2517,Nitin Shah,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1517@rbunagpur.in
+2026EE2518,Yash Chauhan,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1518@rbunagpur.in
+2026ME2519,Tushar Patil,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1519@rbunagpur.in
+2026CS2520,Tanmay Sandhu,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1520@rbunagpur.in
+2026CE2521,Aanya Gaekwad,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1521@rbunagpur.in
+2026CS2522,Ankit Goud,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1522@rbunagpur.in
+2026EE2523,Vikram Garg,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1523@rbunagpur.in
+2026CE2524,Sameer Sandhu,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1524@rbunagpur.in
+2026IT2525,Sneha Gupta,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1525@rbunagpur.in
+2026CE2526,Ayaan Das,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1526@rbunagpur.in
+2026ME2527,Ananya Jain,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1527@rbunagpur.in
+2026CE2528,Esha Reddy,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1528@rbunagpur.in
+2026IT2529,Sameer Roy,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1529@rbunagpur.in
+2026ME2530,Sara Dhillon,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1530@rbunagpur.in
+2026IT2531,Pranav Trivedi,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1531@rbunagpur.in
+2026CE2532,Advait Sarkar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1532@rbunagpur.in
+2026CE2533,Sameer Jadeja,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1533@rbunagpur.in
+2026ME2534,Ritu Chawla,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1534@rbunagpur.in
+2026CE2535,Diya Goud,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1535@rbunagpur.in
+2026EC2536,Shruti Pawar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1536@rbunagpur.in
+2026EC2537,Kiran Jain,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1537@rbunagpur.in
+2026EC2538,Krishna Dabre,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1538@rbunagpur.in
+2026CS2539,Kiara Ojha,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1539@rbunagpur.in
+2026CS2540,Suresh Joshi,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1540@rbunagpur.in
+2026ME2541,Avni Yadav,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1541@rbunagpur.in
+2026IT2542,Dev Dubey,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1542@rbunagpur.in
+2026CE2543,Harsh Chawla,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1543@rbunagpur.in
+2026IT2544,Tanya Goud,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1544@rbunagpur.in
+2026EE2545,Anita Brar,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1545@rbunagpur.in
+2026EC2546,Ayaan Ghuge,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1546@rbunagpur.in
+2026EC2547,Rajesh Wankhede,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1547@rbunagpur.in
+2026ME2548,Ankit Barad,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1548@rbunagpur.in
+2026EE2549,Karan Reddy,Network Theory,EE201,EE_YR2_GRP,2,EE,student1549@rbunagpur.in
+2026CS2550,Manoj Kulkarni,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1550@rbunagpur.in
+2026ME2551,Pooja Pillai,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1551@rbunagpur.in
+2026CE2552,Dhwani Pathak,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1552@rbunagpur.in
+2026EE2553,Esha Aggarwal,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1553@rbunagpur.in
+2026ME2554,Neel Jain,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1554@rbunagpur.in
+2026EC2555,Pari Mori,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1555@rbunagpur.in
+2026ME2556,Aryan Naidu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1556@rbunagpur.in
+2026IT2557,Ayaan Jadhav,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1557@rbunagpur.in
+2026EC2558,Ayaan Dubey,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1558@rbunagpur.in
+2026IT2559,Abhishek Parmar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1559@rbunagpur.in
+2026CE2560,Shanaya Dhillon,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1560@rbunagpur.in
+2026CE2561,Sameer Shukla,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1561@rbunagpur.in
+2026CS2562,Isha Pandey,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1562@rbunagpur.in
+2026CE2563,Ishaan Iyengar,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1563@rbunagpur.in
+2026CS2564,Krishna Goel,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1564@rbunagpur.in
+2026CE2565,Pranav Bansal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1565@rbunagpur.in
+2026ME2566,Dhiraj Gupta,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1566@rbunagpur.in
+2026IT2567,Anvi Dubey,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1567@rbunagpur.in
+2026EC2568,Shreya Dutta,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1568@rbunagpur.in
+2026CE2569,Girish Shah,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1569@rbunagpur.in
+2026ME2570,Sumit Ghuge,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1570@rbunagpur.in
+2026CE2571,Tanmay Deshmukh,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1571@rbunagpur.in
+2026CS2572,Sameer Goud,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1572@rbunagpur.in
+2026EC2573,Manoj Deshmukh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1573@rbunagpur.in
+2026CE2574,Piyush Menon,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1574@rbunagpur.in
+2026CE2575,Amit Nair,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1575@rbunagpur.in
+2026EC2576,Vihaan More,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1576@rbunagpur.in
+2026EC2577,Avni Joshi,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1577@rbunagpur.in
+2026ME2578,Megha Joshi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1578@rbunagpur.in
+2026EC2579,Aanya Sidhu,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1579@rbunagpur.in
+2026ME2580,Pari Mishra,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1580@rbunagpur.in
+2026CE2581,Rahul Parekh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1581@rbunagpur.in
+2026CE2582,Ritu Sandhu,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1582@rbunagpur.in
+2026EE2583,Seema Jain,Network Theory,EE201,EE_YR2_GRP,2,EE,student1583@rbunagpur.in
+2026EC2584,Tanmay Menon,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1584@rbunagpur.in
+2026EE2585,Girish Kaur,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1585@rbunagpur.in
+2026IT2586,Arnav Iyer,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1586@rbunagpur.in
+2026EE2587,Rohan Gaekwad,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1587@rbunagpur.in
+2026EC2588,Megha Chauhan,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1588@rbunagpur.in
+2026CE2589,Ananya Parmar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1589@rbunagpur.in
+2026EE2590,Rahul Deshmukh,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1590@rbunagpur.in
+2026EE2591,Anita Mann,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1591@rbunagpur.in
+2026CS2592,Diya Jadhav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1592@rbunagpur.in
+2026EC2593,Rahul Mukherjee,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1593@rbunagpur.in
+2026ME2594,Megha Gupta,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1594@rbunagpur.in
+2026CE2595,Anvi Iyer,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1595@rbunagpur.in
+2026EC2596,Kavya Ghosh,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1596@rbunagpur.in
+2026EE2597,Shreya Yadav,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1597@rbunagpur.in
+2026EE2598,Isha Sarkar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1598@rbunagpur.in
+2026ME2599,Jiya Banerjee,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1599@rbunagpur.in
+2026CE2600,Dhiraj Garg,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1600@rbunagpur.in
+2026CE2601,Kavya Sharma,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1601@rbunagpur.in
+2026IT2602,Anita Dhillon,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1602@rbunagpur.in
+2026IT2603,Sia Cheema,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1603@rbunagpur.in
+2026EC2604,Karan Sharma,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1604@rbunagpur.in
+2026ME2605,Kiara Bansal,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1605@rbunagpur.in
+2026ME2606,Vinay Gill,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1606@rbunagpur.in
+2026EC2607,Rohan Pathak,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1607@rbunagpur.in
+2026EC2608,Vikram Iyer,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1608@rbunagpur.in
+2026EE2609,Shanaya Tiwari,Network Theory,EE201,EE_YR2_GRP,2,EE,student1609@rbunagpur.in
+2026EC2610,Vinay Menon,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1610@rbunagpur.in
+2026ME2611,Tanya Kulkarni,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1611@rbunagpur.in
+2026CE2612,Karan Brar,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1612@rbunagpur.in
+2026EC2613,Vivaan Kaur,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1613@rbunagpur.in
+2026ME2614,Geeta Ojha,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1614@rbunagpur.in
+2026CS2615,Advait Trivedi,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1615@rbunagpur.in
+2026CS2616,Shreya Suri,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1616@rbunagpur.in
+2026CS2617,Pankaj Rao,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1617@rbunagpur.in
+2026EC2618,Dhwani Nair,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1618@rbunagpur.in
+2026CE2619,Ishani Tiwari,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1619@rbunagpur.in
+2026EE2620,Pranav Jain,Network Theory,EE201,EE_YR2_GRP,2,EE,student1620@rbunagpur.in
+2026IT2621,Abhishek Dabre,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1621@rbunagpur.in
+2026IT2622,Dhwani Khanna,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1622@rbunagpur.in
+2026EE2623,Diya Sen,Control Systems,EE301,EE_YR3_GRP,3,EE,student1623@rbunagpur.in
+2026EC2624,Sumit Pandey,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1624@rbunagpur.in
+2026EE2625,Kiara Bhide,Network Theory,EE201,EE_YR2_GRP,2,EE,student1625@rbunagpur.in
+2026IT2626,Akash Kulkarni,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1626@rbunagpur.in
+2026CE2627,Sunita Bansal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1627@rbunagpur.in
+2026EE2628,Manoj Suri,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1628@rbunagpur.in
+2026ME2629,Tanmay Gaekwad,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1629@rbunagpur.in
+2026CS2630,Ritu Verma,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1630@rbunagpur.in
+2026CE2631,Piyush Yadav,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1631@rbunagpur.in
+2026CS2632,Avni Patil,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1632@rbunagpur.in
+2026IT2633,Tushar Shukla,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1633@rbunagpur.in
+2026CS2634,Manoj Sharma,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1634@rbunagpur.in
+2026ME2635,Siddharth Shah,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1635@rbunagpur.in
+2026EC2636,Seema Parmar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1636@rbunagpur.in
+2026ME2637,Atharv Parekh,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1637@rbunagpur.in
+2026EC2638,Anvi Mishra,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1638@rbunagpur.in
+2026CE2639,Vanya Verma,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1639@rbunagpur.in
+2026IT2640,Piyush Mori,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1640@rbunagpur.in
+2026EC2641,Amit Chatterjee,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1641@rbunagpur.in
+2026IT2642,Asha Mann,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1642@rbunagpur.in
+2026CE2643,Vanya Banerjee,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1643@rbunagpur.in
+2026CE2644,Karan Bansal,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1644@rbunagpur.in
+2026EE2645,Kabir Pathak,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1645@rbunagpur.in
+2026EE2646,Vani Menon,Control Systems,EE301,EE_YR3_GRP,3,EE,student1646@rbunagpur.in
+2026CE2647,Navya Chatterjee,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1647@rbunagpur.in
+2026IT2648,Rahul Gupta,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1648@rbunagpur.in
+2026CE2649,Shreya Malhotra,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1649@rbunagpur.in
+2026EE2650,Pari Dubey,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1650@rbunagpur.in
+2026CE2651,Shanaya Gohil,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1651@rbunagpur.in
+2026ME2652,Akash Banerjee,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1652@rbunagpur.in
+2026CS2653,Ayush Zala,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1653@rbunagpur.in
+2026EC2654,Advait Pawar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1654@rbunagpur.in
+2026ME2655,Rani Sandhu,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1655@rbunagpur.in
+2026CS2656,Shanaya Verma,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1656@rbunagpur.in
+2026EE2657,Pradeep Gill,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1657@rbunagpur.in
+2026IT2658,Shruti Shinde,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1658@rbunagpur.in
+2026ME2659,Piyush Parekh,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1659@rbunagpur.in
+2026EE2660,Pranav Dubey,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1660@rbunagpur.in
+2026CS2661,Vaibhav Yadav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1661@rbunagpur.in
+2026CS2662,Harsh More,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1662@rbunagpur.in
+2026ME2663,Reyansh Ghosh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1663@rbunagpur.in
+2026CE2664,Vani Ghuge,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1664@rbunagpur.in
+2026IT2665,Ansh Reddy,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1665@rbunagpur.in
+2026ME2666,Sunita Joshi,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1666@rbunagpur.in
+2026IT2667,Deepa Jadeja,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1667@rbunagpur.in
+2026EC2668,Dev Chatterjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1668@rbunagpur.in
+2026IT2669,Avni Sandhu,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1669@rbunagpur.in
+2026CS2670,Advait Verma,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1670@rbunagpur.in
+2026IT2671,Trisha Shinde,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1671@rbunagpur.in
+2026CE2672,Sai Zala,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1672@rbunagpur.in
+2026ME2673,Reyansh Kapoor,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1673@rbunagpur.in
+2026CE2674,Ritu Sarkar,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1674@rbunagpur.in
+2026CS2675,Ritu Ojha,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1675@rbunagpur.in
+2026CS2676,Neha Parmar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1676@rbunagpur.in
+2026IT2677,Isha Sen,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1677@rbunagpur.in
+2026EC2678,Gaurav Barad,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1678@rbunagpur.in
+2026IT2679,Pari Chatterjee,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1679@rbunagpur.in
+2026ME2680,Karan Aulakh,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1680@rbunagpur.in
+2026EE2681,Ishani Gill,Control Systems,EE301,EE_YR3_GRP,3,EE,student1681@rbunagpur.in
+2026CE2682,Rani Verma,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1682@rbunagpur.in
+2026ME2683,Siddharth Goel,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1683@rbunagpur.in
+2026EC2684,Rajesh Nair,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1684@rbunagpur.in
+2026ME2685,Kabir Dhillon,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1685@rbunagpur.in
+2026EE2686,Yash Sarkar,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1686@rbunagpur.in
+2026EC2687,Dhwani Bose,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1687@rbunagpur.in
+2026CE2688,Manish Garg,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1688@rbunagpur.in
+2026EE2689,Esha Rathod,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1689@rbunagpur.in
+2026EC2690,Tanmay Bhide,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1690@rbunagpur.in
+2026EE2691,Aarav Brar,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1691@rbunagpur.in
+2026EE2692,Kabir Parekh,Control Systems,EE301,EE_YR3_GRP,3,EE,student1692@rbunagpur.in
+2026IT2693,Krishna Vaghela,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1693@rbunagpur.in
+2026ME2694,Amit Deshmukh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1694@rbunagpur.in
+2026CS2695,Sai Kapoor,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1695@rbunagpur.in
+2026EC2696,Sara Kaur,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1696@rbunagpur.in
+2026EE2697,Geeta Banerjee,Network Theory,EE201,EE_YR2_GRP,2,EE,student1697@rbunagpur.in
+2026CE2698,Rajesh Dhillon,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1698@rbunagpur.in
+2026CS2699,Navya Das,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1699@rbunagpur.in
+2026CE2700,Anita Joshi,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1700@rbunagpur.in
+2026CS2701,Swapnil Sen,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1701@rbunagpur.in
+2026EE2702,Sneha Banerjee,Control Systems,EE301,EE_YR3_GRP,3,EE,student1702@rbunagpur.in
+2026EE2703,Atharv Ghosh,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1703@rbunagpur.in
+2026EC2704,Aditya Mann,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1704@rbunagpur.in
+2026EE2705,Aditi Mishra,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1705@rbunagpur.in
+2026CE2706,Aryan Pathak,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1706@rbunagpur.in
+2026CE2707,Atharv Gohil,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1707@rbunagpur.in
+2026ME2708,Bhavya Chauhan,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1708@rbunagpur.in
+2026EE2709,Manoj Pandey,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1709@rbunagpur.in
+2026IT2710,Neha Sharma,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1710@rbunagpur.in
+2026IT2711,Vaibhav Mishra,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1711@rbunagpur.in
+2026CE2712,Yash Parekh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1712@rbunagpur.in
+2026IT2713,Dhwani Sen,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1713@rbunagpur.in
+2026IT2714,Isha Gupta,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1714@rbunagpur.in
+2026CE2715,Ishani Gohil,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1715@rbunagpur.in
+2026IT2716,Abhishek Shetty,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1716@rbunagpur.in
+2026IT2717,Vanya Mann,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1717@rbunagpur.in
+2026EE2718,Dhiraj Suri,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1718@rbunagpur.in
+2026CE2719,Neel More,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1719@rbunagpur.in
+2026ME2720,Amit Shetty,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1720@rbunagpur.in
+2026EC2721,Anvi Roy,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1721@rbunagpur.in
+2026CE2722,Riya Bansal,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1722@rbunagpur.in
+2026CE2723,Esha Chopde,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1723@rbunagpur.in
+2026CE2724,Vinay Garg,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1724@rbunagpur.in
+2026EC2725,Aanya Banerjee,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1725@rbunagpur.in
+2026IT2726,Tushar Solanki,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1726@rbunagpur.in
+2026CS2727,Pranav Brar,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1727@rbunagpur.in
+2026CE2728,Seema Verma,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1728@rbunagpur.in
+2026IT2729,Vivaan Chauhan,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1729@rbunagpur.in
+2026CS2730,Trisha Goel,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1730@rbunagpur.in
+2026EE2731,Jiya Khanna,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1731@rbunagpur.in
+2026EC2732,Neel Bansal,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1732@rbunagpur.in
+2026EC2733,Rani Parekh,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1733@rbunagpur.in
+2026EE2734,Seema Dutta,Network Theory,EE201,EE_YR2_GRP,2,EE,student1734@rbunagpur.in
+2026CE2735,Pooja Iyer,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1735@rbunagpur.in
+2026EE2736,Navya Gupta,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1736@rbunagpur.in
+2026CE2737,Tanya Menon,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1737@rbunagpur.in
+2026EC2738,Asha Nair,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1738@rbunagpur.in
+2026EC2739,Rani Roy,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1739@rbunagpur.in
+2026EE2740,Lokesh Ojha,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1740@rbunagpur.in
+2026EC2741,Asha Das,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1741@rbunagpur.in
+2026EC2742,Aarav Chopde,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1742@rbunagpur.in
+2026IT2743,Swapnil Parekh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1743@rbunagpur.in
+2026ME2744,Ayaan Goel,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1744@rbunagpur.in
+2026CE2745,Vanya Shetty,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1745@rbunagpur.in
+2026EC2746,Trisha Trivedi,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1746@rbunagpur.in
+2026EC2747,Girish Chauhan,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1747@rbunagpur.in
+2026CE2748,Nitin Pandey,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1748@rbunagpur.in
+2026EC2749,Aditi Parmar,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1749@rbunagpur.in
+2026IT2750,Ishaan Roy,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1750@rbunagpur.in
+2026CS2751,Vihaan Chauhan,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1751@rbunagpur.in
+2026EC2752,Dhiraj Shetty,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1752@rbunagpur.in
+2026IT2753,Sai Sandhu,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1753@rbunagpur.in
+2026ME2754,Sameer Jadhav,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1754@rbunagpur.in
+2026EC2755,Atharv Shah,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1755@rbunagpur.in
+2026ME2756,Akash Menon,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1756@rbunagpur.in
+2026IT2757,Shreya Aulakh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1757@rbunagpur.in
+2026CS2758,Ishaan Goud,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1758@rbunagpur.in
+2026ME2759,Vani Deshmukh,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1759@rbunagpur.in
+2026IT2760,Sumit Kulkarni,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1760@rbunagpur.in
+2026ME2761,Kiran Mann,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1761@rbunagpur.in
+2026CE2762,Dev Mehta,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1762@rbunagpur.in
+2026IT2763,Rohan More,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1763@rbunagpur.in
+2026CE2764,Pooja Vaghela,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1764@rbunagpur.in
+2026CS2765,Pankaj Chatterjee,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1765@rbunagpur.in
+2026EC2766,Neha Shah,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1766@rbunagpur.in
+2026CE2767,Anvi Pathak,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1767@rbunagpur.in
+2026ME2768,Arnav Shetty,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1768@rbunagpur.in
+2026IT2769,Vinay Chawla,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1769@rbunagpur.in
+2026CE2770,Pranav Mann,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1770@rbunagpur.in
+2026IT2771,Lokesh Ghosh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1771@rbunagpur.in
+2026CS2772,Sia Brar,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1772@rbunagpur.in
+2026IT2773,Neel Dutta,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1773@rbunagpur.in
+2026IT2774,Lokesh Kaur,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1774@rbunagpur.in
+2026EC2775,Nitin Nair,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1775@rbunagpur.in
+2026EC2776,Isha Barad,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1776@rbunagpur.in
+2026EE2777,Umesh Cheema,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1777@rbunagpur.in
+2026IT2778,Tushar Pawar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1778@rbunagpur.in
+2026EC2779,Vivaan Dhillon,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1779@rbunagpur.in
+2026IT2780,Rahul Solanki,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1780@rbunagpur.in
+2026ME2781,Pradeep Pawar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1781@rbunagpur.in
+2026EE2782,Atharv Aulakh,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1782@rbunagpur.in
+2026IT2783,Vihaan Mori,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1783@rbunagpur.in
+2026CE2784,Manoj Aulakh,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1784@rbunagpur.in
+2026EC2785,Tushar Chopde,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1785@rbunagpur.in
+2026ME2786,Kiara Patil,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1786@rbunagpur.in
+2026EC2787,Diya Roy,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1787@rbunagpur.in
+2026IT2788,Anita Kulkarni,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1788@rbunagpur.in
+2026IT2789,Rani Jadhav,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1789@rbunagpur.in
+2026IT2790,Aavya Suri,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1790@rbunagpur.in
+2026ME2791,Anay Gupta,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1791@rbunagpur.in
+2026ME2792,Tanmay Brar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1792@rbunagpur.in
+2026CS2793,Trisha Rao,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1793@rbunagpur.in
+2026CS2794,Diya Rao,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1794@rbunagpur.in
+2026ME2795,Tanya Bhide,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1795@rbunagpur.in
+2026IT2796,Anvi Reddy,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1796@rbunagpur.in
+2026EC2797,Pankaj Chawla,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1797@rbunagpur.in
+2026CE2798,Sameer Dabre,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1798@rbunagpur.in
+2026CE2799,Abhishek Gill,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1799@rbunagpur.in
+2026EC2800,Tushar Iyengar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1800@rbunagpur.in
+2026CE2801,Ishita Khanna,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1801@rbunagpur.in
+2026IT2802,Esha Aulakh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1802@rbunagpur.in
+2026IT2803,Vihaan Shah,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1803@rbunagpur.in
+2026EE2804,Amit Yadav,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1804@rbunagpur.in
+2026EC2805,Anvi Malhotra,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1805@rbunagpur.in
+2026EE2806,Rani Rao,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1806@rbunagpur.in
+2026ME2807,Kavya Gill,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1807@rbunagpur.in
+2026ME2808,Suresh Pillai,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1808@rbunagpur.in
+2026EE2809,Riya Brar,Network Theory,EE201,EE_YR2_GRP,2,EE,student1809@rbunagpur.in
+2026ME2810,Deepa Iyengar,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1810@rbunagpur.in
+2026CE2811,Sumit Bose,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1811@rbunagpur.in
+2026IT2812,Ishani Patil,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1812@rbunagpur.in
+2026ME2813,Tanmay Malhotra,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1813@rbunagpur.in
+2026EE2814,Aditya Pathak,Control Systems,EE301,EE_YR3_GRP,3,EE,student1814@rbunagpur.in
+2026IT2815,Aditi Ghosh,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1815@rbunagpur.in
+2026ME2816,Ankit Pandey,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1816@rbunagpur.in
+2026IT2817,Sameer Garg,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1817@rbunagpur.in
+2026EC2818,Kiara Pathak,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1818@rbunagpur.in
+2026CE2819,Sunita Bhide,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1819@rbunagpur.in
+2026CE2820,Manoj Aggarwal,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1820@rbunagpur.in
+2026CS2821,Pari Gohil,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1821@rbunagpur.in
+2026IT2822,Myra Ghuge,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1822@rbunagpur.in
+2026IT2823,Karan Parmar,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1823@rbunagpur.in
+2026EC2824,Rahul Iyengar,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1824@rbunagpur.in
+2026EC2825,Ankit Sarkar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1825@rbunagpur.in
+2026CS2826,Sameer Jain,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1826@rbunagpur.in
+2026CE2827,Sara Dubey,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1827@rbunagpur.in
+2026EC2828,Gaurav Ghuge,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1828@rbunagpur.in
+2026EC2829,Reyansh More,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1829@rbunagpur.in
+2026EC2830,Aditi Joshi,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1830@rbunagpur.in
+2026EE2831,Reyansh Goel,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1831@rbunagpur.in
+2026CS2832,Ishaan Joshi,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1832@rbunagpur.in
+2026CS2833,Akash Bose,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1833@rbunagpur.in
+2026EE2834,Ishani Jadeja,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1834@rbunagpur.in
+2026CS2835,Vikram Rathod,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1835@rbunagpur.in
+2026CE2836,Sunita More,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1836@rbunagpur.in
+2026ME2837,Swapnil Iyengar,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1837@rbunagpur.in
+2026IT2838,Advait Garg,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1838@rbunagpur.in
+2026CS2839,Ananya Pawar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1839@rbunagpur.in
+2026CE2840,Shreya Jadhav,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1840@rbunagpur.in
+2026CS2841,Vinay More,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1841@rbunagpur.in
+2026IT2842,Kabir Mann,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1842@rbunagpur.in
+2026CE2843,Jiya Shah,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1843@rbunagpur.in
+2026IT2844,Rahul Goel,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1844@rbunagpur.in
+2026IT2845,Krishna Goud,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1845@rbunagpur.in
+2026EE2846,Amit Tiwari,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1846@rbunagpur.in
+2026IT2847,Ananya Patil,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1847@rbunagpur.in
+2026EE2848,Myra Gaekwad,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1848@rbunagpur.in
+2026EE2849,Neel Dabre,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1849@rbunagpur.in
+2026EE2850,Girish Reddy,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1850@rbunagpur.in
+2026CS2851,Megha Menon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1851@rbunagpur.in
+2026CS2852,Ishani Sen,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1852@rbunagpur.in
+2026EE2853,Ishani Suri,Network Theory,EE201,EE_YR2_GRP,2,EE,student1853@rbunagpur.in
+2026IT2854,Girish Jadeja,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1854@rbunagpur.in
+2026ME2855,Ansh Grewal,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1855@rbunagpur.in
+2026EE2856,Vivaan Chawla,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1856@rbunagpur.in
+2026ME2857,Ayaan Parekh,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1857@rbunagpur.in
+2026CS2858,Suresh Nair,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1858@rbunagpur.in
+2026CE2859,Vani Sandhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1859@rbunagpur.in
+2026ME2860,Lokesh Parmar,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1860@rbunagpur.in
+2026CS2861,Navya Yadav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1861@rbunagpur.in
+2026IT2862,Ayaan Solanki,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1862@rbunagpur.in
+2026IT2863,Asha Bansal,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1863@rbunagpur.in
+2026ME2864,Vanya Chawla,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1864@rbunagpur.in
+2026EE2865,Akash Gaekwad,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1865@rbunagpur.in
+2026CE2866,Bhavya Chatterjee,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1866@rbunagpur.in
+2026IT2867,Anvi Shah,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1867@rbunagpur.in
+2026CS2868,Trisha Mukherjee,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1868@rbunagpur.in
+2026IT2869,Kriti Pandey,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1869@rbunagpur.in
+2026IT2870,Shanaya Banerjee,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1870@rbunagpur.in
+2026EC2871,Ayush Naidu,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1871@rbunagpur.in
+2026EC2872,Arjun Dhillon,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1872@rbunagpur.in
+2026CS2873,Shruti Menon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1873@rbunagpur.in
+2026EC2874,Ishita Jadhav,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1874@rbunagpur.in
+2026ME2875,Lokesh Gill,Engineering Graphics,ME101,ME_YR1_GRP,1,ME,student1875@rbunagpur.in
+2026EE2876,Pranav Khanna,Control Systems,EE301,EE_YR3_GRP,3,EE,student1876@rbunagpur.in
+2026IT2877,Vivaan Nair,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1877@rbunagpur.in
+2026CE2878,Rohan Shinde,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1878@rbunagpur.in
+2026CS2879,Ansh Solanki,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1879@rbunagpur.in
+2026CS2880,Bhavya Khanna,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1880@rbunagpur.in
+2026IT2881,Ishita Pathak,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1881@rbunagpur.in
+2026EE2882,Manish Malhotra,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1882@rbunagpur.in
+2026EC2883,Arnav Gohil,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1883@rbunagpur.in
+2026EE2884,Umesh Chauhan,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1884@rbunagpur.in
+2026CE2885,Piyush Ghuge,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1885@rbunagpur.in
+2026EC2886,Gaurav Sarkar,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1886@rbunagpur.in
+2026IT2887,Shanaya Solanki,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1887@rbunagpur.in
+2026IT2888,Deepa Dabre,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1888@rbunagpur.in
+2026EC2889,Vihaan Naidu,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1889@rbunagpur.in
+2026CE2890,Isha Solanki,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1890@rbunagpur.in
+2026EE2891,Vaibhav Nair,Network Theory,EE201,EE_YR2_GRP,2,EE,student1891@rbunagpur.in
+2026CS2892,Rani Reddy,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1892@rbunagpur.in
+2026CS2893,Kiran Bose,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1893@rbunagpur.in
+2026CE2894,Vihaan Reddy,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1894@rbunagpur.in
+2026EE2895,Rani Dabre,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1895@rbunagpur.in
+2026ME2896,Atharv Garg,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1896@rbunagpur.in
+2026CE2897,Jiya Iyengar,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1897@rbunagpur.in
+2026EC2898,Arnav Joshi,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1898@rbunagpur.in
+2026EE2899,Vani Gupta,Basic Electrical Engineering,EE101,EE_YR1_GRP,1,EE,student1899@rbunagpur.in
+2026CS2900,Gaurav Dabre,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1900@rbunagpur.in
+2026IT2901,Ishaan Vaghela,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1901@rbunagpur.in
+2026EC2902,Sumit Mehta,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1902@rbunagpur.in
+2026CS2903,Swapnil Dhillon,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1903@rbunagpur.in
+2026EE2904,Girish Goel,Control Systems,EE301,EE_YR3_GRP,3,EE,student1904@rbunagpur.in
+2026CE2905,Vinay Goud,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1905@rbunagpur.in
+2026CE2906,Ankit Bhide,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1906@rbunagpur.in
+2026EC2907,Vivaan Dabre,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1907@rbunagpur.in
+2026CS2908,Geeta Das,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1908@rbunagpur.in
+2026IT2909,Isha Chauhan,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1909@rbunagpur.in
+2026EC2910,Tushar Parmar,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1910@rbunagpur.in
+2026ME2911,Vivaan Shah,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1911@rbunagpur.in
+2026IT2912,Esha Dhillon,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1912@rbunagpur.in
+2026CE2913,Tushar Mann,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1913@rbunagpur.in
+2026EC2914,Pooja Banerjee,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1914@rbunagpur.in
+2026EE2915,Trisha Wankhede,Control Systems,EE301,EE_YR3_GRP,3,EE,student1915@rbunagpur.in
+2026CE2916,Diya Ojha,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1916@rbunagpur.in
+2026EC2917,Saanvi Pathak,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1917@rbunagpur.in
+2026EC2918,Aavya Garg,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1918@rbunagpur.in
+2026EC2919,Harsh Menon,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1919@rbunagpur.in
+2026IT2920,Nitin Jadeja,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1920@rbunagpur.in
+2026IT2921,Ishita Gill,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1921@rbunagpur.in
+2026CE2922,Aavya Sharma,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1922@rbunagpur.in
+2026CS2923,Anay Goel,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1923@rbunagpur.in
+2026EC2924,Ansh Bhide,Electronic Devices,EC101,EC_YR1_GRP,1,EC,student1924@rbunagpur.in
+2026ME2925,Lokesh Bose,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1925@rbunagpur.in
+2026CS2926,Sanjay Shinde,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1926@rbunagpur.in
+2026IT2927,Sumit Chauhan,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1927@rbunagpur.in
+2026ME2928,Bhavya Trivedi,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1928@rbunagpur.in
+2026EE2929,Sunita Trivedi,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1929@rbunagpur.in
+2026EC2930,Ritu Yadav,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1930@rbunagpur.in
+2026IT2931,Ayush Aggarwal,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1931@rbunagpur.in
+2026CE2932,Ishani Wankhede,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1932@rbunagpur.in
+2026IT2933,Nitin Banerjee,Software Engineering,IT301,IT_YR3_GRP,3,IT,student1933@rbunagpur.in
+2026IT2934,Maitri Mehta,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1934@rbunagpur.in
+2026EC2935,Aditi Mehta,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1935@rbunagpur.in
+2026EE2936,Rahul Roy,Network Theory,EE201,EE_YR2_GRP,2,EE,student1936@rbunagpur.in
+2026CS2937,Pari Sharma,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1937@rbunagpur.in
+2026CS2938,Aanya Rao,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1938@rbunagpur.in
+2026CE2939,Rohan Jadhav,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1939@rbunagpur.in
+2026ME2940,Abhishek Kapoor,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1940@rbunagpur.in
+2026EE2941,Pooja Mehta,Network Theory,EE201,EE_YR2_GRP,2,EE,student1941@rbunagpur.in
+2026CE2942,Kriti Joshi,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1942@rbunagpur.in
+2026CE2943,Manish Goel,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1943@rbunagpur.in
+2026ME2944,Tanmay Shah,Thermodynamics,ME201,ME_YR2_GRP,2,ME,student1944@rbunagpur.in
+2026CS2945,Bhavya Jadeja,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1945@rbunagpur.in
+2026EC2946,Sara Bose,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1946@rbunagpur.in
+2026EE2947,Sia Solanki,Power Electronics,EE401,EE_YR4_GRP,4,EE,student1947@rbunagpur.in
+2026CE2948,Amol Sandhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1948@rbunagpur.in
+2026EE2949,Pankaj Mehta,Control Systems,EE301,EE_YR3_GRP,3,EE,student1949@rbunagpur.in
+2026CS2950,Diya Singh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1950@rbunagpur.in
+2026CS2951,Vaibhav Bhide,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1951@rbunagpur.in
+2026EE2952,Dhiraj Pawar,Network Theory,EE201,EE_YR2_GRP,2,EE,student1952@rbunagpur.in
+2026CE2953,Neel Shetty,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1953@rbunagpur.in
+2026CE2954,Kavya Iyer,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1954@rbunagpur.in
+2026EE2955,Kiran Goel,Network Theory,EE201,EE_YR2_GRP,2,EE,student1955@rbunagpur.in
+2026CS2956,Ankit Garg,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1956@rbunagpur.in
+2026IT2957,Pooja Suri,Cloud Computing,IT401,IT_YR4_GRP,4,IT,student1957@rbunagpur.in
+2026CS2958,Anvi More,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1958@rbunagpur.in
+2026CS2959,Dev Nair,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1959@rbunagpur.in
+2026ME2960,Mayur Rathod,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1960@rbunagpur.in
+2026CE2961,Neel Sandhu,Strength of Materials,CE201,CE_YR2_GRP,2,CE,student1961@rbunagpur.in
+2026IT2962,Aanya Kapoor,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1962@rbunagpur.in
+2026CE2963,Tanmay Parekh,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1963@rbunagpur.in
+2026CS2964,Swapnil Kapoor,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1964@rbunagpur.in
+2026IT2965,Swapnil Sandhu,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1965@rbunagpur.in
+2026CS2966,Rohan Iyer,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1966@rbunagpur.in
+2026CE2967,Mayur Ghuge,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1967@rbunagpur.in
+2026ME2968,Pankaj Rathod,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1968@rbunagpur.in
+2026CS2969,Krishna Bose,Programming for Problem Solving,CS101,CS_YR1_GRP,1,CS,student1969@rbunagpur.in
+2026ME2970,Manish Iyer,Theory of Machines,ME301,ME_YR3_GRP,3,ME,student1970@rbunagpur.in
+2026EE2971,Aavya Chauhan,Network Theory,EE201,EE_YR2_GRP,2,EE,student1971@rbunagpur.in
+2026CE2972,Aditya Suri,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1972@rbunagpur.in
+2026EC2973,Rohan Malhotra,VLSI Design,EC401,EC_YR4_GRP,4,EC,student1973@rbunagpur.in
+2026IT2974,Yash Jadhav,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1974@rbunagpur.in
+2026EE2975,Siddharth Deshmukh,Network Theory,EE201,EE_YR2_GRP,2,EE,student1975@rbunagpur.in
+2026CS2976,Anvi Deshmukh,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1976@rbunagpur.in
+2026EC2977,Dev Goud,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1977@rbunagpur.in
+2026CE2978,Ayaan Joshi,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1978@rbunagpur.in
+2026CE2979,Manish Bansal,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1979@rbunagpur.in
+2026EE2980,Megha Dutta,Control Systems,EE301,EE_YR3_GRP,3,EE,student1980@rbunagpur.in
+2026CS2981,Vaibhav Pathak,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1981@rbunagpur.in
+2026ME2982,Krishna Chawla,Heat and Mass Transfer,ME401,ME_YR4_GRP,4,ME,student1982@rbunagpur.in
+2026EE2983,Dev Tiwari,Control Systems,EE301,EE_YR3_GRP,3,EE,student1983@rbunagpur.in
+2026CE2984,Neha Shinde,Engineering Mechanics,CE101,CE_YR1_GRP,1,CE,student1984@rbunagpur.in
+2026CS2985,Rahul Sen,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1985@rbunagpur.in
+2026CE2986,Ishita Sidhu,Structural Analysis,CE301,CE_YR3_GRP,3,CE,student1986@rbunagpur.in
+2026CS2987,Tushar Mori,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1987@rbunagpur.in
+2026EC2988,Rahul Jadhav,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1988@rbunagpur.in
+2026IT2989,Shreya Bose,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1989@rbunagpur.in
+2026CS2990,Sanjay Verma,Data Structures & Algorithms,CS201,CS_YR2_GRP,2,CS,student1990@rbunagpur.in
+2026CS2991,Kriti Bose,Operating Systems,CS301,CS_YR3_GRP,3,CS,student1991@rbunagpur.in
+2026EC2992,Krishna Shetty,Digital Circuit Design,EC201,EC_YR2_GRP,2,EC,student1992@rbunagpur.in
+2026CE2993,Seema Yadav,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student1993@rbunagpur.in
+2026CS2994,Saanvi Deshmukh,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1994@rbunagpur.in
+2026EC2995,Dhiraj Patil,Microprocessors,EC301,EC_YR3_GRP,3,EC,student1995@rbunagpur.in
+2026CS2996,Umesh Brar,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1996@rbunagpur.in
+2026EE2997,Tushar Goel,Network Theory,EE201,EE_YR2_GRP,2,EE,student1997@rbunagpur.in
+2026CS2998,Anvi Vaghela,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student1998@rbunagpur.in
+2026IT2999,Tushar Shah,Web Technologies,IT101,IT_YR1_GRP,1,IT,student1999@rbunagpur.in

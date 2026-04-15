@@ -1,51 +1,69 @@
-def solve_seating(students_list, room_grid):
-    """
-    Nagpur Division AI Engine - Optimized Constraint Satisfaction (CSP).
-    Ensures zero-collusion by checking Up, Down, Left, Right, AND Diagonals.
-    """
-    assignments = {}  # Key: (room_no, (r, c)) -> Value: student_dict
-    room_map = {}     # Key: room_id -> Key: (r, c) -> Value: subject_code
-    
-    # Track seated students by Roll No for O(1) lookup
+import pandas as pd
+
+def solve_seating(students_list, room_configs, mode="Double"):
+    assignments = []
     seated_roll_nos = set()
+    
+    # RBU Shift Timings
+    SHIFTS = [
+        {"name": "Morning", "time": "09:30 AM"},
+        {"name": "Afternoon", "time": "02:00 PM"}
+    ]
 
-    for seat_tuple in room_grid:
-        room_id, (r, c) = seat_tuple
-        
-        if room_id not in room_map:
-            room_map[room_id] = {}
+    for session in SHIFTS:
+        # Every shift gets a fresh room layout
+        room_occupancy = {} 
 
-        # 1. ENHANCED CONFLICT RADIUS (Includes Diagonals for better security)
-        # Check all 8 surrounding cells in the matrix
-        neighbors = [
-            (r-1, c), (r+1, c), (r, c-1), (r, c+1), # Orthogonal
-            (r-1, c-1), (r-1, c+1), (r+1, c-1), (r+1, c+1) # Diagonals
-        ]
-        
-        for student in students_list:
-            # 2. SEATED CHECK
-            # Skip if candidate already has a coordinate in another room
-            if student['roll_no'] in seated_roll_nos:
-                continue
+        for room in room_configs:
+            r_id = str(room['room_no'])
+            room_occupancy[r_id] = {}
             
-            # Identify the Subject/Course Code for this student
-            # Supports both naming conventions used in your CSVs
-            current_subject = student.get('subject_code') or student.get('course_code')
+            # Infrastructure Check: Identify broken tables
+            broken_str = str(room.get('broken_tables', ''))
+            broken = [t.strip() for t in broken_str.split(',') if t.strip()]
             
-            # 3. COLLISION DETECTION
-            is_safe = True
-            for n_coord in neighbors:
-                if n_coord in room_map[room_id]:
-                    # Check if neighbor has the same Subject ID
-                    if room_map[room_id][n_coord] == current_subject:
-                        is_safe = False
-                        break
-            
-            # 4. ALLOCATION
-            if is_safe:
-                assignments[seat_tuple] = student
-                room_map[room_id][(r, c)] = current_subject
-                seated_roll_nos.add(student['roll_no'])
-                break
-                
+            rows = int(room['rows'])
+            cols = int(room['cols'])
+
+            for r in range(rows):
+                for c in range(cols):
+                    # Policy: Single vs Double seating
+                    if mode == "Single" and c % 2 != 0: continue
+                    
+                    # Safety: Skip broken infrastructure
+                    table_id = f"T{r * cols + c}"
+                    if table_id in broken: continue
+
+                    # Find a student who isn't seated yet
+                    for student in students_list:
+                        roll = str(student.get('rollno') or student.get('roll_no'))
+                        if roll in seated_roll_nos: continue
+                        
+                        group_id = student.get('paper_group_id', 'COMMON')
+                        
+                        # 8-Neighbor Conflict Check (Collusion Prevention)
+                        neighbors = [
+                            (r-1, c), (r+1, c), (r, c-1), (r, c+1), 
+                            (r-1, c-1), (r-1, c+1), (r+1, c-1), (r+1, c+1)
+                        ]
+                        
+                        is_safe = True
+                        for n in neighbors:
+                            if n in room_occupancy[r_id] and room_occupancy[r_id][n] == group_id:
+                                is_safe = False
+                                break
+                        
+                        if is_safe:
+                            # IMPORTANT: We create a copy to avoid overwriting shift data in the next pass
+                            seated_student = student.copy()
+                            seated_student['assigned_room'] = r_id
+                            seated_student['assigned_seat'] = f"R{r+1}C{c+1}"
+                            seated_student['shift'] = session['name']
+                            seated_student['exam_time'] = session['time']
+                            
+                            assignments.append(seated_student)
+                            room_occupancy[r_id][(r, c)] = group_id
+                            seated_roll_nos.add(roll)
+                            break
+                            
     return assignments
