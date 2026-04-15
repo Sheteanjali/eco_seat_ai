@@ -19,7 +19,6 @@ const Sidebar = () => {
   const location = useLocation();
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  // Real-time clock for the RBU Node
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
@@ -28,8 +27,8 @@ const Sidebar = () => {
   const menuItems = [
     { name: 'Analytics', icon: BarChart3, path: '/admin/analytics', label: 'Live Presence Feed' },
     { name: 'Optimization', icon: Database, path: '/admin/upload', label: 'Syllabus Logic' },
-    { name: 'Digital Twin', icon: Map, path: '/admin/map', label: 'DT-Building Map' },
-    { name: 'Verify Scan', icon: QrCode, path: '/admin/scanner', label: 'Admin Entrance Verification' },
+    { name: 'Digital Twin', icon: Map, path: '/admin/dashboard', label: 'DT-Building Map' }, // Matches your App.js route
+    { name: 'Verify Scan', icon: QrCode, path: '/admin/verify-scan', label: 'Admin Entrance Verification' }, // Matches your App.js route
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -110,8 +109,6 @@ const Sidebar = () => {
 
       {/* Bottom Profile & Reset Controls */}
       <div className="p-6 mt-auto border-t border-slate-100 space-y-4">
-        
-        {/* Reset Action */}
         <button 
           onClick={handleReset}
           className="w-full flex items-center gap-4 px-4 py-3 text-slate-400 font-bold hover:text-amber-600 transition-colors text-[9px] uppercase tracking-[0.2em] group"
@@ -120,7 +117,6 @@ const Sidebar = () => {
           Purge Active Logs
         </button>
         
-        {/* Logout Button */}
         <button 
           onClick={handleLogout}
           className="w-full flex items-center justify-center gap-2 py-4 bg-slate-900 hover:bg-rose-600 text-white rounded-2xl transition-all font-black text-[10px] uppercase tracking-widest shadow-xl shadow-slate-200"

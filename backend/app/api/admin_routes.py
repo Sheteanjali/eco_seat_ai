@@ -2,8 +2,8 @@ import qrcode
 import base64
 import io
 import pandas as pd
-from datetime import datetime
-from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, Query
+from datetime import datetime, time
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, Query, Header
 from sqlalchemy.orm import Session
 from sqlalchemy import func, or_, and_
 from pydantic import BaseModel
@@ -12,11 +12,14 @@ from ..core.solver import solve_seating
 
 router = APIRouter(prefix="/api/admin", tags=["Admin Hub"])
 
-# Schema for Digital Twin infrastructure updates
+# --- SCHEMAS ---
 class BrokenTableUpdate(BaseModel):
     room_no: str
     table_id: str
     is_broken: bool
+
+class AttendanceVerification(BaseModel):
+    qr_data: str # Format: "RBU|ROLL_NO|ROOM|TIME"
 
 # --- 1. DATA INGESTION & SHIFT-AWARE AI SOLVER ---
 @router.post("/upload-bulk")
@@ -27,20 +30,16 @@ async def upload_bulk_data(
     db: Session = Depends(connection.get_db)
 ):
     try:
-        # 1. Clear existing session data
         db.query(models.StudentSeating).delete()
         db.query(models.Room).delete()
         db.commit()
 
-        # 2. Read and Normalize CSVs
         s_df = pd.read_csv(io.BytesIO(await student_file.read()))
         r_df = pd.read_csv(io.BytesIO(await room_file.read()))
         
-        # Standardize headers to lowercase_with_underscores
         s_df.columns = [c.lower().strip().replace(' ', '_') for c in s_df.columns]
         r_df.columns = [c.lower().strip().replace(' ', '_') for c in r_df.columns]
 
-        # 3. Sync Infrastructure (Fixed 'floor' keyword crash)
         for _, r_data in r_df.iterrows():
             db.add(models.Room(
                 room_no=str(r_data['room_no']),
@@ -52,22 +51,16 @@ async def upload_bulk_data(
             ))
         db.commit()
 
-        # 4. EXECUTE AI ENGINE
-        # Pass 1 & 2 (Morning/Afternoon) are handled inside solve_seating
         assignments = solve_seating(s_df.to_dict('records'), r_df.to_dict('records'), mode=mode)
         
-        # 5. SAVE ASSIGNMENTS (Fixed: assignments is a List, not a Dict)
         new_records = []
         for student in assignments:
             roll_val = str(student.get('rollno') or student.get('roll_no'))
             room_id = str(student.get('assigned_room'))
             seat_id = str(student.get('assigned_seat'))
-            
-            # Extract Shift data from Solver metadata
             curr_shift = student.get('shift', 'Morning')
             curr_time = student.get('exam_time', '09:30 AM')
 
-            # Generate Secure RBU QR
             qr_content = f"RBU|{roll_val}|{room_id}|{curr_time}"
             qr = qrcode.make(qr_content)
             buf = io.BytesIO()
@@ -95,7 +88,6 @@ async def upload_bulk_data(
 
     except Exception as e:
         db.rollback()
-        print(f"CRITICAL SOLVER ERROR: {str(e)}") # Visible in Python Terminal
         raise HTTPException(status_code=500, detail=f"Solver Crash: {str(e)}")
 
 # --- 2. ROOM DIRECTORY ---
@@ -119,7 +111,7 @@ async def update_infrastructure(data: BrokenTableUpdate, db: Session = Depends(c
     db.commit()
     return {"status": "Synced", "broken_tables": room.broken_tables}
 
-# --- 4. STRICT SEARCH HUB (Strict AND Logic) ---
+# --- 4. SEARCH HUB ---
 @router.get("/search-hub")
 async def search_hub(
     query: str = Query(None), 
@@ -128,23 +120,15 @@ async def search_hub(
     year: str = Query("All"),
     db: Session = Depends(connection.get_db)
 ):
-    # Base query for Student Seating
     stmt = db.query(models.StudentSeating)
-    
-    # Apply Strict Filters (If selected, MUST match)
     if shift != "All":
         stmt = stmt.filter(models.StudentSeating.shift == shift)
-
     if year != "All":
         stmt = stmt.filter(models.StudentSeating.year == year)
 
-    # Apply Search Query
     if query:
         if filter_type == "student":
-            stmt = stmt.filter(or_(
-                models.StudentSeating.name.ilike(f"%{query}%"), 
-                models.StudentSeating.roll_no.ilike(f"%{query}%")
-            ))
+            stmt = stmt.filter(or_(models.StudentSeating.name.ilike(f"%{query}%"), models.StudentSeating.roll_no.ilike(f"%{query}%")))
         elif filter_type == "subject":
             stmt = stmt.filter(models.StudentSeating.subject.ilike(f"%{query}%"))
         elif filter_type == "room":
@@ -153,8 +137,6 @@ async def search_hub(
             stmt = stmt.filter(models.StudentSeating.branch.ilike(f"%{query}%"))
 
     results = stmt.all()
-    
-    # Summary for Presence Heatmap
     summary = {}
     for s in results:
         label = f"Room {s.room_no}"
@@ -176,3 +158,42 @@ async def get_analytics(db: Session = Depends(connection.get_db)):
         "utilization": round((total / 2500) * 100, 1) if total > 0 else 0,
         "roomData": [{"name": f"Room {r[0]}", "count": r[1]} for r in rooms]
     }
+
+# --- 6. SECURE ATTENDANCE VERIFICATION (Authorized & Temporal) ---
+@router.post("/attendance/verify-scan")
+async def verify_attendance(
+    data: AttendanceVerification, 
+    authorization: str = Header(None), 
+    db: Session = Depends(connection.get_db)
+):
+    # Layer 1: Authorized Device Handshake
+    if authorization != "RBU_ADMIN_SECURE_TOKEN_2026":
+        raise HTTPException(status_code=401, detail="Unauthorized Device Detected")
+
+    # Layer 2: Signature Validation
+    parts = data.qr_data.split('|')
+    if len(parts) < 2 or parts[0] != "RBU":
+        raise HTTPException(status_code=400, detail="Invalid RBU QR Signature")
+    
+    roll_no = parts[1]
+    student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == roll_no).first()
+    
+    if not student:
+        raise HTTPException(status_code=404, detail="Student Not Registered")
+
+    # Layer 3: Temporal Gating (Strict 30-Min Windows)
+    now = datetime.now().time()
+    if student.shift == "Morning":
+        if not (time(9, 0) <= now <= time(9, 30)):
+            raise HTTPException(status_code=403, detail="Morning Entry Closed (09:00-09:30)")
+    elif student.shift == "Afternoon":
+        if not (time(13, 0) <= now <= time(13, 30)):
+            raise HTTPException(status_code=403, detail="Afternoon Entry Closed (13:00-13:30)")
+
+    # Layer 4: Duplicate Entry Prevention
+    if student.attendance_status == "Present":
+        return {"status": "warning", "message": "Already Verified", "name": student.name}
+
+    student.attendance_status = "Present"
+    db.commit()
+    return {"status": "success", "name": student.name, "seat": student.seat_no, "room": student.room_no}
