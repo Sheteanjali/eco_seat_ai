@@ -1,4 +1,4 @@
-room_no,floor,total_tables,rows,cols,broken_tables
+room_no,floor,capacity,rows,cols,broken_tables
 DT-101,1,75,15,5,
 DT-102,1,75,15,5,
 DT-103,1,100,10,10,

@@ -1,4 +1,4 @@
-rollno,nameid,course name,course id,paper_group_id,year,branch,email
+roll_no,name,subject,course id,paper_group_id,year,branch,email
 2026CE1000,Sunita Parmar,Environmental Engineering,CE401,CE_YR4_GRP,4,CE,student0@rbunagpur.in
 2026IT1001,Jiya Rao,Database Management Systems,IT201,IT_YR2_GRP,2,IT,student1@rbunagpur.in
 2026CS1002,Umesh Jadhav,Artificial Intelligence,CS401,CS_YR4_GRP,4,CS,student2@rbunagpur.in

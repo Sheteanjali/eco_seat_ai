@@ -6,11 +6,13 @@ class Room(Base):
     __tablename__ = "rooms"
     id = Column(Integer, primary_key=True)
     room_no = Column(String, unique=True)
-    floor = Column(Integer)  # <--- ADD THIS LINE TO FIX THE 500 ERROR
+    floor = Column(Integer)
     rows = Column(Integer)
     cols = Column(Integer)
     total_tables = Column(Integer)
     broken_tables = Column(String, default="") 
+    # ✅ FIX: Adding this column so admin_routes can save density settings
+    students_per_table = Column(Integer, default=1) 
 
 class StudentSeating(Base):
     __tablename__ = "student_seating"

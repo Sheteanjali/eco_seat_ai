@@ -3,7 +3,7 @@ import base64
 import io
 import pandas as pd
 from datetime import datetime, time
-from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, Query, Header
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, Query, Request, Header
 from sqlalchemy.orm import Session
 from sqlalchemy import func, or_
 from pydantic import BaseModel
@@ -12,7 +12,6 @@ from ..core.solver import solve_seating
 
 router = APIRouter(prefix="/api/admin", tags=["Admin Hub"])
 
-
 # -------------------- SCHEMAS --------------------
 
 class BrokenTableUpdate(BaseModel):
@@ -20,16 +19,69 @@ class BrokenTableUpdate(BaseModel):
     table_id: str
     is_broken: bool
 
+class RegenerateRequest(BaseModel):
+    mode: str = "Double"
 
-class AttendanceVerification(BaseModel):
-    qr_data: str   # ✅ THIS IS CRITICAL
+class AttendanceUpdate(BaseModel):
+    roll_no: str
+    status: str 
 
+# NEW: Schema for Verify Scan request
+class VerifyScanRequest(BaseModel):
+    qr_data: str
 
-class DeviceEnrollment(BaseModel):
-    admin_secret: str
+# -------------------- 1. ATTENDANCE & VERIFY LOGIC (The Fix) --------------------
 
+@router.post("/attendance/verify-scan")
+async def verify_scan(
+    req: VerifyScanRequest, 
+    db: Session = Depends(connection.get_db),
+    authorization: str = Header(None)
+):
+    """
+    Handles identity verification from VerifyScan.js
+    """
+    # 🛡️ Step 1: Secure Terminal Check
+    if authorization != "RBU_ADMIN_SECURE_TOKEN_2026":
+        raise HTTPException(status_code=401, detail="Unauthorized Terminal Access")
 
-# -------------------- 1. DATA INGESTION --------------------
+    qr_raw = req.qr_data.strip()
+    if not qr_raw:
+        raise HTTPException(status_code=400, detail="Empty QR Content")
+
+    # 🔍 Step 2: Extract Roll Number
+    # Format Handling: "RBU|ROLL123|ROOM1" -> ROLL123
+    roll_no = qr_raw.split("|")[1] if "|" in qr_raw else qr_raw
+
+    # 🔎 Step 3: DB Search
+    student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == roll_no).first()
+    
+    if not student:
+        raise HTTPException(status_code=404, detail="Student Identity Not Found")
+
+    # ✅ Step 4: Record Presence
+    student.attendance_status = "Present"
+    db.commit()
+
+    return {
+        "success": True,
+        "name": student.name,
+        "roll_no": student.roll_no,
+        "room": student.room_no,
+        "seat": student.seat_no,
+        "message": "Authorized Entry Recorded"
+    }
+
+@router.patch("/mark-attendance")
+async def mark_attendance(data: AttendanceUpdate, db: Session = Depends(connection.get_db)):
+    student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == data.roll_no).first()
+    if not student: raise HTTPException(404, "Student not found")
+    
+    student.attendance_status = data.status
+    db.commit()
+    return {"status": "success", "new_status": student.attendance_status}
+
+# -------------------- 2. DATA INGESTION & AI SOLVER --------------------
 
 @router.post("/upload-bulk")
 async def upload_bulk_data(
@@ -48,227 +100,154 @@ async def upload_bulk_data(
         
         s_df.columns = [c.lower().strip().replace(' ', '_') for c in s_df.columns]
         r_df.columns = [c.lower().strip().replace(' ', '_') for c in r_df.columns]
+        s_df = s_df.fillna("N/A")
+        r_df = r_df.fillna("")
 
         for _, r_data in r_df.iterrows():
             db.add(models.Room(
                 room_no=str(r_data['room_no']),
                 floor=int(r_data.get('floor', 0)),
-                total_tables=int(r_data['total_tables']),
+                total_tables=int(r_data.get('capacity', r_data.get('total_tables', 0))),
                 rows=int(r_data['rows']),
                 cols=int(r_data['cols']),
-                broken_tables=str(r_data.get('broken_tables', ""))
+                broken_tables=str(r_data.get('broken_tables', "")),
+                students_per_table=1 
             ))
         db.commit()
 
-        assignments = solve_seating(
-            s_df.to_dict('records'),
-            r_df.to_dict('records'),
-            mode=mode
-        )
-        
-        new_records = []
-
-        for student in assignments:
-            roll_val = str(student.get('rollno') or student.get('roll_no'))
-            room_id = str(student.get('assigned_room'))
-            seat_id = str(student.get('assigned_seat'))
-
-            curr_shift = student.get('shift', 'Morning')
-            curr_time = student.get('exam_time', '09:30 AM')
-
-            qr_content = f"RBU|{roll_val}|{room_id}|{curr_time}"
-
-            qr = qrcode.make(qr_content)
-            buf = io.BytesIO()
-            qr.save(buf, format="PNG")
-            qr_base64 = base64.b64encode(buf.getvalue()).decode()
-
-            new_records.append(models.StudentSeating(
-                name=student.get('nameid') or student.get('name'),
-                roll_no=roll_val,
-                branch=student.get('branch', 'GEN'),
-                year=str(student.get('year', '1')),
-                subject=student.get('course_name') or student.get('subject', 'N/A'),
-                paper_group_id=student.get('paper_group_id', 'COMMON'),
-                room_no=room_id,
-                seat_no=seat_id,
-                shift=curr_shift,
-                exam_time=curr_time,
-                attendance_status="Absent",
-                qr_code=f"data:image/png;base64,{qr_base64}"
-            ))
-
-        db.add_all(new_records)
-        db.commit()
-
-        return {"status": "success", "count": len(assignments)}
+        return await run_solver_logic(db, mode, is_first_upload=True, raw_student_data=s_df.to_dict('records'))
 
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=f"Solver Crash: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
+# -------------------- 3. REGENERATE & SOLVER ENGINE --------------------
 
-# -------------------- 2. ROOM DIRECTORY --------------------
+@router.post("/regenerate-plan")
+async def regenerate_plan(req: RegenerateRequest, db: Session = Depends(connection.get_db)):
+    try:
+        return await run_solver_logic(db, req.mode)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Regeneration Failed: {str(e)}")
 
-@router.get("/rooms")
-async def get_all_rooms(db: Session = Depends(connection.get_db)):
-    return db.query(models.Room).all()
+async def run_solver_logic(db: Session, mode: str, is_first_upload=False, raw_student_data=None):
+    current_rooms = db.query(models.Room).all()
+    rooms_list = [{
+        "room_no": r.room_no,
+        "rows": r.rows,
+        "cols": r.cols,
+        "broken_tables": r.broken_tables
+    } for r in current_rooms]
 
-
-# -------------------- 3. DIGITAL TWIN --------------------
-
-@router.patch("/room/update-infrastructure")
-async def update_infrastructure(data: BrokenTableUpdate, db: Session = Depends(connection.get_db)):
-    room = db.query(models.Room).filter(models.Room.room_no == data.room_no).first()
-
-    if not room:
-        raise HTTPException(status_code=404, detail="Room Not Found")
-
-    current_broken = set(t.strip() for t in str(room.broken_tables).split(',') if t.strip())
-
-    if data.is_broken:
-        current_broken.add(data.table_id)
+    student_records = []
+    if is_first_upload and raw_student_data:
+        for row in raw_student_data:
+            student_records.append({
+                "name": row.get('name', row.get('nameid', 'Unknown')),
+                "roll_no": str(row.get('roll_no', row.get('rollno', '000'))),
+                "branch": row.get('branch', 'GEN'),
+                "year": str(row.get('year', '1')),
+                "subject": row.get('subject', 'N/A'),
+                "paper_group_id": row.get('subject', 'N/A')
+            })
     else:
-        current_broken.discard(data.table_id)
+        existing = db.query(models.StudentSeating).all()
+        for s in existing:
+            student_records.append({
+                "name": s.name,
+                "roll_no": s.roll_no,
+                "branch": s.branch,
+                "year": s.year,
+                "subject": s.subject,
+                "paper_group_id": s.subject
+            })
 
-    room.broken_tables = ",".join(current_broken)
+    if not student_records:
+        raise HTTPException(400, "No student registry found.")
+
+    assignments = solve_seating(student_records, rooms_list, mode=mode)
+    
+    db.query(models.StudentSeating).delete()
     db.commit()
 
-    return {"status": "Synced", "broken_tables": room.broken_tables}
+    new_records = []
+    for s in assignments:
+        qr_content = f"RBU|{s['roll_no']}|{s['assigned_room']}|{s.get('assigned_seat')}"
+        qr = qrcode.make(qr_content)
+        buf = io.BytesIO()
+        qr.save(buf, format="PNG")
+        qr_base64 = base64.b64encode(buf.getvalue()).decode()
 
+        new_records.append(models.StudentSeating(
+            name=s['name'],
+            roll_no=s['roll_no'],
+            branch=s.get('branch', 'GEN'),
+            year=str(s.get('year', '1')),
+            subject=s['subject'],
+            room_no=s['assigned_room'],
+            seat_no=str(s.get('assigned_seat')),
+            shift=s.get('shift', 'Morning'),
+            exam_time=s.get('exam_time', '09:30 AM'),
+            attendance_status="Absent", 
+            qr_code=f"data:image/png;base64,{qr_base64}"
+        ))
 
-# -------------------- 4. SEARCH HUB --------------------
+    db.add_all(new_records)
+    db.commit()
+    return {"status": "success", "count": len(assignments)}
+
+# -------------------- 4. ANALYTICS & INFRASTRUCTURE --------------------
+
+@router.get("/analytics")
+async def get_analytics(db: Session = Depends(connection.get_db)):
+    total = db.query(models.StudentSeating).count()
+    present = db.query(models.StudentSeating).filter(models.StudentSeating.attendance_status == "Present").count()
+    rooms = db.query(models.Room).all()
+    
+    room_stats = []
+    for r in rooms:
+        students_in_room = db.query(models.StudentSeating).filter(models.StudentSeating.room_no == r.room_no).all()
+        room_stats.append({
+            "name": f"Room {r.room_no}",
+            "room_no": r.room_no,
+            "count": len(students_in_room),
+            "broken": len([t for t in r.broken_tables.split(',') if t.strip()]),
+            "broken_tables": r.broken_tables,
+            "rows": r.rows,
+            "cols": r.cols,
+            "students": [{"name": s.name, "seat": s.seat_no, "status": s.attendance_status} for s in students_in_room]
+        })
+
+    return {
+        "totalStudents": total,
+        "presentCount": present,
+        "utilization": round((total / 2500) * 100, 1) if total > 0 else 0,
+        "roomData": room_stats
+    }
+
+@router.patch("/room/update-infrastructure")
+async def update_infra(data: BrokenTableUpdate, db: Session = Depends(connection.get_db)):
+    room = db.query(models.Room).filter(models.Room.room_no == data.room_no).first()
+    if not room: raise HTTPException(404, "Room Not Found")
+    
+    broken_set = set(t.strip() for t in str(room.broken_tables).split(',') if t.strip())
+    if data.is_broken: broken_set.add(data.table_id)
+    else: broken_set.discard(data.table_id)
+    
+    room.broken_tables = ",".join(filter(None, broken_set))
+    db.commit()
+    return {"status": "success", "broken_tables": room.broken_tables}
 
 @router.get("/search-hub")
 async def search_hub(
     query: str = Query(None), 
     filter_type: str = Query("student"), 
-    shift: str = Query("All"),
-    year: str = Query("All"),
     db: Session = Depends(connection.get_db)
 ):
     stmt = db.query(models.StudentSeating)
-
-    if shift != "All":
-        stmt = stmt.filter(models.StudentSeating.shift == shift)
-
-    if year != "All":
-        stmt = stmt.filter(models.StudentSeating.year == year)
-
     if query:
         if filter_type == "student":
-            stmt = stmt.filter(or_(
-                models.StudentSeating.name.ilike(f"%{query}%"),
-                models.StudentSeating.roll_no.ilike(f"%{query}%")
-            ))
-        elif filter_type == "subject":
-            stmt = stmt.filter(models.StudentSeating.subject.ilike(f"%{query}%"))
-        elif filter_type == "room":
-            stmt = stmt.filter(models.StudentSeating.room_no == query)
-        elif filter_type == "branch":
-            stmt = stmt.filter(models.StudentSeating.branch.ilike(f"%{query}%"))
-
+            stmt = stmt.filter(or_(models.StudentSeating.name.ilike(f"%{query}%"), models.StudentSeating.roll_no.ilike(f"%{query}%")))
+    
     results = stmt.all()
-
-    summary = {}
-    for s in results:
-        label = f"Room {s.room_no}"
-        summary[label] = summary.get(label, 0) + 1
-
-    return {"results": results, "summary": summary, "total": len(results)}
-
-
-# -------------------- 5. ANALYTICS --------------------
-
-@router.get("/analytics")
-async def get_analytics(db: Session = Depends(connection.get_db)):
-    total = db.query(models.StudentSeating).count()
-
-    present = db.query(models.StudentSeating)\
-        .filter(models.StudentSeating.attendance_status == "Present")\
-        .count()
-
-    rooms = db.query(
-        models.StudentSeating.room_no,
-        func.count(models.StudentSeating.id)
-    ).group_by(models.StudentSeating.room_no).all()
-
-    return {
-        "totalStudents": total,
-        "presentCount": present,
-        "absentCount": total - present,
-        "utilization": round((total / 2500) * 100, 1) if total > 0 else 0,
-        "roomData": [{"name": f"Room {r[0]}", "count": r[1]} for r in rooms]
-    }
-
-
-# -------------------- 6. 🔥 FINAL VERIFIED ENDPOINT --------------------
-
-@router.post("/attendance/verify-scan")
-async def verify_attendance(
-    data: AttendanceVerification,
-    authorization: str = Header(None),
-    db: Session = Depends(connection.get_db)
-):
-    print("Incoming QR:", data.qr_data)
-
-    if authorization != "RBU_ADMIN_SECURE_TOKEN_2026":
-        raise HTTPException(status_code=401, detail="Unauthorized Device")
-
-    qr_value = data.qr_data.strip()
-
-    # Parse QR or manual input
-    if "|" in qr_value:
-        parts = qr_value.split('|')
-        if parts[0] != "RBU":
-            raise HTTPException(status_code=400, detail="Invalid QR Signature")
-        roll_no = parts[1]
-    else:
-        roll_no = qr_value
-
-    student = db.query(models.StudentSeating)\
-        .filter(models.StudentSeating.roll_no == roll_no)\
-        .first()
-
-    if not student:
-        raise HTTPException(status_code=404, detail="Student Not Registered")
-
-    now = datetime.now().time()
-
-    if student.shift == "Morning":
-        if not (time(9, 0) <= now <= time(9, 30)):
-            raise HTTPException(status_code=403, detail="Morning Entry Closed")
-
-    elif student.shift == "Afternoon":
-        if not (time(13, 0) <= now <= time(14, 30)):
-            raise HTTPException(status_code=403, detail="Afternoon Entry Closed")
-
-    if student.attendance_status == "Present":
-        return {
-            "status": "warning",
-            "message": "Already Verified",
-            "name": student.name
-        }
-
-    student.attendance_status = "Present"
-    db.commit()
-
-    return {
-        "status": "success",
-        "name": student.name,
-        "room": student.room_no,
-        "seat": student.seat_no
-    }
-
-
-# -------------------- 7. DEVICE ENROLLMENT --------------------
-
-@router.post("/device/enroll")
-async def enroll_device(data: DeviceEnrollment):
-    if data.admin_secret == "RBU_MASTER_KEY":
-        return {
-            "status": "authorized",
-            "token": "RBU_ADMIN_SECURE_TOKEN_2026"
-        }
-
-    raise HTTPException(status_code=403, detail="Invalid Master Key")
+    return {"results": results, "total": len(results)}
