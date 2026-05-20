@@ -10,6 +10,8 @@ import RoomEditor from './pages/Admin/RoomEditor';
 import StudentDashboard from './pages/Student/StudentDashboard';
 import MasterSeatingPDF from './pages/Admin/MasterSeatingPDF';
 import VerifyScan from './pages/Admin/VerifyScan';
+// 🛡️ Invigilator Dashboard imported safely from the new pages structural layout node
+import InvigilatorDashboard from './pages/Invigilator/InvigilatorDashboard';
 
 const AdminLayout = ({ children }) => (
   <div className="flex bg-slate-50 min-h-screen text-slate-900 selection:bg-indigo-100 font-sans">
@@ -50,12 +52,20 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
+          {/* 👥 STUDENT ACCESS NODE ROUTE */}
           <Route path="/student/dashboard" element={userRole === 'student' ? <StudentDashboard /> : <Navigate to="/login" replace />} />
+          
+          {/* 🔐 INVIGILATOR PRIVATE CONTROL CENTER ROUTE (Newly Embedded Node) */}
+          <Route path="/invigilator/dashboard" element={userRole === 'invigilator' ? <InvigilatorDashboard /> : <Navigate to="/login" replace />} />
+
+          {/* 👑 ADMINISTRATIVE SUBSYSTEM WORKSPACE ROUTES */}
           <Route path="/admin/dashboard" element={userRole === 'admin' ? <AdminLayout><RoomEditor /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/upload" element={userRole === 'admin' ? <AdminLayout><UploadHub /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/analytics" element={userRole === 'admin' ? <AdminLayout><Analytics /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/verify-scan" element={userRole === 'admin' ? <AdminLayout><VerifyScan /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/reports" element={userRole === 'admin' ? <MasterSeatingPDF /> : <Navigate to="/login" replace />} />
+          
+          {/* FALLBACK TRIGGER REDIRECT OVERRIDE */}
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </div>

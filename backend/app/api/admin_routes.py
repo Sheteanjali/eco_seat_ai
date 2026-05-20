@@ -26,11 +26,15 @@ class AttendanceUpdate(BaseModel):
     roll_no: str
     status: str 
 
-# NEW: Schema for Verify Scan request
 class VerifyScanRequest(BaseModel):
     qr_data: str
 
-# -------------------- 1. ATTENDANCE & VERIFY LOGIC (The Fix) --------------------
+# 👑 NEW SCHEMA: Request body configuration parser for isolated seat swapping
+class ResolveBrokenSeatRequest(BaseModel):
+    student_id: int
+    target_new_room: str
+
+# -------------------- 1. ATTENDANCE & VERIFY LOGIC --------------------
 
 @router.post("/attendance/verify-scan")
 async def verify_scan(
@@ -41,7 +45,6 @@ async def verify_scan(
     """
     Handles identity verification from VerifyScan.js
     """
-    # 🛡️ Step 1: Secure Terminal Check
     if authorization != "RBU_ADMIN_SECURE_TOKEN_2026":
         raise HTTPException(status_code=401, detail="Unauthorized Terminal Access")
 
@@ -49,17 +52,13 @@ async def verify_scan(
     if not qr_raw:
         raise HTTPException(status_code=400, detail="Empty QR Content")
 
-    # 🔍 Step 2: Extract Roll Number
-    # Format Handling: "RBU|ROLL123|ROOM1" -> ROLL123
     roll_no = qr_raw.split("|")[1] if "|" in qr_raw else qr_raw
 
-    # 🔎 Step 3: DB Search
     student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == roll_no).first()
     
     if not student:
         raise HTTPException(status_code=404, detail="Student Identity Not Found")
 
-    # ✅ Step 4: Record Presence
     student.attendance_status = "Present"
     db.commit()
 
@@ -81,7 +80,70 @@ async def mark_attendance(data: AttendanceUpdate, db: Session = Depends(connecti
     db.commit()
     return {"status": "success", "new_status": student.attendance_status}
 
-# -------------------- 2. DATA INGESTION & AI SOLVER --------------------
+
+# -------------------- 👑 2. FAULT-TOLERANT RESOLVER ENGINE --------------------
+
+@router.post("/resolve-broken-seat")
+async def admin_resolve_broken_seat(payload: ResolveBrokenSeatRequest, db: Session = Depends(connection.get_db)):
+    """
+    Finds an open layout slot inside the target room selected by Admin,
+    moves ONLY the affected student, without altering any other database allocations.
+    """
+    # 🔍 Fetch student node flag registry details
+    student = db.query(models.StudentSeating).filter(models.StudentSeating.id == payload.student_id).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student index record mismatch.")
+
+    # 🔎 Fetch room structural parameters boundaries
+    room_meta = db.query(models.Room).filter(models.Room.room_no == payload.target_new_room).first()
+    if not room_meta:
+        raise HTTPException(status_code=404, detail=f"Target Room {payload.target_new_room} matrix missing.")
+
+    # 📏 Max seats constraint matching check
+    max_capacity = room_meta.total_tables * room_meta.students_per_table
+    currently_allocated = db.query(models.StudentSeating).filter(models.StudentSeating.room_no == payload.target_new_room).all()
+
+    if len(currently_allocated) >= max_capacity:
+        raise HTTPException(status_code=400, detail=f"Target Room {payload.target_new_room} is at absolute density limit.")
+
+    # 🛠️ Extract all available layout indices safely
+    allocated_seats = [s.seat_no for s in currently_allocated]
+    all_possible_seats = [
+        f"S-{row}-{col}" 
+        for row in range(1, room_meta.rows + 1) 
+        for col in range(1, room_meta.cols + 1)
+    ]
+    
+    # Exclude broken tables configuration if mapped by admin inside data frame
+    broken_list = [t.strip() for t in str(room_meta.broken_tables).split(',') if t.strip()]
+    available_slots = [s for s in all_possible_seats if s not in allocated_seats and s not in broken_list]
+
+    if not available_slots:
+        raise HTTPException(status_code=500, detail="No isolated coordinates available inside target room arrays.")
+
+    old_room = student.room_no
+    old_seat = student.seat_no
+    target_new_seat = available_slots[0] # Picking the first constraint matching slot index
+
+    # 🔄 Atomic swap operation boundary lock
+    student.room_no = payload.target_new_room
+    student.seat_no = target_new_seat
+    student.attendance_status = "Present (Admin Swapped)"
+    student.incident_logs = f"RESOLVED: Shifted from Room {old_room} [Seat {old_seat}] due to broken chair report."
+    
+    db.commit()
+    print(f"👑 [ADMIN RESOLVE TRANS] - Shifted Candidate {student.roll_no} safely -> Room {payload.target_new_room} at {target_new_seat}")
+    
+    return {
+        "status": "success",
+        "message": f"Candidate successfully mapped to alternative room slots without cascading shifts.",
+        "moved_student": student.name,
+        "new_room": student.room_no,
+        "new_seat": student.seat_no
+    }
+
+
+# -------------------- 3. DATA INGESTION & AI SOLVER --------------------
 
 @router.post("/upload-bulk")
 async def upload_bulk_data(
@@ -121,7 +183,8 @@ async def upload_bulk_data(
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
 
-# -------------------- 3. REGENERATE & SOLVER ENGINE --------------------
+
+# -------------------- 4. REGENERATE & SOLVER ENGINE --------------------
 
 @router.post("/regenerate-plan")
 async def regenerate_plan(req: RegenerateRequest, db: Session = Depends(connection.get_db)):
@@ -196,7 +259,8 @@ async def run_solver_logic(db: Session, mode: str, is_first_upload=False, raw_st
     db.commit()
     return {"status": "success", "count": len(assignments)}
 
-# -------------------- 4. ANALYTICS & INFRASTRUCTURE --------------------
+
+# -------------------- 5. ANALYTICS & INFRASTRUCTURE --------------------
 
 @router.get("/analytics")
 async def get_analytics(db: Session = Depends(connection.get_db)):

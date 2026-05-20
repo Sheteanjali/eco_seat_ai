@@ -33,7 +33,7 @@ const Login = () => {
     });
   };
 
-  // ✅ FIXED: Added correct prefix '/api/auth/' to prevent 404
+  // 📡 REQUEST OTP NODE CONNECTOR
   const handleRequestOTP = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -63,7 +63,7 @@ const Login = () => {
     }
   };
 
-  // ✅ FIXED: Added correct prefix '/api/auth/' to prevent 404
+  // 🔓 VERIFY OTP NODE CONNECTOR (Routing Matrix Fixed)
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -85,10 +85,12 @@ const Login = () => {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('sessionToken', response.data.token);
 
+        // 🧭 MULTI-ROLE SECURITY PATH ROUTER
         if (formData.role === 'admin') {
           navigate('/admin/dashboard');
         } else if (formData.role === 'invigilator') {
-          navigate('/admin/attendance/verify-scan');
+          // 👈 FIXED: Routes seamlessly to the new dedicated control workspace room
+          navigate('/invigilator/dashboard');
         } else {
           navigate('/student/dashboard');
         }
@@ -134,7 +136,7 @@ const Login = () => {
 
         <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10 py-12">
           
-          {/* LEFT CONTENT */}
+          {/* LEFT CONTENT CONTAINER */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300">
               <Sparkles size={15} />
@@ -170,7 +172,7 @@ const Login = () => {
             </div>
           </div>
 
-          {/* LOGIN CARD */}
+          {/* DYNAMIC SECURE LOGIN SYSTEM CARD */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
             <div className="w-full max-w-[460px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-10 shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500" />
@@ -342,7 +344,7 @@ const Login = () => {
             <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl text-center space-y-3">
               <div className="w-10 h-10 bg-purple-500 text-black rounded-full flex items-center justify-center font-black mx-auto text-sm shadow-md">4</div>
               <h4 className="text-sm font-black uppercase italic">Central Audit</h4>
-              <p className="text-xs text-slate-400 leading-relaxed"> централизованный analytics updates, populating dynamic circular layouts and side-by-side metrics grids.</p>
+              <p className="text-xs text-slate-400 leading-relaxed">Централизованный analytics updates, populating dynamic circular layouts and side-by-side metrics grids.</p>
             </div>
           </div>
         </div>
