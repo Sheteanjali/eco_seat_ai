@@ -5,7 +5,8 @@ from sqlalchemy.orm import Session
 import uvicorn
 
 # Project Imports
-from .api import auth, admin_routes, student_routes
+# 👑 FIXED: Integrated invigilator_routes mapping inside the api module extraction node
+from .api import auth, admin_routes, student_routes, invigilator_routes 
 from .database import models, connection
 
 # Initialize Database Tables (Automatic Table Creation)
@@ -44,22 +45,18 @@ async def update_room_infrastructure(
     Admin marks table as broken on the Digital Twin map.
     This updates the database so the AI Solver skips these seats.
     """
-    # 1. Database se wo specific room dhundo
     room = db.query(models.Room).filter(models.Room.room_no == data.room_no).first()
     
     if not room:
         raise HTTPException(status_code=404, detail=f"Room {data.room_no} not found.")
 
-    # 2. Current broken tables string ko set mein convert karo (e.g., "T1,T2" -> {'T1', 'T2'})
     current_broken = set(t.strip() for t in str(room.broken_tables).split(',') if t.strip())
 
-    # 3. Logic: Agar chair broken hai toh set mein add karo, warna nikalo
     if data.is_broken:
         current_broken.add(data.table_id)
     else:
         current_broken.discard(data.table_id)
 
-    # 4. Wapas comma-separated string banakar save karo
     room.broken_tables = ",".join(filter(None, current_broken))
     
     try:
@@ -80,6 +77,10 @@ async def update_room_infrastructure(
 app.include_router(auth.router)
 app.include_router(admin_routes.router)
 app.include_router(student_routes.router)
+
+# 👑 THE FINAL CYBER MATRIX PATCH: Added invigilator workspace boundaries route mapping
+# This opens up the /api/invigilator/dashboard-stream and gate scanner network tunnels!
+app.include_router(invigilator_routes.router) 
 
 
 # -------------------- SYSTEM HEALTH --------------------

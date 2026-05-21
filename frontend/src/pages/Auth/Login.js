@@ -63,7 +63,7 @@ const Login = () => {
     }
   };
 
-  // 🔓 VERIFY OTP NODE CONNECTOR (Routing Matrix Fixed)
+  // 🔓 VERIFY OTP NODE CONNECTOR (State Sync Latency Bypass Patch Applied)
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -79,20 +79,27 @@ const Login = () => {
       );
 
       if (response.data.status === 'success') {
+        // Mount authentication tokens directly into client storage cache
         localStorage.setItem('userRole', formData.role);
         localStorage.setItem('userEmail', formData.email);
         localStorage.setItem('userRollNo', formData.rollNo);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('sessionToken', response.data.token);
 
-        // 🧭 MULTI-ROLE SECURITY PATH ROUTER
+        // Explicit fallback context for demo room assignment matrix
+        if (formData.role === 'invigilator') {
+          localStorage.setItem('assignedRoomNo', "Ex-101");
+        }
+
+        // 🛡️ CYBER GATEWAY PATCH: 
+        // Bypasses React memory lag loops by issuing a full hardware relocation frame.
+        // This forces App.js to instantly bootstrap with the updated userRole parameters.
         if (formData.role === 'admin') {
-          navigate('/admin/dashboard');
+          window.location.href = '/admin/dashboard';
         } else if (formData.role === 'invigilator') {
-          // 👈 FIXED: Routes seamlessly to the new dedicated control workspace room
-          navigate('/invigilator/dashboard');
+          window.location.href = '/invigilator/dashboard';
         } else {
-          navigate('/student/dashboard');
+          window.location.href = '/student/dashboard';
         }
       }
     } catch (err) {
@@ -119,9 +126,9 @@ const Login = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection(homeRef)} className="text-sm font-bold text-cyan-400 uppercase tracking-widest">Home</button>
-          <button onClick={() => scrollToSection(aboutRef)} className="text-sm font-bold text-slate-300 hover:text-cyan-400 transition uppercase tracking-widest">Workspace</button>
-          <button onClick={() => scrollToSection(featuresRef)} className="text-sm font-bold text-slate-300 hover:text-cyan-400 transition uppercase tracking-widest">Pipelines</button>
+          <button type="button" onClick={() => scrollToSection(homeRef)} className="text-sm font-bold text-cyan-400 uppercase tracking-widest">Home</button>
+          <button type="button" onClick={() => scrollToSection(aboutRef)} className="text-sm font-bold text-slate-300 hover:text-cyan-400 transition uppercase tracking-widest">Workspace</button>
+          <button type="button" onClick={() => scrollToSection(featuresRef)} className="text-sm font-bold text-slate-300 hover:text-cyan-400 transition uppercase tracking-widest">Pipelines</button>
         </div>
 
         <div className="px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-[10px] font-bold uppercase tracking-[0.2em]">
