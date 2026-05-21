@@ -29,7 +29,6 @@ class AttendanceUpdate(BaseModel):
 class VerifyScanRequest(BaseModel):
     qr_data: str
 
-# 👑 NEW SCHEMA: Request body configuration parser for isolated seat swapping
 class ResolveBrokenSeatRequest(BaseModel):
     student_id: int
     target_new_room: str
@@ -42,9 +41,6 @@ async def verify_scan(
     db: Session = Depends(connection.get_db),
     authorization: str = Header(None)
 ):
-    """
-    Handles identity verification from VerifyScan.js
-    """
     if authorization != "RBU_ADMIN_SECURE_TOKEN_2026":
         raise HTTPException(status_code=401, detail="Unauthorized Terminal Access")
 
@@ -53,7 +49,6 @@ async def verify_scan(
         raise HTTPException(status_code=400, detail="Empty QR Content")
 
     roll_no = qr_raw.split("|")[1] if "|" in qr_raw else qr_raw
-
     student = db.query(models.StudentSeating).filter(models.StudentSeating.roll_no == roll_no).first()
     
     if not student:
@@ -81,40 +76,35 @@ async def mark_attendance(data: AttendanceUpdate, db: Session = Depends(connecti
     return {"status": "success", "new_status": student.attendance_status}
 
 
-# -------------------- 👑 2. FAULT-TOLERANT RESOLVER ENGINE --------------------
+# -------------------- 2. FAULT-TOLERANT RESOLVER ENGINE --------------------
 
 @router.post("/resolve-broken-seat")
 async def admin_resolve_broken_seat(payload: ResolveBrokenSeatRequest, db: Session = Depends(connection.get_db)):
-    """
-    Finds an open layout slot inside the target room selected by Admin,
-    moves ONLY the affected student, without altering any other database allocations.
-    """
-    # 🔍 Fetch student node flag registry details
     student = db.query(models.StudentSeating).filter(models.StudentSeating.id == payload.student_id).first()
     if not student:
         raise HTTPException(status_code=404, detail="Student index record mismatch.")
 
-    # 🔎 Fetch room structural parameters boundaries
     room_meta = db.query(models.Room).filter(models.Room.room_no == payload.target_new_room).first()
     if not room_meta:
         raise HTTPException(status_code=404, detail=f"Target Room {payload.target_new_room} matrix missing.")
 
-    # 📏 Max seats constraint matching check
     max_capacity = room_meta.total_tables * room_meta.students_per_table
     currently_allocated = db.query(models.StudentSeating).filter(models.StudentSeating.room_no == payload.target_new_room).all()
 
     if len(currently_allocated) >= max_capacity:
         raise HTTPException(status_code=400, detail=f"Target Room {payload.target_new_room} is at absolute density limit.")
 
-    # 🛠️ Extract all available layout indices safely
     allocated_seats = [s.seat_no for s in currently_allocated]
-    all_possible_seats = [
-        f"S-{row}-{col}" 
-        for row in range(1, room_meta.rows + 1) 
-        for col in range(1, room_meta.cols + 1)
-    ]
     
-    # Exclude broken tables configuration if mapped by admin inside data frame
+    all_possible_seats = []
+    for row in range(1, room_meta.rows + 1):
+        for col in range(1, room_meta.cols + 1):
+            if room_meta.students_per_table == 2:
+                all_possible_seats.append(f"R{row}C{col}_L")
+                all_possible_seats.append(f"R{row}C{col}_R")
+            else:
+                all_possible_seats.append(f"R{row}C{col}")
+    
     broken_list = [t.strip() for t in str(room_meta.broken_tables).split(',') if t.strip()]
     available_slots = [s for s in all_possible_seats if s not in allocated_seats and s not in broken_list]
 
@@ -123,33 +113,29 @@ async def admin_resolve_broken_seat(payload: ResolveBrokenSeatRequest, db: Sessi
 
     old_room = student.room_no
     old_seat = student.seat_no
-    target_new_seat = available_slots[0] # Picking the first constraint matching slot index
+    target_new_seat = available_slots[0]
 
-    # 🔄 Atomic swap operation boundary lock
     student.room_no = payload.target_new_room
     student.seat_no = target_new_seat
     student.attendance_status = "Present (Admin Swapped)"
     student.incident_logs = f"RESOLVED: Shifted from Room {old_room} [Seat {old_seat}] due to broken chair report."
     
     db.commit()
-    print(f"👑 [ADMIN RESOLVE TRANS] - Shifted Candidate {student.roll_no} safely -> Room {payload.target_new_room} at {target_new_seat}")
-    
     return {
         "status": "success",
-        "message": f"Candidate successfully mapped to alternative room slots without cascading shifts.",
         "moved_student": student.name,
         "new_room": student.room_no,
         "new_seat": student.seat_no
     }
 
 
-# -------------------- 3. DATA INGESTION & AI SOLVER --------------------
+# -------------------- 3. DATA INGESTION & DYNAMIC AI SOLVER --------------------
 
 @router.post("/upload-bulk")
 async def upload_bulk_data(
     student_file: UploadFile = File(...), 
     room_file: UploadFile = File(...),
-    mode: str = "Single", 
+    mode: str = Query("Single"), # 🎯 FIXED: Extracted as Query param to instantly match frontend button actions
     db: Session = Depends(connection.get_db)
 ):
     try:
@@ -165,6 +151,16 @@ async def upload_bulk_data(
         s_df = s_df.fillna("N/A")
         r_df = r_df.fillna("")
 
+        if 'branch' in s_df.columns:
+            s_df = s_df.sort_values(by=['branch']).reset_index(drop=True)
+
+        # 👑 THE TOGGLE MATRIX UPGRADE: Evaluates exact string payload to set room boundary dimensions
+        # Alternate matching for "Double", "2 students per bench" button modes string text
+        is_double_mode = "double" in str(mode).lower() or "two" in str(mode).lower() or "2" in str(mode).lower()
+        per_bench_count = 2 if is_double_mode else 1
+
+        print(f"📡 [AI SOLVER ACTIVATION LOG] - Initializing ingestion map layout mode: {mode} (Count per table: {per_bench_count})")
+
         for _, r_data in r_df.iterrows():
             db.add(models.Room(
                 room_no=str(r_data['room_no']),
@@ -173,11 +169,11 @@ async def upload_bulk_data(
                 rows=int(r_data['rows']),
                 cols=int(r_data['cols']),
                 broken_tables=str(r_data.get('broken_tables', "")),
-                students_per_table=1 
+                students_per_table=per_bench_count # 🎯 FIXED: Explicit dynamic link injection applied
             ))
         db.commit()
 
-        return await run_solver_logic(db, mode, is_first_upload=True, raw_student_data=s_df.to_dict('records'))
+        return await run_solver_logic(db, "Double" if is_double_mode else "Single", is_first_upload=True, raw_student_data=s_df.to_dict('records'))
 
     except Exception as e:
         db.rollback()
@@ -199,7 +195,8 @@ async def run_solver_logic(db: Session, mode: str, is_first_upload=False, raw_st
         "room_no": r.room_no,
         "rows": r.rows,
         "cols": r.cols,
-        "broken_tables": r.broken_tables
+        "broken_tables": r.broken_tables,
+        "students_per_table": r.students_per_table 
     } for r in current_rooms]
 
     student_records = []
@@ -208,13 +205,13 @@ async def run_solver_logic(db: Session, mode: str, is_first_upload=False, raw_st
             student_records.append({
                 "name": row.get('name', row.get('nameid', 'Unknown')),
                 "roll_no": str(row.get('roll_no', row.get('rollno', '000'))),
-                "branch": row.get('branch', 'GEN'),
+                "branch": str(row.get('branch', 'GEN')).strip().upper(),
                 "year": str(row.get('year', '1')),
                 "subject": row.get('subject', 'N/A'),
                 "paper_group_id": row.get('subject', 'N/A')
             })
     else:
-        existing = db.query(models.StudentSeating).all()
+        existing = db.query(models.StudentSeating).order_by(models.StudentSeating.branch).all()
         for s in existing:
             student_records.append({
                 "name": s.name,
@@ -275,6 +272,8 @@ async def get_analytics(db: Session = Depends(connection.get_db)):
             "name": f"Room {r.room_no}",
             "room_no": r.room_no,
             "count": len(students_in_room),
+            "capacity": r.total_tables,
+            "students_per_bench": r.students_per_table,
             "broken": len([t for t in r.broken_tables.split(',') if t.strip()]),
             "broken_tables": r.broken_tables,
             "rows": r.rows,

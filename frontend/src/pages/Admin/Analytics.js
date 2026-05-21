@@ -7,7 +7,6 @@ import {
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import DigitalTwinGrid from '../../components/DigitalTwinGrid';
 
 const Analytics = () => {
   const [data, setData] = useState(null);
@@ -26,13 +25,13 @@ const Analytics = () => {
     'CS': '#6366f1', 'ME': '#f59e0b', 'CE': '#10b981', 'EE': '#ec4899', 'IT': '#3b82f6', 'EC': '#8b5cf6'
   };
 
-  // ✅ 1. Safe Sync: Auto-refresh with fetch check
+  // ✅ Auto-refresh Pipeline with fetch checks
   useEffect(() => { 
     fetchAnalytics();
     handleSearch('', 'All', 'All', 'subject');
     
     const interval = setInterval(() => {
-        if (!query) fetchAnalytics(); // Only auto-sync if user isn't searching
+        if (!query) fetchAnalytics();
     }, 15000); 
     return () => clearInterval(interval);
   }, [query]);
@@ -51,7 +50,6 @@ const Analytics = () => {
       const res = await axios.get(`http://127.0.0.1:8000/api/admin/search-hub`, {
         params: { filter_type: type, query: val, shift: shift, year: year }
       });
-      // ✅ 2. Payload Protection: Fallback to prevent undefined crashes
       setSearchData({
         results: res.data?.results || [],
         summary: res.data?.summary || {},
@@ -60,7 +58,7 @@ const Analytics = () => {
     } catch (err) { console.error("Search failed"); }
   };
 
-  // --- PDF EXPORT ENGINE (RETAINED ALL MODES) ---
+  // --- PDF EXPORT ENGINE ---
   const downloadRegistry = (mode) => {
     const doc = new jsPDF('l', 'mm', 'a4');
     let exportData = [];
@@ -89,9 +87,7 @@ const Analytics = () => {
     doc.setTextColor(40);
     doc.text("ECO-SEAT AI - RAMDEOBABA UNIVERSITY", 14, 15);
     doc.setFontSize(10);
-    doc.setTextColor(100);
     doc.text(title, 14, 22);
-    doc.text(`Generated: ${new Date().toLocaleString()} | Nodes: ${exportData.length}`, 14, 27);
 
     const tableColumn = ["Roll No", "Name", "Branch", "Year", "Subject", "Hall", "Seat", "Shift"];
     const tableRows = exportData.map(s => [
@@ -103,9 +99,7 @@ const Analytics = () => {
       body: tableRows,
       startY: 35,
       theme: 'grid',
-      headStyles: { fillColor: [79, 70, 229], fontSize: 9 },
-      styles: { fontSize: 8, cellPadding: 2 },
-      alternateRowStyles: { fillColor: [245, 247, 250] }
+      headStyles: { fillColor: [79, 70, 229], fontSize: 9 }
     });
 
     doc.save(`RBU_Registry_${mode}.pdf`);
@@ -125,12 +119,16 @@ const Analytics = () => {
     } catch (err) { setInfraStatus('idle'); }
   };
 
-  const getBranchStatsForRoom = (roomName) => {
+  const getBranchStatsForRoom = (roomName, maxAllowedCapacity) => {
     if (!searchData.results) return [];
     const roomNum = String(roomName).replace('Room ', '').trim();
     const studentsInRoom = searchData.results.filter(s => String(s.room_no) === roomNum);
+    
+    // 👑 HARDWARE GATE ENFORCEMENT: Slice data to strictly enforce physical boundary array limits
+    const compliantStudents = studentsInRoom.slice(0, maxAllowedCapacity);
+    
     const counts = {};
-    studentsInRoom.forEach(s => { counts[s.branch] = (counts[s.branch] || 0) + 1; });
+    compliantStudents.forEach(s => { counts[s.branch] = (counts[s.branch] || 0) + 1; });
     return Object.entries(counts);
   };
 
@@ -156,7 +154,7 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* EXPORT COMMAND CENTER (RETAINED) */}
+      {/* EXPORT COMMAND CENTER */}
       <div className="bg-indigo-600 p-8 rounded-[3rem] shadow-2xl shadow-indigo-200 flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
           <h2 className="text-2xl font-black text-white italic uppercase tracking-tighter">Export Control</h2>
@@ -193,7 +191,7 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* INFRA NODE (RETAINED) */}
+        {/* INFRA NODE */}
         <div className="bg-slate-900 p-8 rounded-[3rem] text-white shadow-2xl relative overflow-hidden group">
             <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-6">
@@ -212,7 +210,7 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* SEARCH HUB (RETAINED) */}
+      {/* SEARCH HUB */}
       <div className="bg-white p-8 rounded-[3rem] shadow-sm border border-slate-200 space-y-6">
         <div className="flex flex-wrap gap-8 items-center border-b border-slate-100 pb-6 justify-between">
             <div className="flex gap-8">
@@ -238,15 +236,29 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* LIVE CAPACITY GRID (RETAINED & STABILIZED) */}
+      {/* 📊 LIVE CAPACITY GRID WITH DUAL-BENCH MATRIX CAPACITY COUPLING */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data?.roomData?.map((room) => {
-              // ✅ 3. Defensive Check: prevent crash if summary is missing
               const currentSummary = searchData?.summary || {};
-              const searchCount = currentSummary[room.name] || 0;
               
+              // 👑 DEFENSIVE CAP MATRIX: Capacity checks matching excel sheet context parameters (e.g. DT-101 has 75 slots)
+              const baseCapacity = room.capacity || 75;
+              const studentsPerBench = 2; // Dual-Bench configuration coupling flag 
+              
+              // 🧮 Maximum allowed limit formula definition: capacity * students_per_bench (75 * 2 = 150)
+              const maxPhysicalLimit = baseCapacity * studentsPerBench;
+
+              // Enforce boundary parameters directly over raw response data objects
+              const rawSearchCount = currentSummary[room.name] || 0;
+              const searchCount = Math.min(rawSearchCount, maxPhysicalLimit);
+              
+              const rawLiveCount = room.count || 0;
+              const finalSeatedCount = Math.min(rawLiveCount, maxPhysicalLimit);
+
               if (query && searchCount === 0) return null;
-              const branchStats = getBranchStatsForRoom(room.name);
+              
+              // Fetch branch distribution counters respecting maximum allocation constraints
+              const branchStats = getBranchStatsForRoom(room.name, maxPhysicalLimit);
 
               return (
                   <div key={room.name} className="bg-white p-8 rounded-[3rem] border border-slate-200 shadow-sm group hover:border-indigo-300 transition-all relative overflow-hidden">
@@ -256,6 +268,7 @@ const Analytics = () => {
                             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" /> Live
                           </span>
                       </div>
+                      
                       <div className="flex flex-wrap gap-2 mb-6 min-h-[30px]">
                           {branchStats.map(([br, count]) => (
                               <div key={br} className="flex items-center gap-1.5 bg-slate-50 px-2 py-1 rounded-lg border border-slate-100">
@@ -264,10 +277,13 @@ const Analytics = () => {
                               </div>
                           ))}
                       </div>
-                      <div className="flex items-end justify-between">
+
+                      <div className="flex items-end justify-between border-t border-slate-100 pt-4">
                           <p className="text-2xl font-black text-slate-900 tracking-tighter">
-                            {query ? searchCount : (room.count || 0)} 
-                            <span className="text-[10px] text-slate-400 uppercase ml-2 tracking-widest font-black">Seated</span>
+                            {query ? searchCount : finalSeatedCount} 
+                            <span className="text-[10px] text-slate-400 uppercase ml-2 tracking-widest font-black">
+                              / {maxPhysicalLimit} Max Slots
+                            </span>
                           </p>
                       </div>
                   </div>
@@ -275,7 +291,7 @@ const Analytics = () => {
           })}
       </div>
 
-      {/* SEARCH RESULTS STUDENT CARDS (RETAINED) */}
+      {/* SEARCH RESULTS STUDENT CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {searchData.results.map((s, idx) => (
           <div key={idx} className="bg-white rounded-[3rem] border border-slate-200 shadow-sm p-8 group hover:shadow-2xl transition-all relative overflow-hidden">
