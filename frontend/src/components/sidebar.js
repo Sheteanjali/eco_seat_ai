@@ -10,7 +10,8 @@ import {
   ChevronRight,
   RotateCcw,
   QrCode,
-  Map
+  Map,
+  Settings2
 } from 'lucide-react';
 import apiService from '../services/api';
 
@@ -27,8 +28,10 @@ const Sidebar = () => {
   const menuItems = [
     { name: 'Analytics', icon: BarChart3, path: '/admin/analytics', label: 'Live Presence Feed' },
     { name: 'Optimization', icon: Database, path: '/admin/upload', label: 'Syllabus Logic' },
-    { name: 'Digital Twin', icon: Map, path: '/admin/dashboard', label: 'DT-Building Map' }, // Matches your App.js route
-    { name: 'Verify Scan', icon: QrCode, path: '/admin/verify-scan', label: 'Admin Entrance Verification' }, // Matches your App.js route
+    { name: 'Digital Twin', icon: Map, path: '/admin/dashboard', label: 'DT-Building Map' },
+    // 👑 NEW LINK ATTACHED: Links directly to your real-time asymmetric transformation center page!
+    { name: 'Manage Rooms', icon: Settings2, path: '/admin/rooms', label: 'On-Time Grid Editor' },
+    { name: 'Verify Scan', icon: QrCode, path: '/admin/verify-scan', label: 'Admin Entrance Verification' },
   ];
 
   const isActive = (path) => location.pathname === path;

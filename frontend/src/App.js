@@ -10,7 +10,9 @@ import RoomEditor from './pages/Admin/RoomEditor';
 import StudentDashboard from './pages/Student/StudentDashboard';
 import MasterSeatingPDF from './pages/Admin/MasterSeatingPDF';
 import VerifyScan from './pages/Admin/VerifyScan';
-// 🛡️ Invigilator Dashboard imported safely from the new pages structural layout node
+// 👑 FIXED PATH MATCHING: Capital 'Admin' linked properly to wipe layout compilation blocks
+import AdminRoomsControlHub from './pages/Admin/Rooms'; 
+// 🛡️ Invigilator Dashboard imported safely from the pages node
 import InvigilatorDashboard from './pages/Invigilator/InvigilatorDashboard';
 
 const AdminLayout = ({ children }) => (
@@ -55,7 +57,7 @@ function App() {
           {/* 👥 STUDENT ACCESS NODE ROUTE */}
           <Route path="/student/dashboard" element={userRole === 'student' ? <StudentDashboard /> : <Navigate to="/login" replace />} />
           
-          {/* 🔐 INVIGILATOR PRIVATE CONTROL CENTER ROUTE (Newly Embedded Node) */}
+          {/* 🛡️ INVIGILATOR PRIVATE CONTROL CENTER ROUTE */}
           <Route path="/invigilator/dashboard" element={userRole === 'invigilator' ? <InvigilatorDashboard /> : <Navigate to="/login" replace />} />
 
           {/* 👑 ADMINISTRATIVE SUBSYSTEM WORKSPACE ROUTES */}
@@ -64,6 +66,9 @@ function App() {
           <Route path="/admin/analytics" element={userRole === 'admin' ? <AdminLayout><Analytics /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/verify-scan" element={userRole === 'admin' ? <AdminLayout><VerifyScan /></AdminLayout> : <Navigate to="/login" replace />} />
           <Route path="/admin/reports" element={userRole === 'admin' ? <MasterSeatingPDF /> : <Navigate to="/login" replace />} />
+          
+          {/* 🚨 NEW ROUTE PATCH: Real-time On-Time Add/Modify Room Infrastructure Management */}
+          <Route path="/admin/rooms" element={userRole === 'admin' ? <AdminLayout><AdminRoomsControlHub /></AdminLayout> : <Navigate to="/login" replace />} />
           
           {/* FALLBACK TRIGGER REDIRECT OVERRIDE */}
           <Route path="*" element={<Navigate to="/login" replace />} />

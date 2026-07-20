@@ -11,8 +11,9 @@ class Room(Base):
     cols = Column(Integer)
     total_tables = Column(Integer)
     broken_tables = Column(String, default="") 
-    # ✅ FIX: Adding this column so admin_routes can save density settings
     students_per_table = Column(Integer, default=1) 
+    # 👑 NEW PROPERTY LAYER: Stores the asymmetric per-column rows configuration maps as serialized JSON strings
+    column_bounds = Column(String, nullable=True, default="") 
 
 class StudentSeating(Base):
     __tablename__ = "student_seating"

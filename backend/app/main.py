@@ -19,58 +19,19 @@ app = FastAPI(
 )
 
 # --- CORS CONFIGURATION (Frontend Connection Fix) ---
+# 👑 FIXED: Enforcing clear origin arrays to prevent network drop triggers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3001"
+    ], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# -------------------- SCHEMAS --------------------
-
-class BrokenTableUpdate(BaseModel):
-    room_no: str
-    table_id: str  
-    is_broken: bool
-
-# -------------------- REAL-TIME INFRASTRUCTURE ENDPOINTS --------------------
-
-@app.patch("/api/admin/room/update-infrastructure")
-async def update_room_infrastructure(
-    data: BrokenTableUpdate,
-    db: Session = Depends(connection.get_db)
-):
-    """
-    Admin marks table as broken on the Digital Twin map.
-    This updates the database so the AI Solver skips these seats.
-    """
-    room = db.query(models.Room).filter(models.Room.room_no == data.room_no).first()
-    
-    if not room:
-        raise HTTPException(status_code=404, detail=f"Room {data.room_no} not found.")
-
-    current_broken = set(t.strip() for t in str(room.broken_tables).split(',') if t.strip())
-
-    if data.is_broken:
-        current_broken.add(data.table_id)
-    else:
-        current_broken.discard(data.table_id)
-
-    room.broken_tables = ",".join(filter(None, current_broken))
-    
-    try:
-        db.commit()
-        db.refresh(room)
-        return {
-            "status": "success",
-            "message": f"Table {data.table_id} in {data.room_no} sync completed.",
-            "db_state": room.broken_tables
-        }
-    except Exception as e:
-        db.rollback()
-        raise HTTPException(status_code=500, detail="Database Sync Failed.")
-
 
 # -------------------- ROUTERS --------------------
 # Saare functionality folders ko link kar raha hai
@@ -79,7 +40,6 @@ app.include_router(admin_routes.router)
 app.include_router(student_routes.router)
 
 # 👑 THE FINAL CYBER MATRIX PATCH: Added invigilator workspace boundaries route mapping
-# This opens up the /api/invigilator/dashboard-stream and gate scanner network tunnels!
 app.include_router(invigilator_routes.router) 
 
 
