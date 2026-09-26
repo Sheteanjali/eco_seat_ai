@@ -1,17 +1,28 @@
+// File: frontend/src/index.js
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './index.css';
 import App from './App';
 
-/**
- * Global Initialization
- * Standardizing the render root for the Eco-Seat AI framework.
- */
-const root = ReactDOM.createRoot(document.getElementById('root'));
+/* ============================================================
+   ECO-SEAT
+   React Application Entry Point
+============================================================ */
+
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error(
+    'Application root element was not found. Ensure public/index.html contains <div id="root"></div>.'
+  );
+}
+
+const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    {/* The App component now manages the global routing and layout structure */}
     <App />
   </React.StrictMode>
 );

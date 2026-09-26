@@ -1,130 +1,788 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Database, 
-  BarChart3, 
+// File: frontend/src/components/Sidebar.jsx
+
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import {
+  BarChart3,
+  Database,
   LogOut,
-  Zap,
   Clock,
   ChevronRight,
   RotateCcw,
   QrCode,
   Map,
-  Settings2
+  Settings2,
+  ShieldCheck,
+  UserCircle,
 } from 'lucide-react';
+
 import apiService from '../services/api';
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [resetting, setResetting] = useState(false);
+
+  /* ==========================================================
+     CURRENT USER
+  ========================================================== */
+
+  const username =
+    localStorage.getItem('username') ||
+    'Administrator';
+
+  /* ==========================================================
+     LIVE CLOCK
+  ========================================================== */
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
+  /* ==========================================================
+     ADMIN MENU
+  ========================================================== */
+
   const menuItems = [
-    { name: 'Analytics', icon: BarChart3, path: '/admin/analytics', label: 'Live Presence Feed' },
-    { name: 'Optimization', icon: Database, path: '/admin/upload', label: 'Syllabus Logic' },
-    { name: 'Digital Twin', icon: Map, path: '/admin/dashboard', label: 'DT-Building Map' },
-    // 👑 NEW LINK ATTACHED: Links directly to your real-time asymmetric transformation center page!
-    { name: 'Manage Rooms', icon: Settings2, path: '/admin/rooms', label: 'On-Time Grid Editor' },
-    { name: 'Verify Scan', icon: QrCode, path: '/admin/verify-scan', label: 'Admin Entrance Verification' },
+    {
+      name: 'Analytics',
+      icon: BarChart3,
+      path: '/admin/analytics',
+      label: 'System Overview',
+    },
+    {
+      name: 'Optimization',
+      icon: Database,
+      path: '/admin/upload',
+      label: 'Seating Allocation',
+    },
+    {
+      name: 'Digital Twin',
+      icon: Map,
+      path: '/admin/dashboard',
+      label: 'Building & Hall View',
+    },
+    {
+      name: 'Manage Rooms',
+      icon: Settings2,
+      path: '/admin/rooms',
+      label: 'Room Configuration',
+    },
+    {
+      name: 'Verify Scan',
+      icon: QrCode,
+      path: '/admin/verify-scan',
+      label: 'Entry Verification',
+    },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  /* ==========================================================
+     ACTIVE ROUTE
+  ========================================================== */
+
+  const isActive = (path) => {
+    return (
+      location.pathname === path ||
+      location.pathname.startsWith(`${path}/`)
+    );
+  };
+
+  /* ==========================================================
+     RESET ENGINE
+  ========================================================== */
 
   const handleReset = async () => {
-    if (window.confirm("CRITICAL: Wipe seating data and clear current attendance logs?")) {
-      try {
-        await apiService.resetEngine();
-        window.location.reload(); 
-      } catch (err) {
-        alert("Reset failed. Engine is currently busy with a live session.");
-      }
+    const confirmed = window.confirm(
+      'This will clear the current seating and attendance session. Do you want to continue?'
+    );
+
+    if (!confirmed || resetting) {
+      return;
+    }
+
+    try {
+      setResetting(true);
+
+      await apiService.resetEngine();
+
+      window.location.reload();
+    } catch (error) {
+      console.error(
+        'Reset engine failed:',
+        error
+      );
+
+      alert(
+        error?.response?.data?.detail ||
+          'Unable to reset the current session. Please try again.'
+      );
+    } finally {
+      setResetting(false);
     }
   };
 
+  /* ==========================================================
+     LOGOUT
+  ========================================================== */
+
   const handleLogout = () => {
-    localStorage.clear();
-    navigate('/login');
+    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('role');
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('username');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userRollNo');
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('assigned_room');
+    localStorage.removeItem('assignedRoomNo');
+
+    window.dispatchEvent(
+      new Event('authChange')
+    );
+
+    navigate('/login', {
+      replace: true,
+    });
   };
 
+  /* ==========================================================
+     UI
+  ========================================================== */
+
   return (
-    <aside className="h-screen w-72 bg-white border-r border-slate-200 flex flex-col sticky top-0 z-50 shadow-sm">
-      
-      {/* Branding Section */}
-      <div className="p-8 pb-4">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="bg-indigo-600 p-2.5 rounded-xl shadow-lg shadow-indigo-100">
-            <Zap size={24} className="text-white fill-white" />
+    <aside
+      className="
+        sticky
+        top-0
+        z-40
+        flex
+        h-screen
+        w-72
+        shrink-0
+        flex-col
+        border-r
+        border-slate-200
+        bg-white
+      "
+    >
+      {/* =====================================================
+          BRAND
+      ===================================================== */}
+
+      <div
+        className="
+          border-b
+          border-slate-100
+          px-6
+          pb-5
+          pt-6
+        "
+      >
+        <button
+          type="button"
+          onClick={() =>
+            navigate('/admin/analytics')
+          }
+          className="
+            group
+            flex
+            w-full
+            items-center
+            gap-3
+            text-left
+          "
+        >
+          <div
+            className="
+              flex
+              h-11
+              w-11
+              shrink-0
+              items-center
+              justify-center
+              rounded-xl
+              border
+              border-indigo-100
+              bg-indigo-50
+              text-indigo-600
+              transition-all
+              duration-200
+              group-hover:bg-indigo-100
+            "
+          >
+            <ShieldCheck
+              size={22}
+              strokeWidth={2.2}
+            />
           </div>
-          <div>
-            <h1 className="text-xl font-black text-slate-900 tracking-tight uppercase" style={{ fontFamily: '"Times New Roman", serif' }}>
-              Eco-Seat <span className="text-indigo-600">AI</span>
-            </h1>
-            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest -mt-1">Operational Hub</p>
+
+          <div className="min-w-0">
+            <div
+              className="
+                flex
+                items-center
+                gap-1
+              "
+            >
+              <h1
+                className="
+                  text-lg
+                  font-extrabold
+                  tracking-tight
+                  text-slate-900
+                "
+              >
+                Eco-Seat
+              </h1>
+
+              <span
+                className="
+                  text-lg
+                  font-extrabold
+                  tracking-tight
+                  text-indigo-600
+                "
+              >
+                AI
+              </span>
+            </div>
+
+            <p
+              className="
+                mt-0.5
+                text-[8px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-slate-400
+              "
+            >
+              Administration Console
+            </p>
           </div>
+        </button>
+
+        {/* ===================================================
+            SYSTEM STATUS
+        =================================================== */}
+
+        <div
+          className="
+            mt-5
+            flex
+            items-center
+            justify-between
+            rounded-xl
+            border
+            border-slate-200
+            bg-slate-50
+            px-4
+            py-3
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-2
+            "
+          >
+            <span
+              className="
+                relative
+                flex
+                h-2
+                w-2
+              "
+            >
+              <span
+                className="
+                  absolute
+                  inline-flex
+                  h-full
+                  w-full
+                  animate-ping
+                  rounded-full
+                  bg-emerald-400
+                  opacity-50
+                "
+              />
+
+              <span
+                className="
+                  relative
+                  inline-flex
+                  h-2
+                  w-2
+                  rounded-full
+                  bg-emerald-500
+                "
+              />
+            </span>
+
+            <span
+              className="
+                text-[9px]
+                font-bold
+                uppercase
+                tracking-[0.14em]
+                text-slate-500
+              "
+            >
+              System Online
+            </span>
+          </div>
+
+          <span
+            className="
+              rounded-md
+              border
+              border-slate-200
+              bg-white
+              px-2
+              py-1
+              text-[8px]
+              font-bold
+              uppercase
+              tracking-wider
+              text-slate-400
+            "
+          >
+            Admin
+          </span>
         </div>
-        
-        {/* LIVE CLOCK WIDGET */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between shadow-xl">
-          <div className="flex items-center gap-2 text-indigo-400">
-            <Clock size={14} />
-            <span className="text-[10px] font-black uppercase tracking-widest">RBU Time</span>
+
+        {/* ===================================================
+            CLOCK
+        =================================================== */}
+
+        <div
+          className="
+            mt-3
+            flex
+            items-center
+            justify-between
+            rounded-xl
+            border
+            border-slate-200
+            bg-white
+            px-4
+            py-3
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-2
+              text-slate-500
+            "
+          >
+            <Clock
+              size={14}
+              className="text-indigo-500"
+            />
+
+            <span
+              className="
+                text-[9px]
+                font-bold
+                uppercase
+                tracking-[0.13em]
+              "
+            >
+              Local Time
+            </span>
           </div>
-          <span className="text-sm font-mono font-bold text-white tracking-widest">
-            {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+
+          <span
+            className="
+              font-mono
+              text-xs
+              font-bold
+              text-slate-700
+            "
+          >
+            {currentTime.toLocaleTimeString(
+              [],
+              {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+              }
+            )}
           </span>
         </div>
       </div>
 
-      {/* Navigation Links */}
-      <nav className="flex-1 px-4 py-6 space-y-2">
-        {menuItems.map((item) => (
-          <button
-            key={item.name}
-            onClick={() => navigate(item.path)}
-            className={`
-              w-full flex items-center justify-between px-4 py-4 rounded-2xl font-bold transition-all group
-              ${isActive(item.path) 
-                ? 'bg-indigo-50 text-indigo-600 border border-indigo-100 shadow-sm' 
-                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'}
-            `}
-          >
-            <div className="flex items-center gap-4">
-              <span className={isActive(item.path) ? 'text-indigo-600' : 'text-slate-400 group-hover:text-indigo-600 transition-colors'}>
-                <item.icon size={20} />
-              </span>
-              <div className="text-left">
-                <p className="text-sm tracking-tight font-black uppercase">{item.name}</p>
-                <p className={`text-[9px] font-bold uppercase tracking-widest ${isActive(item.path) ? 'text-indigo-400' : 'text-slate-400'}`}>
-                  {item.label}
-                </p>
-              </div>
-            </div>
-            {isActive(item.path) && <ChevronRight size={14} className="text-indigo-300" />}
-          </button>
-        ))}
-      </nav>
+      {/* =====================================================
+          NAVIGATION
+      ===================================================== */}
 
-      {/* Bottom Profile & Reset Controls */}
-      <div className="p-6 mt-auto border-t border-slate-100 space-y-4">
-        <button 
+      <div
+        className="
+          flex-1
+          overflow-y-auto
+          px-4
+          py-5
+        "
+      >
+        <p
+          className="
+            mb-3
+            px-3
+            text-[8px]
+            font-bold
+            uppercase
+            tracking-[0.2em]
+            text-slate-400
+          "
+        >
+          Administration
+        </p>
+
+        <nav className="space-y-1.5">
+          {menuItems.map((item) => {
+            const active =
+              isActive(item.path);
+
+            const Icon =
+              item.icon;
+
+            return (
+              <button
+                type="button"
+                key={item.name}
+                onClick={() =>
+                  navigate(item.path)
+                }
+                className={`
+                  group
+                  relative
+                  flex
+                  w-full
+                  items-center
+                  justify-between
+                  rounded-xl
+                  border
+                  px-3
+                  py-3
+                  text-left
+                  transition-all
+                  duration-200
+
+                  ${
+                    active
+                      ? `
+                          border-indigo-100
+                          bg-indigo-50/80
+                          shadow-sm
+                        `
+                      : `
+                          border-transparent
+                          bg-white
+                          hover:border-slate-200
+                          hover:bg-slate-50
+                        `
+                  }
+                `}
+              >
+                {/* ACTIVE INDICATOR */}
+
+                {active && (
+                  <span
+                    className="
+                      absolute
+                      -left-[17px]
+                      h-8
+                      w-[3px]
+                      rounded-r-full
+                      bg-indigo-600
+                    "
+                  />
+                )}
+
+                <div
+                  className="
+                    flex
+                    min-w-0
+                    items-center
+                    gap-3
+                  "
+                >
+                  {/* ICON */}
+
+                  <div
+                    className={`
+                      flex
+                      h-9
+                      w-9
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-lg
+                      border
+                      transition-all
+
+                      ${
+                        active
+                          ? `
+                              border-indigo-100
+                              bg-white
+                              text-indigo-600
+                              shadow-sm
+                            `
+                          : `
+                              border-slate-100
+                              bg-slate-50
+                              text-slate-400
+                              group-hover:border-indigo-100
+                              group-hover:bg-indigo-50
+                              group-hover:text-indigo-600
+                            `
+                      }
+                    `}
+                  >
+                    <Icon
+                      size={17}
+                      strokeWidth={2}
+                    />
+                  </div>
+
+                  {/* TEXT */}
+
+                  <div className="min-w-0">
+                    <p
+                      className={`
+                        truncate
+                        text-[11px]
+                        font-bold
+
+                        ${
+                          active
+                            ? 'text-indigo-700'
+                            : 'text-slate-700'
+                        }
+                      `}
+                    >
+                      {item.name}
+                    </p>
+
+                    <p
+                      className={`
+                        mt-0.5
+                        truncate
+                        text-[8px]
+                        font-semibold
+                        uppercase
+                        tracking-wider
+
+                        ${
+                          active
+                            ? 'text-indigo-400'
+                            : 'text-slate-400'
+                        }
+                      `}
+                    >
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+
+                {active && (
+                  <ChevronRight
+                    size={14}
+                    className="
+                      shrink-0
+                      text-indigo-400
+                    "
+                  />
+                )}
+              </button>
+            );
+          })}
+        </nav>
+      </div>
+
+      {/* =====================================================
+          ADMIN PROFILE
+      ===================================================== */}
+
+      <div
+        className="
+          border-t
+          border-slate-100
+          px-4
+          pb-4
+          pt-4
+        "
+      >
+        <div
+          className="
+            mb-3
+            flex
+            items-center
+            gap-3
+            rounded-xl
+            border
+            border-slate-200
+            bg-slate-50
+            p-3
+          "
+        >
+          <div
+            className="
+              flex
+              h-9
+              w-9
+              shrink-0
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-slate-200
+              bg-white
+              text-slate-500
+              shadow-sm
+            "
+          >
+            <UserCircle size={17} />
+          </div>
+
+          <div className="min-w-0">
+            <p
+              className="
+                truncate
+                text-[11px]
+                font-bold
+                text-slate-800
+              "
+            >
+              {username}
+            </p>
+
+            <div
+              className="
+                mt-0.5
+                flex
+                items-center
+                gap-1.5
+              "
+            >
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-emerald-500
+                "
+              />
+
+              <p
+                className="
+                  text-[8px]
+                  font-semibold
+                  uppercase
+                  tracking-wider
+                  text-slate-400
+                "
+              >
+                Administrator
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ===================================================
+            RESET
+        =================================================== */}
+
+        <button
+          type="button"
           onClick={handleReset}
-          className="w-full flex items-center gap-4 px-4 py-3 text-slate-400 font-bold hover:text-amber-600 transition-colors text-[9px] uppercase tracking-[0.2em] group"
+          disabled={resetting}
+          className="
+            group
+            flex
+            w-full
+            items-center
+            gap-3
+            rounded-xl
+            px-3
+            py-2.5
+            text-[9px]
+            font-bold
+            uppercase
+            tracking-[0.12em]
+            text-slate-400
+            transition-all
+            hover:bg-amber-50
+            hover:text-amber-600
+            disabled:cursor-not-allowed
+            disabled:opacity-50
+          "
         >
-          <RotateCcw size={14} className="group-hover:rotate-[-45deg] transition-transform" />
-          Purge Active Logs
+          <RotateCcw
+            size={14}
+            className={
+              resetting
+                ? 'animate-spin'
+                : 'transition-transform group-hover:-rotate-45'
+            }
+          />
+
+          {resetting
+            ? 'Resetting Session...'
+            : 'Reset Current Session'}
         </button>
-        
-        <button 
+
+        {/* ===================================================
+            LOGOUT
+        =================================================== */}
+
+        <button
+          type="button"
           onClick={handleLogout}
-          className="w-full flex items-center justify-center gap-2 py-4 bg-slate-900 hover:bg-rose-600 text-white rounded-2xl transition-all font-black text-[10px] uppercase tracking-widest shadow-xl shadow-slate-200"
+          className="
+            mt-2
+            flex
+            w-full
+            items-center
+            justify-center
+            gap-2
+            rounded-xl
+            border
+            border-slate-200
+            bg-white
+            py-3
+            text-[9px]
+            font-bold
+            uppercase
+            tracking-[0.14em]
+            text-slate-600
+            shadow-sm
+            transition-all
+            duration-200
+            hover:border-red-200
+            hover:bg-red-50
+            hover:text-red-600
+          "
         >
-          <LogOut size={16} /> Terminate Access
+          <LogOut size={14} />
+
+          Logout
         </button>
       </div>
     </aside>
