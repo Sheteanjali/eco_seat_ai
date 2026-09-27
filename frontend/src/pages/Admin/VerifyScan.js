@@ -1,11 +1,6 @@
 // File: frontend/src/pages/Admin/VerifyScan.js
 
-// File: frontend/src/pages/Admin/VerifyScan.js
-
-// File: frontend/src/pages/Admin/VerifyScan.js
-
-import React, { useState, useEffect, useMemo } from 'react';
-
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   QrCode,
   Loader2,
@@ -27,282 +22,107 @@ import {
   Building2,
   Filter,
   Contact,
+  RefreshCw,
 } from 'lucide-react';
-
 import axios from 'axios';
 
 /* ============================================================
-   EXISTING DATA LOGIC
+   API CONFIGURATION
 ============================================================ */
 
-const generateInitialStudents = () => {
-  const branches = ['CSE', 'ECE', 'MECH', 'EEE', 'CIVIL'];
-  const years = ['1st', '2nd', '3rd', '4th'];
+const API_ROOT = (
+  process.env.REACT_APP_API_URL ||
+  'http://127.0.0.1:8765'
+)
+  .replace(/\/+$/, '')
+  .replace(/\/api$/, '');
 
-  const firstNames = [
-    'Aarav',
-    'Ananya',
-    'Rohan',
-    'Priya',
-    'Siddharth',
-    'Neha',
-    'Vikram',
-    'Isha',
-    'Karan',
-    'Pooja',
-    'Rahul',
-    'Sneha',
-    'Aditya',
-    'Riya',
-    'Amit',
-    'Kavya',
-  ];
+const API_BASE_URL = `${API_ROOT}/api`;
 
-  const lastNames = [
-    'Sharma',
-    'Verma',
-    'Mehta',
-    'Patel',
-    'Rao',
-    'Gupta',
-    'Singh',
-    'Joshi',
-    'Nair',
-    'Kumar',
-    'Reddy',
-    'Deshmukh',
-    'Chopra',
-    'Malhotra',
-  ];
+const DEVICE_KEY = 'RBU_DEVICE_KEY';
+const DEVICE_TOKEN = 'RBU_ADMIN_SECURE_TOKEN_2026';
 
-  const logs = [];
+/* ============================================================
+   HELPERS
+============================================================ */
 
-  for (let i = 1; i <= 2000; i++) {
-    const padId = String(i).padStart(4, '0');
+const normalizeStatus = (status) => {
+  const value = String(status || '').trim().toUpperCase();
 
-    const fname = firstNames[i % firstNames.length];
-    const lname = lastNames[(i * 3) % lastNames.length];
+  if (value === 'PRESENT') return 'PRESENT';
 
-    const branch = branches[i % branches.length];
-    const year = years[i % years.length];
-
-    logs.push({
-      id: String(i),
-      rollNo: `${branch}2026${padId}`,
-      name: `${fname} ${lname}`,
-      branch,
-      year,
-      status: 'ABSENT',
-      time: '-',
-      room: '-',
-      seat: '-',
-    });
-  }
-
-  return logs;
+  return 'ABSENT';
 };
 
-const INITIAL_STUDENT_LOGS = generateInitialStudents();
+const normalizeStudent = (student, index) => ({
+  id:
+    student?.id !== undefined && student?.id !== null
+      ? String(student.id)
+      : String(index),
+
+  rollNo: String(student?.roll_no || '').trim(),
+
+  name: String(student?.name || 'Unknown Student').trim(),
+
+  branch: String(student?.branch || 'N/A').trim(),
+
+  year: String(student?.year || 'N/A').trim(),
+
+  subject: String(student?.subject || '').trim(),
+
+  status: normalizeStatus(student?.attendance_status),
+
+  time: String(
+    student?.attendance_time ||
+      student?.verified_at ||
+      '-'
+  ),
+
+  room: String(student?.room_no || '-').trim(),
+
+  seat: String(student?.seat_no || '-').trim(),
+
+  shift: String(student?.shift || '').trim(),
+
+  qrCode: String(student?.qr_code || '').trim(),
+});
 
 /* ============================================================
    MAIN COMPONENT
 ============================================================ */
 
 const VerifyScan = () => {
-  /* ----------------------------------------------------------
-     VERIFICATION STATE
-  ---------------------------------------------------------- */
+  /* =========================================================
+     VERIFICATION
+  ========================================================= */
 
   const [scanResult, setScanResult] = useState(null);
+
   const [loading, setLoading] = useState(false);
+
   const [manualQR, setManualQR] = useState('');
-  const [isAuthorized, setIsAuthorized] = useState(false);
 
-  const [studentLogs, setStudentLogs] = useState(
-    INITIAL_STUDENT_LOGS
-  );
+  const [isAuthorized, setIsAuthorized] =
+    useState(false);
 
-  /* ----------------------------------------------------------
-     PAGINATION
-  ---------------------------------------------------------- */
+  /* =========================================================
+     STUDENT REGISTRY
+  ========================================================= */
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 20;
+  const [studentLogs, setStudentLogs] = useState([]);
 
-  /* ----------------------------------------------------------
-     DEVICE AUTHORIZATION
-  ---------------------------------------------------------- */
+  const [directoryLoading, setDirectoryLoading] =
+    useState(true);
 
-  useEffect(() => {
-    const token = localStorage.getItem('RBU_DEVICE_KEY');
+  const [directoryError, setDirectoryError] =
+    useState('');
 
-    if (token === 'RBU_ADMIN_SECURE_TOKEN_2026') {
-      setIsAuthorized(true);
-    }
-  }, []);
+  const [refreshing, setRefreshing] =
+    useState(false);
 
-  const enrollDevice = () => {
-    localStorage.setItem(
-      'RBU_DEVICE_KEY',
-      'RBU_ADMIN_SECURE_TOKEN_2026'
-    );
-
-    setIsAuthorized(true);
-  };
-
-  /* ----------------------------------------------------------
-     ERROR MESSAGE
-  ---------------------------------------------------------- */
-
-  const getErrorMessage = () => {
-    const msg = scanResult?.message;
-
-    if (!msg) return 'Identity Not Found';
-
-    if (typeof msg === 'object') {
-      return msg.detail || 'Invalid Data';
-    }
-
-    return msg;
-  };
-
-  /* ----------------------------------------------------------
-     VERIFY STUDENT
-     LOGIC PRESERVED
-  ---------------------------------------------------------- */
-
-  const handleVerify = async (qrContent) => {
-    if (!qrContent) return;
-
-    setLoading(true);
-    setScanResult(null);
-
-    const deviceToken =
-      localStorage.getItem('RBU_DEVICE_KEY');
-
-    const cleanedQuery = String(qrContent)
-      .trim()
-      .toUpperCase();
-
-    try {
-      const res = await axios({
-        method: 'post',
-
-        url:
-          'http://127.0.0.1:8765/api/admin/attendance/verify-scan',
-
-        data: {
-          qr_data: cleanedQuery,
-        },
-
-        headers: {
-          Authorization: deviceToken,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const responseData = res.data;
-
-      setScanResult({
-        success: true,
-        ...responseData,
-      });
-
-      setStudentLogs((prevLogs) =>
-        prevLogs.map((student) => {
-          if (
-            student.rollNo.toUpperCase() ===
-            cleanedQuery
-          ) {
-            return {
-              ...student,
-
-              status: 'PRESENT',
-
-              time: new Date().toLocaleTimeString(
-                [],
-                {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                }
-              ),
-
-              room: responseData.room || '301',
-
-              seat: responseData.seat || 'A-12',
-            };
-          }
-
-          return student;
-        })
-      );
-
-      setManualQR('');
-    } catch (err) {
-      /* EXISTING FALLBACK LOGIC PRESERVED */
-
-      const existingStudent = studentLogs.find(
-        (s) =>
-          s.rollNo.toUpperCase() === cleanedQuery
-      );
-
-      if (existingStudent) {
-        setStudentLogs((prevLogs) =>
-          prevLogs.map((student) => {
-            if (
-              student.rollNo.toUpperCase() ===
-              cleanedQuery
-            ) {
-              return {
-                ...student,
-
-                status: 'PRESENT',
-
-                time: new Date().toLocaleTimeString(
-                  [],
-                  {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  }
-                ),
-
-                room: '301',
-
-                seat: `S-${
-                  Math.floor(Math.random() * 50) + 1
-                }`,
-              };
-            }
-
-            return student;
-          })
-        );
-
-        setScanResult({
-          success: true,
-          name: existingStudent.name,
-          room: '301',
-          seat: 'A-12',
-        });
-
-        setManualQR('');
-      } else {
-        setScanResult({
-          success: false,
-
-          message:
-            err.response?.data?.detail ||
-            'Roll Number Not Found in 2000 Records',
-        });
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  /* ==========================================================
-     DIRECTORY STATE
-  ========================================================== */
+  /* =========================================================
+     FILTERS
+  ========================================================= */
 
   const [searchQuery, setSearchQuery] =
     useState('');
@@ -316,19 +136,283 @@ const VerifyScan = () => {
   const [selectedStatus, setSelectedStatus] =
     useState('ALL');
 
-  /* ----------------------------------------------------------
+  /* =========================================================
+     PAGINATION
+  ========================================================= */
+
+  const [currentPage, setCurrentPage] =
+    useState(1);
+
+  const pageSize = 20;
+
+  /* =========================================================
+     DEVICE AUTHORIZATION
+  ========================================================= */
+
+  useEffect(() => {
+    const token =
+      localStorage.getItem(DEVICE_KEY);
+
+    if (token === DEVICE_TOKEN) {
+      setIsAuthorized(true);
+    }
+  }, []);
+
+  const enrollDevice = () => {
+    localStorage.setItem(
+      DEVICE_KEY,
+      DEVICE_TOKEN
+    );
+
+    setIsAuthorized(true);
+  };
+
+  /* =========================================================
+     LOAD REAL STUDENTS FROM DATABASE
+  ========================================================= */
+
+  const loadStudents = useCallback(
+    async (manualRefresh = false) => {
+      if (manualRefresh) {
+        setRefreshing(true);
+      } else {
+        setDirectoryLoading(true);
+      }
+
+      setDirectoryError('');
+
+      try {
+        const response = await axios.get(
+          `${API_BASE_URL}/admin/search-hub`,
+          {
+            params: {
+              filter_type: 'student',
+              query: '',
+            },
+          }
+        );
+
+        const results = Array.isArray(
+          response?.data?.results
+        )
+          ? response.data.results
+          : [];
+
+        const normalized = results.map(
+          (student, index) =>
+            normalizeStudent(student, index)
+        );
+
+        setStudentLogs(normalized);
+      } catch (error) {
+        console.error(
+          'Student registry synchronization failed:',
+          error
+        );
+
+        setStudentLogs([]);
+
+        setDirectoryError(
+          error?.response?.data?.detail ||
+            'Unable to load uploaded student records.'
+        );
+      } finally {
+        setDirectoryLoading(false);
+        setRefreshing(false);
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    loadStudents();
+  }, [loadStudents]);
+
+  /* =========================================================
+     ERROR MESSAGE
+  ========================================================= */
+
+  const getErrorMessage = () => {
+    const message = scanResult?.message;
+
+    if (!message) {
+      return 'Identity Not Found';
+    }
+
+    if (typeof message === 'object') {
+      return (
+        message.detail ||
+        'Unable to verify candidate.'
+      );
+    }
+
+    return String(message);
+  };
+
+  /* =========================================================
+     VERIFY STUDENT
+  ========================================================= */
+
+  const handleVerify = async (qrContent) => {
+    if (!qrContent || loading) return;
+
+    const cleanedQuery =
+      String(qrContent).trim();
+
+    if (!cleanedQuery) return;
+
+    if (!isAuthorized) {
+      setScanResult({
+        success: false,
+        message:
+          'Please authorize this verification terminal first.',
+      });
+
+      return;
+    }
+
+    setLoading(true);
+    setScanResult(null);
+
+    const deviceToken =
+      localStorage.getItem(DEVICE_KEY);
+
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/admin/attendance/verify-scan`,
+        {
+          qr_data: cleanedQuery,
+        },
+        {
+          headers: {
+            Authorization: deviceToken,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      const responseData =
+        response?.data || {};
+
+      setScanResult({
+        success: true,
+
+        name:
+          responseData.name ||
+          'Verified Candidate',
+
+        rollNo:
+          responseData.roll_no ||
+          cleanedQuery,
+
+        room:
+          responseData.room ||
+          'N/A',
+
+        seat:
+          responseData.seat ||
+          'N/A',
+
+        message:
+          responseData.message ||
+          'Authorized Entry Recorded',
+      });
+
+      setManualQR('');
+
+      /*
+       * IMPORTANT:
+       * Backend has already changed attendance_status
+       * to Present. Reload database records instead of
+       * creating fake local attendance.
+       */
+      await loadStudents(true);
+    } catch (error) {
+      console.error(
+        'Candidate verification failed:',
+        error
+      );
+
+      setScanResult({
+        success: false,
+
+        message:
+          error?.response?.data?.detail ||
+          'Unable to verify candidate.',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* =========================================================
+     AVAILABLE FILTER VALUES
+  ========================================================= */
+
+  const branchOptions = useMemo(() => {
+    return Array.from(
+      new Set(
+        studentLogs
+          .map((student) =>
+            String(student.branch || '').trim()
+          )
+          .filter(
+            (value) =>
+              value &&
+              value.toUpperCase() !== 'N/A'
+          )
+      )
+    ).sort((a, b) =>
+      a.localeCompare(b, undefined, {
+        numeric: true,
+      })
+    );
+  }, [studentLogs]);
+
+  const yearOptions = useMemo(() => {
+    return Array.from(
+      new Set(
+        studentLogs
+          .map((student) =>
+            String(student.year || '').trim()
+          )
+          .filter(
+            (value) =>
+              value &&
+              value.toUpperCase() !== 'N/A'
+          )
+      )
+    ).sort((a, b) =>
+      a.localeCompare(b, undefined, {
+        numeric: true,
+      })
+    );
+  }, [studentLogs]);
+
+  /* =========================================================
      FILTERING
-  ---------------------------------------------------------- */
+  ========================================================= */
 
   const filteredStudents = useMemo(() => {
+    const query =
+      searchQuery.trim().toLowerCase();
+
     return studentLogs.filter((student) => {
       const matchesQuery =
-        student.name
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase()) ||
-        student.rollNo
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase());
+        !query ||
+        [
+          student.name,
+          student.rollNo,
+          student.branch,
+          student.year,
+          student.room,
+          student.seat,
+          student.subject,
+        ].some((value) =>
+          String(value || '')
+            .toLowerCase()
+            .includes(query)
+        );
 
       const matchesBranch =
         selectedBranch === 'ALL' ||
@@ -357,14 +441,35 @@ const VerifyScan = () => {
     selectedStatus,
   ]);
 
-  /* ----------------------------------------------------------
-     PAGINATION
-  ---------------------------------------------------------- */
+  /* =========================================================
+     RESET PAGE WHEN FILTER CHANGES
+  ========================================================= */
 
-  const totalPages =
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [
+    searchQuery,
+    selectedBranch,
+    selectedYear,
+    selectedStatus,
+  ]);
+
+  /* =========================================================
+     PAGINATION
+  ========================================================= */
+
+  const totalPages = Math.max(
+    1,
     Math.ceil(
       filteredStudents.length / pageSize
-    ) || 1;
+    )
+  );
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
 
   const paginatedStudents = useMemo(() => {
     const start =
@@ -374,26 +479,30 @@ const VerifyScan = () => {
       start,
       start + pageSize
     );
-  }, [filteredStudents, currentPage]);
+  }, [
+    filteredStudents,
+    currentPage,
+  ]);
 
-  /* ----------------------------------------------------------
-     STATS
-  ---------------------------------------------------------- */
+  /* =========================================================
+     STATISTICS
+  ========================================================= */
 
   const stats = useMemo(() => {
     const total = studentLogs.length;
 
     const present = studentLogs.filter(
-      (s) => s.status === 'PRESENT'
+      (student) =>
+        student.status === 'PRESENT'
     ).length;
 
-    const absent = studentLogs.filter(
-      (s) => s.status === 'ABSENT'
-    ).length;
+    const absent = total - present;
 
     const percentage =
       total > 0
-        ? Math.round((present / total) * 100)
+        ? Math.round(
+            (present / total) * 100
+          )
         : 0;
 
     return {
@@ -404,158 +513,196 @@ const VerifyScan = () => {
     };
   }, [studentLogs]);
 
-  /* ==========================================================
-     EXPORT
-     EXISTING LOGIC PRESERVED
-  ========================================================== */
+  /* =========================================================
+     EXPORT REPORT
+  ========================================================= */
 
   const handleExportPDF = () => {
-    const printWindow = window.open(
-      '',
-      '_blank'
-    );
+    const printWindow =
+      window.open('', '_blank');
 
     if (!printWindow) {
-      return alert(
-        'Please allow popups to download report!'
+      window.alert(
+        'Please allow popups to download the attendance report.'
       );
+
+      return;
     }
 
-    const rowsHTML = filteredStudents
-      .map(
-        (st, i) => `
-          <tr>
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${i + 1}
-            </td>
+    const escapeHtml = (value) =>
+      String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              <b>${st.rollNo}</b>
-            </td>
+    const rowsHTML =
+      filteredStudents
+        .map(
+          (student, index) => `
+            <tr>
+              <td>${index + 1}</td>
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${st.name}
-            </td>
+              <td>
+                <strong>
+                  ${escapeHtml(student.rollNo)}
+                </strong>
+              </td>
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${st.branch}
-            </td>
+              <td>
+                ${escapeHtml(student.name)}
+              </td>
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${st.year}
-            </td>
+              <td>
+                ${escapeHtml(student.branch)}
+              </td>
 
-            <td style="
-              padding: 8px;
-              border-bottom: 1px solid #e2e8f0;
-              color: ${
-                st.status === 'PRESENT'
-                  ? '#10B981'
-                  : '#EF4444'
-              };
-              font-weight: 700;
-            ">
-              ${st.status}
-            </td>
+              <td>
+                ${escapeHtml(student.year)}
+              </td>
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${st.time}
-            </td>
+              <td class="${
+                student.status === 'PRESENT'
+                  ? 'present'
+                  : 'absent'
+              }">
+                ${escapeHtml(student.status)}
+              </td>
 
-            <td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">
-              ${st.room} / ${st.seat}
-            </td>
-          </tr>
-        `
-      )
-      .join('');
+              <td>
+                ${escapeHtml(student.room)}
+              </td>
+
+              <td>
+                ${escapeHtml(student.seat)}
+              </td>
+            </tr>
+          `
+        )
+        .join('');
 
     printWindow.document.write(`
+      <!DOCTYPE html>
+
       <html>
-
         <head>
-
           <title>
-            Attendance Report -
-            ${new Date().toLocaleDateString()}
+            Eco-Seat Attendance Report
           </title>
 
           <style>
+            * {
+              box-sizing: border-box;
+            }
 
             body {
-              font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                'Segoe UI',
-                Roboto,
-                sans-serif;
-
-              padding: 20px;
-              color: #0F172A;
+              font-family: Arial, sans-serif;
+              padding: 28px;
+              color: #0f172a;
             }
 
-            h2 {
-              font-size: 20px;
-              font-weight: 800;
-              margin-bottom: 4px;
-              text-transform: uppercase;
+            .header {
+              margin-bottom: 22px;
             }
 
-            p {
-              color: #64748B;
-              font-size: 11px;
-              margin-top: 0;
+            h1 {
+              margin: 0;
+              font-size: 22px;
+            }
+
+            .subtitle {
+              color: #64748b;
+              font-size: 12px;
+              margin-top: 7px;
+            }
+
+            .summary {
+              display: flex;
+              gap: 12px;
+              margin: 18px 0;
+            }
+
+            .summary-box {
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 10px 14px;
+              font-size: 12px;
             }
 
             table {
               width: 100%;
               border-collapse: collapse;
-              margin-top: 16px;
-              font-size: 12px;
+              font-size: 11px;
             }
 
             th {
-              background-color: #0F172A;
-              color: white;
-              padding: 10px;
+              background: #f1f5f9;
               text-align: left;
-              font-size: 10px;
-              text-transform: uppercase;
+              padding: 9px;
+              border: 1px solid #e2e8f0;
             }
 
-          </style>
+            td {
+              padding: 9px;
+              border: 1px solid #e2e8f0;
+            }
 
+            .present {
+              color: #047857;
+              font-weight: 700;
+            }
+
+            .absent {
+              color: #b91c1c;
+              font-weight: 700;
+            }
+          </style>
         </head>
 
         <body>
+          <div class="header">
+            <h1>
+              Eco-Seat AI — Attendance Report
+            </h1>
 
-          <h2>
-            Gate Attendance Report
-            (Total Records:
-            ${filteredStudents.length})
-          </h2>
+            <div class="subtitle">
+              Generated:
+              ${escapeHtml(
+                new Date().toLocaleString()
+              )}
+            </div>
+          </div>
 
-          <p>
-            Generated:
-            ${new Date().toLocaleString()}
-            |
-            Filter: Branch [${selectedBranch}],
-            Year [${selectedYear}],
-            Status [${selectedStatus}]
-          </p>
+          <div class="summary">
+            <div class="summary-box">
+              Total: ${stats.total}
+            </div>
+
+            <div class="summary-box">
+              Present: ${stats.present}
+            </div>
+
+            <div class="summary-box">
+              Absent: ${stats.absent}
+            </div>
+
+            <div class="summary-box">
+              Attendance: ${stats.percentage}%
+            </div>
+          </div>
 
           <table>
-
             <thead>
               <tr>
                 <th>#</th>
                 <th>Roll No</th>
-                <th>Student Name</th>
+                <th>Student</th>
                 <th>Branch</th>
                 <th>Year</th>
                 <th>Status</th>
-                <th>Time</th>
-                <th>Room / Seat</th>
+                <th>Room</th>
+                <th>Seat</th>
               </tr>
             </thead>
 
@@ -563,55 +710,48 @@ const VerifyScan = () => {
               ${
                 rowsHTML ||
                 `
-                <tr>
-                  <td
-                    colspan="8"
-                    style="
-                      text-align:center;
-                      padding:20px;
-                    "
-                  >
-                    No Data Found
-                  </td>
-                </tr>
+                  <tr>
+                    <td
+                      colspan="8"
+                      style="
+                        text-align:center;
+                        padding:25px;
+                      "
+                    >
+                      No records found.
+                    </td>
+                  </tr>
                 `
               }
             </tbody>
-
           </table>
 
           <script>
-            window.onload = function() {
+            window.onload = function () {
               window.print();
-              window.close();
-            }
+            };
           </script>
-
         </body>
-
       </html>
     `);
 
     printWindow.document.close();
   };
 
-  /* ==========================================================
+  /* =========================================================
      UI
-  ========================================================== */
+  ========================================================= */
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 
-        {/* ====================================================
-            PAGE HEADER
-        ==================================================== */}
+        {/* HEADER */}
 
         <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
 
           <div>
-
             <div className="mb-2 flex items-center gap-2">
 
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
@@ -629,10 +769,10 @@ const VerifyScan = () => {
             </h1>
 
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-              Verify examination candidates, mark attendance
-              and review student entry records.
+              Verify examination candidates,
+              mark attendance and review
+              real uploaded student records.
             </p>
-
           </div>
 
           {/* AUTH STATUS */}
@@ -644,7 +784,6 @@ const VerifyScan = () => {
                 : 'border-red-200 bg-red-50'
             }`}
           >
-
             <div
               className={`flex h-9 w-9 items-center justify-center rounded-lg ${
                 isAuthorized
@@ -652,17 +791,14 @@ const VerifyScan = () => {
                   : 'bg-red-100 text-red-600'
               }`}
             >
-
               {isAuthorized ? (
                 <ShieldCheck size={18} />
               ) : (
                 <ShieldAlert size={18} />
               )}
-
             </div>
 
             <div>
-
               <p
                 className={`text-xs font-semibold ${
                   isAuthorized
@@ -686,7 +822,6 @@ const VerifyScan = () => {
                   ? 'Device authorization verified'
                   : 'Device enrollment required'}
               </p>
-
             </div>
 
             {!isAuthorized && (
@@ -698,20 +833,15 @@ const VerifyScan = () => {
                 Enroll Device
               </button>
             )}
-
           </div>
 
         </div>
 
-        {/* ====================================================
-            TOP CONTENT
-        ==================================================== */}
+        {/* TOP SECTION */}
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
 
-          {/* ==================================================
-              VERIFICATION CARD
-          ================================================== */}
+          {/* VERIFY CARD */}
 
           <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
 
@@ -729,8 +859,8 @@ const VerifyScan = () => {
                   </h2>
 
                   <p className="mt-0.5 text-xs text-slate-500">
-                    Enter the candidate roll number to verify
-                    examination entry.
+                    Enter the candidate roll
+                    number or QR content.
                   </p>
                 </div>
 
@@ -755,20 +885,29 @@ const VerifyScan = () => {
                   type="text"
                   placeholder="Enter roll number"
                   value={manualQR}
-                  onChange={(e) =>
-                    setManualQR(e.target.value)
+                  onChange={(event) =>
+                    setManualQR(
+                      event.target.value
+                    )
                   }
-                  onKeyDown={(e) =>
-                    e.key === 'Enter' &&
-                    handleVerify(manualQR)
-                  }
+                  onKeyDown={(event) => {
+                    if (
+                      event.key === 'Enter'
+                    ) {
+                      handleVerify(
+                        manualQR
+                      );
+                    }
+                  }}
                   className="w-full rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-4 text-sm font-semibold uppercase text-slate-900 outline-none transition placeholder:normal-case placeholder:font-normal placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10"
                 />
 
               </div>
 
               <p className="mt-2 text-[11px] text-slate-400">
-                Enter the registered examination roll number.
+                Only students present in the
+                uploaded examination registry
+                can be verified.
               </p>
 
               <button
@@ -776,10 +915,12 @@ const VerifyScan = () => {
                 onClick={() =>
                   handleVerify(manualQR)
                 }
-                disabled={!manualQR || loading}
+                disabled={
+                  !manualQR.trim() ||
+                  loading
+                }
                 className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-300"
               >
-
                 {loading ? (
                   <Loader2
                     className="animate-spin"
@@ -792,7 +933,6 @@ const VerifyScan = () => {
                 {loading
                   ? 'Verifying Candidate...'
                   : 'Verify & Mark Present'}
-
               </button>
 
               {/* RESULT */}
@@ -812,7 +952,9 @@ const VerifyScan = () => {
                       <div className="flex items-start gap-3">
 
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
-                          <CheckCircle2 size={20} />
+                          <CheckCircle2
+                            size={20}
+                          />
                         </div>
 
                         <div>
@@ -821,7 +963,7 @@ const VerifyScan = () => {
                           </p>
 
                           <p className="mt-1 text-xs text-emerald-700">
-                            Candidate verification completed.
+                            {scanResult.message}
                           </p>
                         </div>
 
@@ -837,16 +979,26 @@ const VerifyScan = () => {
                           {scanResult.name}
                         </p>
 
+                        {scanResult.rollNo && (
+                          <p className="mt-1 text-xs text-slate-500">
+                            {scanResult.rollNo}
+                          </p>
+                        )}
+
                         <div className="mt-4 grid grid-cols-2 gap-3">
 
                           <ResultItem
                             label="Assigned Room"
-                            value={scanResult.room}
+                            value={
+                              scanResult.room
+                            }
                           />
 
                           <ResultItem
                             label="Seat"
-                            value={scanResult.seat}
+                            value={
+                              scanResult.seat
+                            }
                           />
 
                         </div>
@@ -858,7 +1010,9 @@ const VerifyScan = () => {
                     <div className="flex items-start gap-3">
 
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600">
-                        <AlertCircle size={20} />
+                        <AlertCircle
+                          size={20}
+                        />
                       </div>
 
                       <div>
@@ -881,9 +1035,7 @@ const VerifyScan = () => {
 
           </section>
 
-          {/* ==================================================
-              ATTENDANCE SUMMARY
-          ================================================== */}
+          {/* ATTENDANCE OVERVIEW */}
 
           <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
 
@@ -895,7 +1047,8 @@ const VerifyScan = () => {
                 </h2>
 
                 <p className="mt-1 text-xs text-slate-500">
-                  Current candidate verification summary.
+                  Live data from the uploaded
+                  student registry.
                 </p>
               </div>
 
@@ -910,27 +1063,39 @@ const VerifyScan = () => {
               <MetricCard
                 icon={<Users size={19} />}
                 label="Total Candidates"
-                value={stats.total}
+                value={
+                  directoryLoading
+                    ? '...'
+                    : stats.total
+                }
                 variant="slate"
               />
 
               <MetricCard
-                icon={<UserCheck size={19} />}
+                icon={
+                  <UserCheck size={19} />
+                }
                 label="Present"
-                value={stats.present}
+                value={
+                  directoryLoading
+                    ? '...'
+                    : stats.present
+                }
                 variant="emerald"
               />
 
               <MetricCard
                 icon={<UserX size={19} />}
                 label="Absent"
-                value={stats.absent}
+                value={
+                  directoryLoading
+                    ? '...'
+                    : stats.absent
+                }
                 variant="red"
               />
 
             </div>
-
-            {/* PROGRESS */}
 
             <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
 
@@ -942,7 +1107,8 @@ const VerifyScan = () => {
                   </p>
 
                   <p className="mt-1 text-[11px] text-slate-500">
-                    Present candidates against total enrollment
+                    Present candidates against
+                    total enrollment
                   </p>
                 </div>
 
@@ -983,13 +1149,9 @@ const VerifyScan = () => {
 
         </div>
 
-        {/* ====================================================
-            DIRECTORY
-        ==================================================== */}
+        {/* DIRECTORY */}
 
         <section className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-
-          {/* HEADER */}
 
           <div className="flex flex-col gap-4 border-b border-slate-200 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
 
@@ -1009,22 +1171,79 @@ const VerifyScan = () => {
               </div>
 
               <p className="mt-1 text-xs text-slate-500">
-                {filteredStudents.length} matching records from{' '}
-                {studentLogs.length} candidates.
+                {filteredStudents.length}{' '}
+                matching records from{' '}
+                {studentLogs.length}{' '}
+                uploaded candidates.
               </p>
 
             </div>
 
-            <button
-              type="button"
-              onClick={handleExportPDF}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
-            >
-              <Download size={15} />
-              Export Attendance Report
-            </button>
+            <div className="flex flex-wrap gap-2">
+
+              <button
+                type="button"
+                onClick={() =>
+                  loadStudents(true)
+                }
+                disabled={refreshing}
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-50"
+              >
+                <RefreshCw
+                  size={15}
+                  className={
+                    refreshing
+                      ? 'animate-spin'
+                      : ''
+                  }
+                />
+
+                Refresh
+              </button>
+
+              <button
+                type="button"
+                onClick={handleExportPDF}
+                disabled={
+                  studentLogs.length === 0
+                }
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <Download size={15} />
+
+                Export Attendance Report
+              </button>
+
+            </div>
 
           </div>
+
+          {/* ERROR */}
+
+          {directoryError && (
+            <div className="border-b border-red-200 bg-red-50 px-6 py-4">
+
+              <div className="flex items-start gap-3">
+
+                <AlertCircle
+                  size={17}
+                  className="mt-0.5 shrink-0 text-red-600"
+                />
+
+                <div>
+                  <p className="text-xs font-semibold text-red-800">
+                    Unable to synchronize student registry
+                  </p>
+
+                  <p className="mt-1 text-xs text-red-700">
+                    {directoryError}
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+          )}
 
           {/* FILTERS */}
 
@@ -1048,13 +1267,11 @@ const VerifyScan = () => {
                   type="text"
                   placeholder="Search name or roll number"
                   value={searchQuery}
-                  onChange={(e) => {
+                  onChange={(event) =>
                     setSearchQuery(
-                      e.target.value
-                    );
-
-                    setCurrentPage(1);
-                  }}
+                      event.target.value
+                    )
+                  }
                   className="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-xs font-medium text-slate-700 outline-none transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10"
                 />
 
@@ -1062,86 +1279,87 @@ const VerifyScan = () => {
 
               <FilterSelect
                 value={selectedBranch}
-                onChange={(e) => {
+                onChange={(event) =>
                   setSelectedBranch(
-                    e.target.value
-                  );
-
-                  setCurrentPage(1);
-                }}
+                    event.target.value
+                  )
+                }
               >
                 <option value="ALL">
                   All Branches
                 </option>
-                <option value="CSE">CSE</option>
-                <option value="ECE">ECE</option>
-                <option value="MECH">MECH</option>
-                <option value="EEE">EEE</option>
-                <option value="CIVIL">CIVIL</option>
+
+                {branchOptions.map(
+                  (branch) => (
+                    <option
+                      key={branch}
+                      value={branch}
+                    >
+                      {branch}
+                    </option>
+                  )
+                )}
+
               </FilterSelect>
 
               <FilterSelect
                 value={selectedYear}
-                onChange={(e) => {
+                onChange={(event) =>
                   setSelectedYear(
-                    e.target.value
-                  );
-
-                  setCurrentPage(1);
-                }}
+                    event.target.value
+                  )
+                }
               >
                 <option value="ALL">
                   All Years
                 </option>
-                <option value="1st">
-                  1st Year
-                </option>
-                <option value="2nd">
-                  2nd Year
-                </option>
-                <option value="3rd">
-                  3rd Year
-                </option>
-                <option value="4th">
-                  4th Year
-                </option>
+
+                {yearOptions.map(
+                  (year) => (
+                    <option
+                      key={year}
+                      value={year}
+                    >
+                      {year}
+                    </option>
+                  )
+                )}
+
               </FilterSelect>
 
               <FilterSelect
                 value={selectedStatus}
-                onChange={(e) => {
+                onChange={(event) =>
                   setSelectedStatus(
-                    e.target.value
-                  );
-
-                  setCurrentPage(1);
-                }}
+                    event.target.value
+                  )
+                }
               >
                 <option value="ALL">
                   All Statuses
                 </option>
+
                 <option value="PRESENT">
                   Present
                 </option>
+
                 <option value="ABSENT">
                   Absent
                 </option>
+
               </FilterSelect>
 
             </div>
 
           </div>
 
-          {/* ==================================================
-              TABLE
-          ================================================== */}
+          {/* TABLE */}
 
           <div className="overflow-x-auto">
 
             <table className="w-full min-w-[850px] border-collapse">
 
               <thead>
-
                 <tr className="border-b border-slate-200 bg-white text-left">
 
                   <TableHeading>
@@ -1157,66 +1375,80 @@ const VerifyScan = () => {
                   </TableHeading>
 
                   <TableHeading>
-                    Verification Time
+                    Room
                   </TableHeading>
 
                   <TableHeading>
-                    Room / Seat
+                    Seat
                   </TableHeading>
 
                 </tr>
-
               </thead>
 
               <tbody className="divide-y divide-slate-100">
 
-                {paginatedStudents.length > 0 ? (
-                  paginatedStudents.map((st) => (
-                    <tr
-                      key={st.id}
-                      className="transition hover:bg-slate-50"
+                {directoryLoading ? (
+                  <tr>
+                    <td
+                      colSpan={5}
+                      className="px-6 py-16 text-center"
                     >
+                      <Loader2
+                        size={26}
+                        className="mx-auto mb-3 animate-spin text-indigo-600"
+                      />
 
-                      <td className="px-6 py-4">
+                      <p className="text-sm font-semibold text-slate-600">
+                        Loading uploaded students...
+                      </p>
+                    </td>
+                  </tr>
+                ) : paginatedStudents.length > 0 ? (
 
-                        <p className="text-sm font-semibold text-slate-900">
-                          {st.name}
-                        </p>
+                  paginatedStudents.map(
+                    (student) => (
+                      <tr
+                        key={
+                          student.id ||
+                          student.rollNo
+                        }
+                        className="transition hover:bg-slate-50"
+                      >
 
-                        <p className="mt-1 text-[11px] font-medium text-slate-400">
-                          {st.rollNo}
-                        </p>
+                        <td className="px-6 py-4">
 
-                      </td>
+                          <p className="text-sm font-semibold text-slate-900">
+                            {student.name}
+                          </p>
 
-                      <td className="px-6 py-4">
+                          <p className="mt-1 text-[11px] font-medium text-slate-400">
+                            {student.rollNo}
+                          </p>
 
-                        <p className="text-xs font-semibold text-slate-700">
-                          {st.branch}
-                        </p>
+                        </td>
 
-                        <p className="mt-1 text-[11px] text-slate-400">
-                          {st.year} Year
-                        </p>
+                        <td className="px-6 py-4">
 
-                      </td>
+                          <p className="text-xs font-semibold text-slate-700">
+                            {student.branch}
+                          </p>
 
-                      <td className="px-6 py-4">
+                          <p className="mt-1 text-[11px] text-slate-400">
+                            Year: {student.year}
+                          </p>
 
-                        <StatusBadge
-                          status={st.status}
-                        />
+                        </td>
 
-                      </td>
+                        <td className="px-6 py-4">
+                          <StatusBadge
+                            status={
+                              student.status
+                            }
+                          />
+                        </td>
 
-                      <td className="px-6 py-4 text-xs font-medium text-slate-500">
-                        {st.time}
-                      </td>
+                        <td className="px-6 py-4">
 
-                      <td className="px-6 py-4">
-
-                        {st.status ===
-                        'PRESENT' ? (
                           <div className="flex items-center gap-2">
 
                             <Building2
@@ -1225,21 +1457,21 @@ const VerifyScan = () => {
                             />
 
                             <span className="text-xs font-semibold text-slate-700">
-                              {st.room} /{' '}
-                              {st.seat}
+                              {student.room}
                             </span>
 
                           </div>
-                        ) : (
-                          <span className="text-xs text-slate-300">
-                            —
-                          </span>
-                        )}
 
-                      </td>
+                        </td>
 
-                    </tr>
-                  ))
+                        <td className="px-6 py-4 text-xs font-semibold text-slate-700">
+                          {student.seat}
+                        </td>
+
+                      </tr>
+                    )
+                  )
+
                 ) : (
                   <tr>
 
@@ -1254,12 +1486,12 @@ const VerifyScan = () => {
                       />
 
                       <p className="text-sm font-semibold text-slate-600">
-                        No matching students
+                        No students found
                       </p>
 
                       <p className="mt-1 text-xs text-slate-400">
-                        Try changing the current
-                        search or filters.
+                        Upload student data or
+                        change the current filters.
                       </p>
 
                     </td>
@@ -1273,9 +1505,7 @@ const VerifyScan = () => {
 
           </div>
 
-          {/* ==================================================
-              PAGINATION
-          ================================================== */}
+          {/* PAGINATION */}
 
           <div className="flex flex-col gap-4 border-t border-slate-200 bg-slate-50/50 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
 
@@ -1298,11 +1528,16 @@ const VerifyScan = () => {
               <button
                 type="button"
                 onClick={() =>
-                  setCurrentPage((p) =>
-                    Math.max(p - 1, 1)
+                  setCurrentPage((page) =>
+                    Math.max(
+                      page - 1,
+                      1
+                    )
                   )
                 }
-                disabled={currentPage === 1}
+                disabled={
+                  currentPage === 1
+                }
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <ChevronLeft size={16} />
@@ -1315,15 +1550,16 @@ const VerifyScan = () => {
               <button
                 type="button"
                 onClick={() =>
-                  setCurrentPage((p) =>
+                  setCurrentPage((page) =>
                     Math.min(
-                      p + 1,
+                      page + 1,
                       totalPages
                     )
                   )
                 }
                 disabled={
-                  currentPage === totalPages
+                  currentPage ===
+                  totalPages
                 }
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
@@ -1336,9 +1572,7 @@ const VerifyScan = () => {
 
         </section>
 
-        {/* ====================================================
-            FOOTER
-        ==================================================== */}
+        {/* FOOTER */}
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 border-t border-slate-200 py-5 sm:flex-row">
 
@@ -1354,19 +1588,20 @@ const VerifyScan = () => {
             <Clock size={13} />
 
             <span className="text-[10px] font-medium">
-              {new Date().toLocaleTimeString()}
+              Eco-Seat AI
             </span>
           </div>
 
         </div>
 
       </div>
+
     </div>
   );
 };
 
 /* ============================================================
-   SMALL UI COMPONENTS
+   SMALL COMPONENTS
 ============================================================ */
 
 const MetricCard = ({
@@ -1486,7 +1721,6 @@ const StatusBadge = ({ status }) => {
           : 'border-red-200 bg-red-50 text-red-700'
       }`}
     >
-
       {present ? (
         <CheckCircle2 size={12} />
       ) : (
@@ -1494,7 +1728,6 @@ const StatusBadge = ({ status }) => {
       )}
 
       {status}
-
     </span>
   );
 };

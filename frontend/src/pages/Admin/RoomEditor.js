@@ -27,9 +27,16 @@ import {
 import DigitalTwinGrid from '../../components/DigitalTwinGrid';
 import axios from 'axios';
 
-const API_BASE_URL =
+// File: frontend/src/pages/Admin/RoomEditor.js
+
+const API_ROOT = (
   process.env.REACT_APP_API_URL ||
-  'http://127.0.0.1:8765/api';
+  'http://127.0.0.1:8765'
+)
+  .replace(/\/+$/, '')
+  .replace(/\/api$/, '');
+
+const API_BASE_URL = `${API_ROOT}/api`;
 
 /* ============================================================
    ROOM EDITOR

@@ -35,10 +35,16 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL ||
-  'http://127.0.0.1:8765/api';
+// File: frontend/src/pages/Admin/Analytics.js
 
+const API_ROOT = (
+  process.env.REACT_APP_API_URL ||
+  'http://127.0.0.1:8765'
+)
+  .replace(/\/+$/, '')
+  .replace(/\/api$/, '');
+
+const API_BASE_URL = `${API_ROOT}/api`;
 
 const normalizeRoom = (value) =>
   String(value ?? '')

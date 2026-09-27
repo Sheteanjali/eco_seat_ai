@@ -69,12 +69,16 @@ import {
 } from 'lucide-react';
 
 
+// File: frontend/src/pages/Admin/Rooms.js
 
-const API_BASE_URL =
-
+const API_ROOT = (
   process.env.REACT_APP_API_URL ||
+  'http://127.0.0.1:8765'
+)
+  .replace(/\/+$/, '')
+  .replace(/\/api$/, '');
 
-  'http://127.0.0.1:8765/api';
+const API_BASE_URL = `${API_ROOT}/api`;
 
 
 
